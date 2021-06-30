@@ -1,0 +1,56 @@
+@import "../../App.scss";
+
+.container {
+  .formloader {
+    position: fixed;
+    background: #00000065;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      filter: brightness(100);
+    }
+    .confirmbox {
+      background: #ffffff;
+      padding: 1rem;
+      border-radius: 0.2rem;
+    }
+  }
+  .form {
+    min-height: 90vh;
+    .heading {
+      font-weight: 600;
+    }
+    form {
+      font-size: 0.9rem;
+      .form-control {
+        font-size: 0.9rem;
+      }
+      label {
+        color: $color-dback;
+      }
+      .btn-submit {
+        background: $color-green;
+        color: #ffffff;
+      }
+    }
+    .removecourse {
+      button {
+        &:hover {
+          background: $color-background !important;
+          color: $color-dback !important;
+          border: 1px solid $color-green;
+        }
+        svg {
+          &:hover {
+            color: $color-dgreen;
+          }
+        }
+      }
+    }
+  }
+}
