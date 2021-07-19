@@ -1,0 +1,12 @@
+.card {
+  border: 2px solid red;
+}
+
+.imges {
+  position: relative;
+}
+img#p1 {
+  border-radius: 1rem;
+  margin-left: 10px;
+  margin-right: 100px;
+}

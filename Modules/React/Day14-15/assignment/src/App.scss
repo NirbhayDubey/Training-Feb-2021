@@ -1,0 +1,38 @@
+$form-bg-color: #f5faae;
+$form-width: 400px;
+$card-bg: lightyellow;
+
+.img {
+  float: left;
+}
+.img1 {
+  float: right;
+}
+
+.head1 {
+  background-color: teal;
+  color: white;
+}
+
+.card {
+  font-weight: bold;
+  color: teal;
+  margin: 10px;
+  border: 2px solid teal;
+
+  > .card-title {
+    background-color: teal;
+    border: 2px solid teal;
+    color: #f5faae;
+  }
+
+  > .card-body {
+    background-color: $card-bg;
+    border: 2px solid teal;
+  }
+
+  > .card-footer {
+    background-color: $card-bg;
+    border: 2px solid teal;
+  }
+}

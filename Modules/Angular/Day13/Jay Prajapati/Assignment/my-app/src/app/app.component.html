@@ -1,0 +1,8 @@
+<div class="container p-5 bg-dark">
+    
+<h1 class='text-light text-center'>App Component</h1>
+<app-student-form-builder (studentList)="List=$event"></app-student-form-builder>
+<app-student-list [studentList]="List"></app-student-list>
+
+<!-- <button (click)="showStudentList()">ShowStudentList in console</button> -->
+</div>

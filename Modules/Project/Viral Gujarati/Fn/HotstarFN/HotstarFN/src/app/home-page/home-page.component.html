@@ -1,0 +1,577 @@
+<div class="container-fluid ">
+  <form class="form" method="post">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+
+          <a class="navbar-brand" href="#">
+
+            <img
+              src="https://secure-media.hotstarext.com/web-assets/prod/images/brand-logos/disney-hotstar-logo-dark.svg"
+              alt="Hotstar" style="width:115px; height: 45px; padding-bottom: 10px;">
+          </a>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+              aria-expanded="false">TV</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" routerLink="/starplus">Star Plus</a>
+              <a class="dropdown-item" href="starworld.html">Star World</a>
+              <a class="dropdown-item" href="lifeok.html">Life OK</a>
+              <a class="dropdown-item" href="starvijay.html">Star Vijay</a>
+              <a class="dropdown-item" href="starbharat.html">Star Bharat</a>
+            </div>
+          </li>
+
+          <li class="nav-item  ">
+            <a class="nav-link" routerLink="movie" role="button" aria-haspopup="true" aria-expanded="false">Movies</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+              aria-expanded="false">Sports</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="https://www.cricbuzz.com/">Cricket</a>
+              <a class="dropdown-item" href="https://www.skysports.com/football">FootBall</a>
+              <a class="dropdown-item" href="https://www.flashscore.in/badminton">Badminton</a>
+              <a class="dropdown-item" href="https://www.flashscore.in/volleyball">VolleyBall</a>
+              <a class="dropdown-item" href="https://www.livescore.in/hockey">Hockey</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown ">
+            <a class="nav-link " data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+              aria-expanded="false">News</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="starplus.html">Hindi</a>
+              <a class="dropdown-item" href="starplus.html">English</a>
+              <a class="dropdown-item" href="starplus.html">Bengali</a>
+              <a class="dropdown-item" href="starplus.html">Telugu</a>
+              <a class="dropdown-item" href="starplus.html">Malayalam</a>
+            </div>
+          </li>
+        </ul>
+        <!-- subscribe -->
+        <button type="button" class="subscribe-btn btn-primary " routerLink="/subscribe">
+          subscribe
+        </button>
+
+
+        <!-- Button trigger modal -->
+        <button type="button" class="login-btn btn-primary ml-auto" [class.d-none]='IsLoggedIn()' (click)='login()' data-toggle="modal"
+          data-target="#exampleModal">
+          Login
+        </button>
+
+        <button class="submit-btn btn-primary" type="submit" [class.d-none]='IsLoggedIn()' (click)='register()' data-toggle="modal"
+          data-target="#exampleModal1">
+          Register
+        </button>
+
+        <button class="submit-btn btn-primary" type="button " [class.d-none]='!IsLoggedIn()' (click)='logout()'>
+          Logout
+        </button>
+
+      </div>
+
+    </nav>
+    <br>
+  </form>
+  <br>
+  <br>
+
+  <!-- carousel -->
+
+  <div id="demo" class="carousel slide mb-5" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li class="active" data-target="#demo" data-slide-to="0"></li>
+      <li data-target="#slider4" data-slide-to="1"></li>
+      <li data-target="#slider4" data-slide-to="2"></li>
+    </ol>
+
+    <div class="carousel-inner" role="listbox">
+      <div class="carousel-item ">
+        <div class="embed-responsive embed-responsive-16by9" style="width: 100%; height: 400px;">
+          <iframe class="embed-responsive-item" src="" allowfullscreen></iframe>
+        </div>
+        <div class="carousel-caption d-non+ e d-md-block">
+          <h3>Biryani</h3>
+          <p>Danish has recently returned from Dubai after quitting his job which his family members are unaware of.
+            Will it affect Danish’s love life as the truth...</p>
+        </div>
+      </div>
+
+
+      <div class="carousel-item active">
+        <img
+          src="https://img1.hotstarext.com/image/upload/f_auto,t_web_m_1x/sources/r1/cms/prod/9330/1009330-h-1aa8a85978c1"
+          alt="Carousel Image 2" class="d-block img-fluid" style="width: 100%; height: 400px;">
+        <div class="carousel-caption d-none d-md-block">
+          <h3>India's WTC Game Changers: Ashwin</h3>
+          <p>Find out why R Ashwin could be one of India's game changers in the ICC World Test Championship final
+            against
+            New Zealand</p>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="https://img1.hotstarext.com/image/upload/f_auto,t_web_m_1x/sources/r1/cms/prod/6769/826769-h"
+          alt="Carousel Image 3" class="d-block img-fluid" style="width: 100%; height: 400px;">
+        <!-- <img src="https://img1.hotstarext.com/image/upload/f_auto,t_web_m_1x/sources/r1/cms/prod/8733/998733-h" alt="Carousel Image 3" class="d-block img-fluid" -->
+        <div class="carousel-caption d-none d-md-block">
+          <h3>StarPlus</h3>
+          <p>Anupama had to sacrifice a lot to become an ideal wife, daughter-in-law, and mother. After a bitter
+            realisation, she sets out to live on her own terms....</p>
+        </div>
+      </div>
+
+    </div>
+    <a href="#demo" class="carousel-control-prev" data-slide="prev"><span class="carousel-control-prev-icon"></span></a>
+    <a href="#demo" class="carousel-control-next" data-slide="next"><span class="carousel-control-next-icon"></span></a>
+  </div>
+
+  <!-- home page content  -->
+  <h3 style="color: whitesmoke; font-weight: 700;">Latest & Trending </h3>
+  <div class="resClass">
+    <div class="row">
+
+      <div class="slick-slide" aria-hidden="false">
+        <div>
+          <div>
+            <div class="vertical">
+              <article class="    movie-card vertical"><a
+                  href="https://res.cloudinary.com/hotstarwebsite/video/upload/v1624250854/SampleVideo_1280x720_5mb_tl2bhx.mp4"
+                  target="">
+                  <div class="thumbnail-container">
+                    <div class="card card-img-container"><img
+                        src="https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/3362/1013362-v-fdcfbdad63c9"
+                        class="img-loader lazy-img-loader loaded" loading="lazy" alt=""></div>
+                  </div>
+
+                </a></article>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slick-slide" aria-hidden="true">
+        <div>
+          <div>
+            <div class="vertical">
+
+              <article class="    movie-card vertical"><a
+                  href="https://res.cloudinary.com/hotstarwebsite/video/upload/v1624250854/SampleVideo_1280x720_5mb_tl2bhx.mp4">
+                  <div class="thumbnail-container">
+                    <div class="card card-img-container"><img
+                        src="https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/6446/996446-v"
+                        class="img-loader lazy-img-loader loaded" loading="lazy" alt=""></div>
+                  </div>
+
+                </a></article>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slick-slide slick-active slick-current" aria-hidden="false">
+        <div>
+          <div>
+            <div class="vertical">
+              <article class="    movie-card vertical"><a href="">
+                  <div class="thumbnail-container">
+                    <div class="card card-img-container"><img
+                        src="https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/1456/771456-v"
+                        class="img-loader lazy-img-loader loaded" loading="lazy" alt=""></div>
+                  </div>
+
+                </a></article>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slick-slide slick-active slick-current" aria-hidden="false">
+        <div>
+          <div>
+            <div class="vertical">
+              <article class="    movie-card vertical"><a href="">
+                  <div class="thumbnail-container">
+                    <div class="card card-img-container"><img
+                        src="https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/1456/771456-v"
+                        class="img-loader lazy-img-loader loaded" loading="lazy" alt=""></div>
+                  </div>
+                </a></article>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slick-slide" aria-hidden="true">
+        <div>
+          <div>
+            <div class="vertical">
+              <article class="    movie-card vertical"><a href="">
+                  <div class="thumbnail-container">
+                    <div class="card card-img-container"><img
+                        src="https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_1_5x/sources/r1/cms/prod/9623/969623-v"
+                        class="img-loader lazy-img-loader loaded" loading="lazy" alt=""></div>
+                  </div>
+
+                </a></article>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slick-slide" aria-hidden="true">
+        <div>
+          <div>
+            <div class="vertical">
+              <article class="    movie-card vertical"><a href="">
+                  <div class="thumbnail-container">
+                    <div class="card card-img-container"><img
+                        src="https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/2887/832887-v"
+                        class="img-loader lazy-img-loader loaded" loading="lazy" alt=""></div>
+                  </div>
+
+                </a></article>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slick-slide" aria-hidden="true">
+        <div>
+          <div>
+            <div class="vertical">
+              <article class="    movie-card vertical"><a href="">
+                  <div class="thumbnail-container">
+                    <div class="card card-img-container"><img
+                        src="https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/9994/829994-v"
+                        class="img-loader lazy-img-loader loaded" loading="lazy" alt=""></div>
+                  </div>
+
+                </a></article>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="">
+
+        <div class="normal">
+          <article class="  show-card normal"><a href="">
+              <div class="thumbnail-container">
+                <div class="card card-img-container"><img
+                    src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_3x/sources/r1/cms/prod/1040/951040-h"
+                    class="img-loader lazy-img-loader loaded" loading="lazy" alt=""></div>
+              </div>
+
+            </a></article>
+        </div>
+      </div>
+
+      <div class="">
+        <div class="normal">
+          <article class="  show-card normal"><a href="">
+              <div class="thumbnail-container">
+                <div class="card card-img-container"><img
+                    src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_1x/sources/r1/cms/prod/1995/861995-h"
+                    class="img-loader lazy-img-loader loaded" loading="lazy" alt=""></div>
+              </div>
+
+            </a></article>
+        </div>
+      </div>
+      <div class="">
+        <div class="normal">
+          <article class="  show-card normal"><a href="">
+              <div class="thumbnail-container">
+                <div class="card card-img-container"><img
+                    src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_1x/sources/r1/cms/prod/895/830895-h"
+                    class="img-loader lazy-img-loader loaded" loading="lazy" alt=""></div>
+              </div>
+
+            </a></article>
+        </div>
+      </div>
+
+      <div class="">
+        <div class="normal">
+          <article class="  show-card normal"><a href="">
+              <div class="thumbnail-container">
+                <div class="card card-img-container"><img
+                    src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_3x/sources/r1/cms/prod/7381/927381-h"
+                    class="img-loader lazy-img-loader loaded" loading="lazy" alt=""></div>
+              </div>
+
+            </a></article>
+        </div>
+      </div>
+      <div class="">
+        <div class="normal">
+          <article class="  show-card normal"><a href="">
+              <div class="thumbnail-container">
+                <div class="card card-img-container"><img
+                    src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_3x/sources/r1/cms/prod/905/840905-h"
+                    class="img-loader lazy-img-loader loaded" loading="lazy" alt=""></div>
+              </div>
+
+            </a></article>
+        </div>
+      </div>
+      <div class="">
+        <div class="normal">
+          <article class="  show-card normal"><a href="">
+              <div class="thumbnail-container">
+                <div class="card card-img-container"><img
+                    src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_1x/sources/r1/cms/prod/6615/826615-h"
+                    class="img-loader lazy-img-loader loaded" loading="lazy" alt=""></div>
+              </div>
+
+            </a></article>
+        </div>
+      </div>
+      <div class="">
+        <div class="normal">
+          <article class="  show-card normal"><a href="">
+              <div class="thumbnail-container">
+                <div class="card card-img-container"><img
+                    src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_1x/sources/r1/cms/prod/6769/826769-h"
+                    class="img-loader lazy-img-loader loaded" loading="lazy" alt=""></div>
+              </div>
+
+            </a></article>
+        </div>
+      </div>
+      <div class="">
+        <div class="normal">
+          <article class="  show-card normal"><a href="">
+              <div class="thumbnail-container">
+                <div class="card card-img-container"><img
+                    src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_1x/sources/r1/cms/prod/9260/889260-h"
+                    class="img-loader lazy-img-loader loaded" loading="lazy" alt=""></div>
+              </div>
+
+            </a></article>
+        </div>
+      </div>
+      <div class="">
+        <div class="normal">
+          <article class="  show-card normal"><a href="">
+              <div class="thumbnail-container">
+                <div class="card card-img-container"><img
+                    src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_1x/sources/r1/cms/prod/7999/747999-h"
+                    class="img-loader lazy-img-loader loaded" loading="lazy" alt=""></div>
+              </div>
+
+            </a></article>
+        </div>
+      </div>
+      <div class="">
+        <div class="normal">
+          <article class="  show-card normal"><a href="">
+              <div class="thumbnail-container">
+                <div class="card card-img-container"><img
+                    src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_3x/sources/r1/cms/prod/9160/819160-h"
+                    class="img-loader lazy-img-loader loaded" loading="lazy" alt=""></div>
+              </div>
+
+            </a></article>
+        </div>
+      </div>
+      <div class="">
+        <div class="normal">
+          <article class="  show-card normal"><a href="" to="/in/tv/lockdown-ki-lovestory/1260040517" target="">
+              <div class="thumbnail-container">
+                <div class="card card-img-container"><img
+                    src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_1x/sources/r1/cms/prod/2956/762956-h"
+                    class="img-loader lazy-img-loader loaded" loading="lazy" alt=""></div>
+              </div>
+
+            </a></article>
+        </div>
+      </div>
+      <div class="">
+        <div class="normal">
+          <article class="  show-card normal"><a href="" to="/in/tv/yehh-jadu-hai-jinn-ka/1260011873" target="">
+              <div class="thumbnail-container">
+                <div class="card card-img-container"><img
+                    src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_1x/sources/r1/cms/prod/5410/775410-h"
+                    class="img-loader lazy-img-loader loaded" loading="lazy" alt=""></div>
+              </div>
+            </a></article>
+        </div>
+      </div>
+      <div class="">
+        <div class="normal">
+          <article class="  show-card normal"><a href="" to="/in/tv/yeh-rishtey-hain/1260003964" target="">
+              <div class="thumbnail-container">
+                <div class="card card-img-container"><img
+                    src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_1x/sources/r1/cms/prod/4333/734333-h"
+                    class="img-loader lazy-img-loader loaded" loading="lazy" alt=""></div>
+              </div>
+            </a></article>
+        </div>
+      </div>
+      <div class="">
+        <div class="normal">
+          <article class="  show-card normal"><a href="" target="">
+              <div class="thumbnail-container">
+                <div class="card card-img-container"><img
+                    src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_1x/sources/r1/cms/prod/4253/734253-h"
+                    class="img-loader lazy-img-loader loaded" loading="lazy" alt=""></div>
+              </div>
+            </a></article>
+        </div>
+      </div>
+      <div class="">
+        <div class="normal">
+          <article class="  show-card normal"><a href="" target="">
+              <div class="thumbnail-container">
+                <div class="card card-img-container"><img
+                    src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_1x/sources/r1/cms/prod/7519/867519-h"
+                    class="img-loader lazy-img-loader loaded" loading="lazy" alt=""></div>
+              </div>
+            </a></article>
+        </div>
+      </div>
+      <div class="">
+        <div class="normal">
+          <article class="  show-card normal"><a href="" target="">
+              <div class="thumbnail-container">
+                <div class="card card-img-container"><img
+                    src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_1x/sources/r1/cms/prod/7252/757252-h"
+                    class="img-loader lazy-img-loader loaded" loading="lazy" alt=""></div>
+              </div>
+            </a></article>
+        </div>
+      </div>
+      <div class="">
+        <div class="normal">
+          <article class="  show-card normal"><a href="" target="">
+              <div class="thumbnail-container">
+                <div class="card card-img-container"><img
+                    src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_1x/sources/r1/cms/prod/7245/827245-h"
+                    class="img-loader lazy-img-loader loaded" loading="lazy" alt=""></div>
+              </div>
+            </a></article>
+        </div>
+      </div>
+      <div class="">
+        <div class="normal">
+          <article class="  show-card normal"><a href="" target="">
+              <div class="thumbnail-container">
+                <div class="card card-img-container"><img
+                    src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_1x/sources/r1/cms/prod/1309/701309-h"
+                    class="img-loader lazy-img-loader loaded" loading="lazy" alt=""></div>
+              </div>
+            </a></article>
+        </div>
+      </div>
+      <div class="">
+        <div class="normal">
+          <article class="show-card normal"><a href="" target="">
+              <div class="thumbnail-container">
+                <div class="card card-img-container"><img
+                    src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_1x/sources/r1/cms/prod/4382/694382-h"
+                    class="img-loader lazy-img-loader loaded" loading="lazy" alt=""></div>
+              </div>
+            </a></article>
+        </div>
+      </div>
+      <div class="">
+        <div class="normal">
+          <article class="  show-card normal"><a href="" target="">
+              <div class="thumbnail-container">
+                <div class="card card-img-container"><img
+                    src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_1x/sources/r1/cms/prod/7898/627898-h"
+                    class="img-loader lazy-img-loader loaded" loading="lazy" alt=""></div>
+              </div>
+            </a></article>
+        </div>
+      </div>
+      <div class="">
+        <div class="normal">
+          <article class="  show-card normal"><a href="" target="">
+              <div class="thumbnail-container">
+                <div class="card card-img-container"><img
+                    src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_1x/sources/r1/cms/prod/2021/552021-h"
+                    class="img-loader lazy-img-loader loaded" loading="lazy" alt=""></div>
+              </div>
+            </a></article>
+        </div>
+      </div>
+      <div class="">
+        <div class="normal">
+          <article class="  show-card normal"><a href="" target="">
+              <div class="thumbnail-container">
+                <div class="card card-img-container"><img
+                    src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_1x/sources/r1/cms/prod/3751/623751-h"
+                    class="img-loader lazy-img-loader loaded" loading="lazy" alt=""></div>
+              </div>
+            </a></article>
+        </div>
+      </div>
+      <div class="">
+        <div class="normal">
+          <article class="  show-card normal"><a href="" target="">
+              <div class="thumbnail-container">
+                <div class="card card-img-container"><img
+                    src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_1x/sources/r1/cms/prod/9145/659145-h"
+                    class="img-loader lazy-img-loader loaded" loading="lazy" alt=""></div>
+              </div>
+            </a></article>
+        </div>
+      </div>
+    </div>
+    <br>
+
+
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class=" footer col-xl-5 col-xs-4 col-sm-12 col-sm-7 "
+            style="margin-left: -30px; margin-top: 10px; margin-right: 20px;">
+            <h2>About Disney+ HotStar</h2>
+            <p>
+              © 2021 STAR. All Rights Reserved. HBO, Home Box Office and all related channel and programming logos are
+              service marks of, and all related programming visuals and elements are the property of, Home Box Office,
+              Inc.
+              All rights reserved. </p>
+              <p>&copy; 2021, Viral Gujarati</p>
+          </div>
+          <div class="col-sm-4">
+            <ul class="list-unstyled link-list">
+              <img
+                src="https://secure-media.hotstarext.com/web-assets/prod/images/brand-logos/disney-hotstar-logo-dark.svg"
+                alt="Hotstar" style="width:215px; height: 85px; padding-bottom: 10px;">
+
+            </ul>
+          </div>
+
+          <div class="copy">
+            <div class="container">
+              <h3>Contact With Us </h3>
+              <a href="https://twitter.com/DisneyPlusHS"><i class="fa fa-twitter"></i></a>
+              <a href="https://www.facebook.com/DisneyPlusHotstar"><i class="fa fa-facebook"></i></a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+      integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+      crossorigin="anonymous"></script>
+
+
+    <!-- <router-outlet></router-outlet> -->
+    <!-- <app-login></app-login> -->

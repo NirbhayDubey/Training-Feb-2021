@@ -1,0 +1,212 @@
+.contentArea .rightPanel {
+    width: 68%;
+    min-height: 700px;
+    height: 100%;
+    position: absolute;
+    right: 0%;
+    z-index: 0;
+    background: url("https://cdn.staticmb.com/images/bg-icon-1.png") repeat 25px top #f2f2f2;
+    background-attachment: fixed;
+    transition: all 0.5s ease;
+}
+
+.formCont {
+    width: 405px;
+    height: auto;
+    position: relative;
+    z-index: 2;
+    background-color: #fff;
+    margin: 30px auto 0;
+    padding: 22px 30px 47px 30px;
+    border-radius: 7px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -ms-border-radius: 7px;
+    border: solid 1px #d7d7d7;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.heading {
+    padding-bottom: 20px;
+    color: #333;
+    font-size: 20px;
+    text-align: left;
+    font-family: 'open_sansregular';
+}
+
+.formRow {
+    padding: 0px;
+}
+
+form {
+    margin: 0;
+}
+
+form, img {
+    padding: 0;
+}
+
+.formRow {
+    padding: 0px;
+}
+
+.formField {
+    position: relative;
+    height: 55px;
+}
+
+.labelText {
+    font-size: 14px;
+    color: #666;
+    display: block;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 20px;
+    transition: all 0.2s ease;
+    text-align: left;
+    font-family: 'open_sansregular';
+}
+
+.formField .inputText {
+    border-color: #999999;
+    border-bottom-width: 1px;
+}
+
+.inputText {
+    padding: 5px 0px 6px 0px;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 15px;
+    width: 100%;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #999999;
+    font-size: 14px;
+    color: #666;
+    transition: all 0.2s ease;
+    text-align: left;
+    font-family: 'open_sansregular';
+}
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.formCont .errorMsg {
+    clear: both;
+}
+
+.errorMsg {
+    width: 100%;
+    font-size: 12px;
+    color: #f44336;
+    display: block;
+    margin-bottom: 5px;
+    display: none;
+    position: relative;
+    padding-right: 25px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.errorMsg .errorIcon {
+    width: 18px;
+    height: 15px;
+    background: url("https://cdn.staticmb.com/images/errorIcon.png") no-repeat;
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 3px;
+}
+
+.formRow.btnField {
+    margin-top: 15px;
+}
+
+.formRow {
+    padding: 0px;
+}
+
+.mui-btn--primary {
+    background-color: #d8232a;
+    color: #FFF;
+}
+.mui-btn {
+    width: 100%;
+    height: 40px;
+    padding: 0px;
+    margin: 0px;
+    display: block;
+    font-family: 'open_sansregular';
+    font-size: 16px;
+    text-align: center;
+    line-height: 40px;
+    color: rgba(0,0,0,0.87);
+    background-color: #FFF;
+    position: relative;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+    background-image: none;
+    white-space: nowrap;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -ms-border-radius: 2px;
+    animation-duration: 0.0001s;
+    -webkit-animation-duration: 0.0001s;
+    animation-name: mui-node-inserted;
+    -webkit-animation-name: mui-node-inserted;
+    transition: all 0.2s ease-in-out;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.formRow.btnWrap.otpPageText {
+    margin-top: 25px;
+}
+
+.formRow.btnWrap {
+    margin-top: 9px;
+    height: auto;
+}
+
+.formCont ul.requestText {
+    padding: 0;
+    margin: 15px 0 0;
+}
+
+ul, li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.formCont ul.requestText li span {
+    display: inline-block;
+    float: none;
+    margin: 0 auto;
+    vertical-align: middle;
+    width: 20px;
+}
+
+.codeIcon {
+    background-position: 0 -159px;
+    height: 20px;
+    width: 19px;
+    float: left;
+}
+
+.requestText li a {
+    display: inline-block;
+}

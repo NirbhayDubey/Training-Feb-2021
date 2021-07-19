@@ -9,7 +9,7 @@ namespace Hospital
     {
         static void Main(string[] args)
         {
-            var context = new MyHospitalContext();
+            
             //staff st = new staff();
             //st = InsertStaffDetails();
             //context.staff.Add(st);
@@ -36,20 +36,29 @@ namespace Hospital
                 switch (op)
                 {
                     case "A":
-                        var s = InsertStaffDetails();
-                        context.Add(s);
-                        context.SaveChanges();
+                        using (var context = new MyHospitalContext())
+                        {
+                            var s = InsertStaffDetails();
+                            context.Add(s);
+                            context.SaveChanges();
+                        }
                         Console.ReadLine();
                         break;
                     case "B":
-                        var d = UpdateStaff();
-                        context.Update(d);
-                        context.SaveChanges();
+                        using(var context = new MyHospitalContext())
+                        {
+                            var d = UpdateStaff();
+                            context.Update(d);
+                            context.SaveChanges();
+                        }
                         Console.ReadLine();
                         break;
                     case "C":
-                        DeleteStaff();
-                        context.SaveChanges();
+                       using(var context = new MyHospitalContext())
+                        {
+                            DeleteStaff();
+                            context.SaveChanges();
+                        }
                         Console.ReadLine();
                         break;
                     case "D":
@@ -101,7 +110,7 @@ namespace Hospital
         public static staff UpdateStaff()
         {
             staff data = new staff();
-            Console.Write("Enter ID of staffmember where you want to update : ");
+            Console.Write("Enter ID of staffMember where you want to update : ");
             data.Id = Convert.ToInt32(Console.ReadLine());
             Console.Write("Enter Name: ");
             data.Name = Console.ReadLine();
@@ -114,93 +123,99 @@ namespace Hospital
         }
         public static void DeleteStaff()
         {
-            var context = new MyHospitalContext();
-            Console.WriteLine("Enter ID of Staff Member whose data you want to delete : ");
-            int id = Convert.ToInt32(Console.ReadLine());
-            var data = from s in context.staff
-                       where s.Id == id
-                       select s;
-            context.staff.Remove(data.FirstOrDefault());
+            using (var context = new MyHospitalContext())
+            {
+                Console.WriteLine("Enter ID of Staff Member whose data you want to delete : ");
+                int id = Convert.ToInt32(Console.ReadLine());
+                var data = from s in context.staff
+                           where s.Id == id
+                           select s;
+                context.staff.Remove(data.FirstOrDefault());
+            }
 
 
         }
         public static void DisplayReportOfPatient()
         {
-            var context = new MyHospitalContext();
-            Console.Write("Enter DoctorID : ");
-            int pt = Convert.ToInt32(Console.ReadLine());
-            var doc = from s in context.staff
-                         where s.Id == pt
-                         select s;
-            var dept = from d in context.Departments
-                       where d.DepartmentId == doc.FirstOrDefault().Department
-                       select d;
-            var treats = from d in context.Treatments
-                         where d.StaffId == doc.FirstOrDefault().Id
-                         select d;
+            using (var context = new MyHospitalContext())
+            {
+                Console.Write("Enter DoctorID : ");
+                int pt = Convert.ToInt32(Console.ReadLine());
+                var doc = from s in context.staff
+                          where s.Id == pt
+                          select s;
+                var dept = from d in context.Departments
+                           where d.DepartmentId == doc.FirstOrDefault().Department
+                           select d;
+                var treats = from d in context.Treatments
+                             where d.StaffId == doc.FirstOrDefault().Id
+                             select d;
                 //context.Treatments
                 //               .Where(s => s.StaffId == doc.FirstOrDefault().Id)
                 //               .ToList();
 
-            var ptdata = context.Patients.Join(treats,
-                p => p.Id,
-                t => t.PatientId,
-                (p, t) => new
+                var ptdata = context.Patients.Join(treats,
+                    p => p.Id,
+                    t => t.PatientId,
+                    (p, t) => new
+                    {
+                        PatientName = p.Name,
+                        Age = p.Age,
+                        City = p.City,
+                        Treatment = t.TreatmentName
+                    });
+                Console.WriteLine($"{ptdata.Count()}");
+                Console.WriteLine($"\nDoctor Name : {doc.FirstOrDefault().Name}\n" +
+                    $"Department : {dept.FirstOrDefault().DepartmentName}");
+                if (ptdata.Count() != 0)
                 {
-                    PatientName = p.Name,
-                    Age = p.Age,
-                    City = p.City,
-                    Treatment = t.TreatmentName
-                });
-            Console.WriteLine($"{ptdata.Count()}");
-            Console.WriteLine($"\nDoctor Name : {doc.FirstOrDefault().Name}\n" +
-                $"Department : {dept.FirstOrDefault().DepartmentName}");
-          if(ptdata.Count() != 0)
-            {
-                Console.WriteLine("\n\nPatient Details\n\n" +
-              "Name\t\t\tAge\t\t\tCity\t\t\tTreatement");
+                    Console.WriteLine("\n\nPatient Details\n\n" +
+                  "Name\t\t\tAge\t\t\tCity\t\t\tTreatement");
 
-                foreach (var patient in ptdata)
-                {
-                    Console.WriteLine($"{patient.PatientName}\t\t\t" +
-                        $"{patient.Age}\t\t\t" +
-                        $"{patient.City}\t\t\t" +
-                        $"{patient.Treatment}");
+                    foreach (var patient in ptdata)
+                    {
+                        Console.WriteLine($"{patient.PatientName}\t\t\t" +
+                            $"{patient.Age}\t\t\t" +
+                            $"{patient.City}\t\t\t" +
+                            $"{patient.Treatment}");
+                    }
                 }
-            }else
-            {
-                Console.WriteLine($"\nSorry! No Patient Appointed for {doc.FirstOrDefault().Name}!!");
+                else
+                {
+                    Console.WriteLine($"\nSorry! No Patient Appointed for {doc.FirstOrDefault().Name}!!");
+                }
+
             }
-
-
         }
         public static void DisplayReportOfMedicineOfPatient()
         {
-            var context = new MyHospitalContext();
-            Console.Write("Enter Name of PatientID : ");
-            int pt = Convert.ToInt32(Console.ReadLine());
-            var Ptdata = from s in context.Patients
-                         where s.Id == pt
-                         select s;
-            var Md = from m in context.DrugAllotments
-                     where m.PatientId == pt
-                     select m;
-            Console.WriteLine($"Patient ID : {Ptdata.FirstOrDefault().Id}\n" +
-                $"Patient Name : {Ptdata.FirstOrDefault().Name}\n");
-            Console.WriteLine("DrugName|\t|Morning|\t|Afternoon|\t|Evening|\t|Night|");
-            foreach (var md in Md)
+            using (var context = new MyHospitalContext())
             {
-                Console.WriteLine($"{md.DrugName}\t\t" +
-                    $"{md.Morning}\t\t" +
-                    $"{md.Afternoon}\t\t" +
-                    $"{md.Evenning}\t\t" +
-                    $"{md.Night}");
+                Console.Write("Enter Name of PatientID : ");
+                int pt = Convert.ToInt32(Console.ReadLine());
+                var Ptdata = from s in context.Patients
+                             where s.Id == pt
+                             select s;
+                var Md = from m in context.DrugAllotments
+                         where m.PatientId == pt
+                         select m;
+                Console.WriteLine($"Patient ID : {Ptdata.FirstOrDefault().Id}\n" +
+                    $"Patient Name : {Ptdata.FirstOrDefault().Name}\n");
+                Console.WriteLine("\t|DrugName || Morning || Noon || Evening || Night|\n");
+                foreach (var md in Md)
+                {
+                    Console.WriteLine($"\t{md.DrugName}\t" +
+                        $"{md.Morning}\t" +
+                        $"{md.Afternoon}\t" +
+                        $"{md.Evenning}\t" +
+                        $"{md.Night}");
+                }
             }
         }
         public static void SummaryReport()
         {
-            var context = new MyHospitalContext();
-            Console.Write("Enter PatientID : ");
+            using (var context = new MyHospitalContext()) { 
+                Console.Write("Enter PatientID : ");
             int p = Convert.ToInt32(Console.ReadLine());
             
             var Ptdata = from s in context.Patients
@@ -232,7 +247,7 @@ namespace Hospital
                     $"{drug.Evenning}\t" +
                     $"{drug.Night}\t");
             }
-
+            }
         }
     }
 }

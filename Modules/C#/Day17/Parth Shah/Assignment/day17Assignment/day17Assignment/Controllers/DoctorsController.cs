@@ -112,5 +112,27 @@ namespace day17Assignment.Controllers
         {
             return _context.Doctors.Any(e => e.DrId == id);
         }
+      /*  [HttpGet]
+        [Route("PatientPatientDetail/{id}")]
+
+        public object finddr(int id)
+        {
+
+            var result = _context.Doctors.Find(id);
+            if (result == null)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "Please Enter a Id!" });
+            }
+
+            var drugDetail = _context.Patients.Find(result.Patient
+
+            return Ok(last);
+
+        }*/
+
+
+
+
     }
+
 }

@@ -1,0 +1,186 @@
+<div class="container">
+    <div class="card text-center">
+        <div class="card-header h4" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+            Day13 Js Assignment
+          </div>
+        <div class="card-body text-light">
+
+
+<h1 class="display-4 text-center text-primary p-3 font-italic">Employee Details</h1>
+ <div id="demo"></div>
+
+  
+        <div class="form-group row">
+          <label for="eid" class="col-sm-2 col-form-label">Employee Id</label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" placeholder="Enter Emp ID" name="eid" id="empid">
+          </div>
+        </div>
+        <div class="form-group row">
+            <label for="empname" class="col-sm-2 col-form-label">Employee Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" placeholder="Enter Emp name" name="empname" id="empname">
+            </div>
+          </div>
+        <div class="form-group row">
+          <label for="age" class="col-sm-2 col-form-label">Age</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" placeholder="Enter Emp age" id="age">
+          </div>
+        </div>
+    
+
+        <div class="form-group row">
+            <label for="desig" class="col-sm-2 form-label">Designation</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" placeholder="Enter Emp Designation "id="desig">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="salary" class="col-sm-2 col-form-label">Salary</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" placeholder="Enter Emp Salary" id="salary">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="exampleFormControlSelect1" class="col-sm-2 form-label">Location</label>
+            <div class="col-sm-10">
+            <select class="form-control" value="Default" id="option" id="exampleFormControlSelect1">
+              <option>Ahemdabad</option>
+              <option>Mumbai</option>
+              <option>Dhrangadhra</option>
+              <option>Kolkata</option>
+              <option>Other</option>
+            </select>
+            </div>
+          </div>
+
+
+          <div class="form-group row">
+            <label for="email" class="col-sm-2 form-label">Email Address:</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="email" placeholder="Enter Emp Email" placeholder="name@example.com">
+            </div>
+          </div>
+
+
+         
+
+          <div class="form-group row">
+            <label for="date" class="col-sm-2 col form-label">Date of Joining</label>
+            <div class="col-sm-10">
+            <input type="date"  class="form-control" placeholder="Enter Emp Date of joining "id="doj">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="contact" class="col-sm-2 col-form-label pb-5">Conatct Number</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="contact" placeholder="Enter Emp Contact Numnber">
+            </div>
+          </div>
+
+       
+        <div class="form-group row">
+          <div class="col-sm-10">
+            <button type="submit" value="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+    
+
+</div>
+</div>
+</div>
+
+    <script>
+        let eid = document.getElementById('empid');
+        let ename = document.getElementById('empname');
+        let age = document.getElementById('age');
+        let msex = document.getElementById('gridRadios1');
+        let fsex = document.getElementById('gridRadios2');
+        let edesig = document.getElementById('desig');
+        let sal = document.getElementById('salary');
+        let opt = document.getElementById('option');
+        let eemail = document.getElementById('email');
+        let date = document.getElementById('doj');
+        let cont = document.getElementById('contact');
+
+      
+
+        function validate()
+      {
+        event.preventDefault();
+        console.log(event);
+
+        let valid = true;
+        let msg = '';
+
+        function improperMsg(ele, imsg)
+        {
+          valid = false;
+          ele.style.border = "1px solid red";
+          ele.focus();
+        msg = '<p class="bg-secondary text-light p-2 rounded">'+imsg+'</p>'; 
+          return msg;
+
+        }
+
+        if(eid.value == ''){
+          msg += improperMsg(eid, 'Please Enter Proper Employee Id');
+        }else if (eid.value.lenght < 5){
+          msg += improperMsg(eid, 'Please Enter Employee Id upto 5 characters');
+        }
+
+      if(ename.value == ''){
+        msg += improperMsg(ename, 'Enter Your name first');
+      } 
+
+      if(age.value == ''){
+        msg += improperMsg(age, 'Enter Your age first');
+      }
+
+      if(msex.value == ''){
+        msg += improperMsg(msex, 'Select Your Gender first');
+      }
+
+      if(edesig.value == ''){
+        msg += improperMsg(edesig, 'Enter Your designation first');
+      }
+
+      if(sal.value == ''){
+        msg += improperMsg(sal, 'Enter Your Salary first');
+      }
+
+      if(opt.value == ''){
+        msg += improperMsg(opt, 'Select Your option first');
+      }
+
+      if(eemail.value == ''){
+        msg += improperMsg(eemail, 'Enter Your email first');
+      }
+
+      if(date.value == ''){
+        msg += improperMsg(date, 'Select Your date of joining first');
+      }
+
+      if(cont.value == ''){
+        msg += improperMsg(cont, 'Enter Your Contact first');
+      }
+
+      if(valid == true)
+      {
+        msg = '<p class="bg-secondary text-light ">Success</p>'; 
+      }
+      document.getElementById('demo').innerHTML= msg;
+    }
+
+
+    function convert(date){
+  var datearray = date.split("/");
+  var newdate = datearray[0] + '/' + datearray[1] + '/' + datearray[2];
+  return newdate;
+  
+}
+</script>

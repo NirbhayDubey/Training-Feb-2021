@@ -1,120 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <%- include('../partials/head', { title : 'RxTraining' }) %>
-</head>
-<body>
-    <header>
-        <%- include('../partials/header', {Tech}) %>
-    </header>
+  </head>
+  <body>
+    <header><%- include('../partials/header', {Tech, User}) %></header>
     <main>
-        <div class="container">
-            <% if(typeof users != 'undefined' && Array.isArray(users)) { %>
-                <h1 class="display-1 mb-5 d-inline-block">Users</h1>
-                <button class="btn btn-info float-right" data-toggle="modal" data-target="#addModal">Add User</button>
-                <hr>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>UserName</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Department</th>
-                            <th>isAdmin</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <% users.forEach(element => { %>
-                        <tr>
-                            <td scope="row"><%= element.username %></td>
-                            <td><%= element.name %></td>
-                            <td><%= element.email %></td>
-                            <td><%= element.department.name %></td>
-                            <td><%= element.isAdmin %></td>
-                        </tr>
-                    <% }); %>
-                    </tbody>
-                </table>
-            <% } else if(typeof user != 'undefined'){ %>
-                <h1 class="display-1 mb-5 d-inline-block">User Profile</h1>
-                <hr>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>UserName</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>isAdmin</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td scope="row"><%= user.username %></td>
-                            <td><%= user.name %></td>
-                            <td><%= user.email %></td>
-                            <td><%= user.isAdmin %></td>
-                        </tr>
-                    </tbody>
-                </table>
-            <% } %>
+      <div class="container">
+        <% if(typeof users != 'undefined' && Array.isArray(users)) { %>
+        <h1 class="display-1 mb-5 d-inline-block">Users</h1>
+        <button
+          class="btn btn-info float-right"
+          data-toggle="modal"
+          data-target="#addModal"
+        >
+          Add User
+        </button>
+        <hr />
+        <table class="table">
+          <thead>
+            <tr>
+              <th>UserName</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Department</th>
+              <th>isAdmin</th>
+              <th>Permision</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% users.forEach(element => { %>
+            <tr>
+              <td scope="row"><%= element.username %></td>
+              <td><%= element.name %></td>
+              <td><%= element.email %></td>
+              <td><%= element.department ? element.department.name : "" %></td>
+              <td><%= element.isAdmin %></td>
+              <td>
+                <button
+                  class="btn btn-info float-right"
+                  data-toggle="modal"
+                  data-target="#addPermission<%= element._id %>"
+                >
+                  Permision
+                </button>
+              </td>
+            </tr>
+
+            <div class="modal" id="addPermission<%= element._id %>">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Add User</h5>
+                    <button class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  <form
+                    action="/users/<%= element._id %>/permissions"
+                    method="POST"
+                  >
+                    <div class="modal-body">
+                      <div class="form-group">
+                        <legend>
+                          Give Permission for defferent technologies
+                        </legend>
+                        <% Tech.forEach(tech => { %> <% if(
+                        element.permissions.indexOf(tech._id) !="-1") { %>
+                        <div class="form-check">
+                          <label class="form-check-label">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              value="<%= tech._id %>"
+                              name="tech"
+                              checked
+                            /><%= tech.name %>
+                          </label>
+                        </div>
+                        <% } else { %>
+                        <div class="form-check">
+                          <label class="form-check-label">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              value="<%= tech._id %>"
+                              name="tech"
+                            /><%= tech.name %>
+                          </label>
+                        </div>
+                        <% } %> <% }) %>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button class="btn btn-secondary" data-dismiss="modal">
+                        close
+                      </button>
+                      <button class="btn btn-primary" type="submit">
+                        Submit
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <% }); %>
+          </tbody>
+        </table>
+        <% } else if(typeof user != 'undefined'){ %>
+        <h1 class="display-1 mb-5 d-inline-block">User Profile</h1>
+        <hr />
+        <table class="table">
+          <thead>
+            <tr>
+              <th>UserName</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>isAdmin</th>
+              <th>Permision</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td scope="row"><%= user.username %></td>
+              <td><%= user.name %></td>
+              <td><%= user.email %></td>
+              <td><%= user.isAdmin %></td>
+              <td>
+                <button
+                  class="btn btn-info float-right"
+                  data-toggle="modal"
+                  data-target="#checkPermission"
+                >
+                  Permision
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="modal" id="checkPermission">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">User Permision</h5>
+                <button class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <form action="#">
+                <div class="modal-body">
+                  <div class="form-group">
+                    <legend>Give Permission for defferent technologies</legend>
+                    <% Tech.forEach(tech => { %> <% if(
+                    user.permissions.indexOf(tech._id) !="-1") { %>
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value="<%= tech._id %>"
+                          name="tech"
+                          checked
+                          disabled
+                        /><%= tech.name %>
+                      </label>
+                    </div>
+                    <% } else { %>
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value="<%= tech._id %>"
+                          name="tech"
+                          disabled
+                        /><%= tech.name %>
+                      </label>
+                    </div>
+                    <% } %> <% }) %>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-secondary" data-dismiss="modal">
+                    close
+                  </button>
+                  <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
+        <% } %>
+      </div>
     </main>
     <% if(typeof users != 'undefined' && Array.isArray(users)) { %>
     <!-- add users -->
     <div class="modal" id="addModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Add Plan</h5>
-                    <button class="close" data-dismiss="modal">&times;</button>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Add User</h5>
+            <button class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <form action="/users" method="POST">
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="username">UserName</label>
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="department">department</label>
+                <select name="department" id="department" class="form-control">
+                  <% dept.forEach(element => { %>
+                  <option value="<%= element._id %>">
+                    <%= element.name %>
+                  </option>
+                  <%}) %>
+                </select>
+              </div>
+              <div class="form-group">
+                <legend>Give Admin permision?</legend>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value="true"
+                      name="admin"
+                    />
+                    Is Admin
+                  </label>
                 </div>
-                <form action="/users" method="POST">
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text"  id="name" name="name" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="username">UserName</label>
-                            <input type="text"  id="username" name="username" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">email</label>
-                            <input type="email"  id="email" name="email" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password"  id="password" name="password" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="department">department</label>
-                            <select name="department" id="department" class="form-control">
-                                <% dept.forEach(element => { %> 
-                                <option value="<%= element._id %>"><%= element.name %></option>
-                                <%}) %>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <legend>Give Admin permision?</legend>
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" value="option1">
-                                    Is Admin
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" data-dismiss="modal">close</button>
-                        <button class="btn btn-primary" type="submit">Submit</button>
-                    </div>
-                </form>
+              </div>
             </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" data-dismiss="modal">
+                close
+              </button>
+              <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+          </form>
         </div>
+      </div>
     </div>
     <% } %>
     <!-- add content  -->
-    
+
     <%- include('../partials/footer') %>
-</body>
+  </body>
 </html>

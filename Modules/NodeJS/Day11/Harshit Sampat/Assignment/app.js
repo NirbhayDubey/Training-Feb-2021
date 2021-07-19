@@ -3,9 +3,6 @@ var indexRouter =require('./Routes/index')
 global.config = require('./config')
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb://localhost/Day10_Assignment',{useNewUrlParser:true,useUnifiedTopology:true})
-.then(()=>console.log('Mongodb Connect'))
-.catch(err=>console.error('Could not connect',err))
 
 
 

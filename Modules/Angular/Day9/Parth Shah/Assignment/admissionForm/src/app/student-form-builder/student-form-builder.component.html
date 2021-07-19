@@ -1,0 +1,466 @@
+<section id="about" class="py-5 text-center bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="info-header md-5">
+                    <h1 class="text-primary pb-3">
+                        Welcome To the Unison International School
+                    </h1>
+                    <p class="lead pb-3">
+                        Please Touch Below accordian to check the contact number if u find any query
+                    </p>
+                </div>
+                <!--accordian-->
+
+                <div id="accordion" role="tablist">
+                    <div class="card">
+                        <div class="card-header bg-secondary text-light" id="heading1">
+                            <h5 class="mb-0">
+                                <div href="#collapse1" data-toggle="collapse"
+                                data-parent="#accordion">
+                                Get Contacts: <small>Touch here.....</small>
+
+                            </div>
+                            </h5>
+                        </div>
+                        <div id="collapse1" class="collapse">
+                            <div class="card-body">
+                       <h5>Mr.Parth Shah - 9106641608</h5>
+                        <h5>Mr.Kush Shah- 6356594465</h5>      
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<br>
+
+
+
+
+
+
+<div class="container">
+<div class="card">
+    <div class="card-header h6">
+      Student Application Form
+    </div>
+<!-- card body -->
+
+
+<div class="container p-3" id="pink">
+    <h1 class="display-4 text-center font-italic">Student's Detail</h1>
+<form [formGroup]="addmissionForm" (ngSubmit) ="submit()">
+
+    <div formGroupName="studentName">
+
+
+    <div class="row">
+        <div class="col-md-4">
+            <label for="EnterName">Enter your First Name</label>
+            <input type="text" class="form-control" formControlName="firstName" placeholder="Enter First Name" required>
+            <span *ngIf = "getStudentFirstName.invalid && (getStudentFirstName.dirty || getStudentFirstName.touched)">Please Enter Your FirstName <br></span>
+        </div>
+        <div class="col-md-4">
+            <label for="EnterName">Enter your middle Name</label>
+        <input type="text" class="form-control" formControlName="middleName" placeholder="Enter middle Name">
+        <span *ngIf = "getStudentMiddlename.invalid && (getStudentMiddlename.dirty || getStudentMiddlename.touched)">Please Enter Your MiddleName <br></span>
+        </div>
+        <div class="col-md-4">
+            <label for="EnterName">Enter your last Name</label>
+            <input type="text" class="form-control" formControlName="lastName" placeholder="Enter last Name">
+            <span *ngIf = "getStudentLasName.invalid && (getStudentLasName.dirty || getStudentLasName.touched)">Please Enter Your LastName <br></span>
+        </div>   
+        </div>
+        </div>
+
+        <label for="EnterName">Enter your Date of birth</label>
+        <input type="date" class="form-control" formControlName="dob" placeholder="Enter DOB"required>
+        <span *ngIf = "getDob.errors?.validateDOB">Your age is not between the 5 to 20<br></span>
+
+
+        <label for="EnterName">Enter your Place of Birth</label>
+        <input type="text" class="form-control" formControlName="PlaceOfBirth" placeholder="Enter Place Of Birth">
+
+        <span *ngIf = "StudentPob.invalid && (StudentPob.dirty || StudentPob.touched)">Please Enter Your Place of birth <br></span>
+
+        <label for="EnterName">Enter your  First Language</label>
+        <input type="text" class="form-control" formControlName="FirstLanguage" placeholder="Enter First Language">
+
+        <span *ngIf = "StudentFl.invalid && (StudentFl.dirty || StudentFl.touched)">Please Enter Your First Language <br></span>
+
+
+        <div formGroupName="Address">
+
+        <div class="row">
+            <div class="col-md-4">
+                <label >Enter City</label>
+                <input type="text" class="form-control" formControlName="city" placeholder="Enter City">
+                <span *ngIf = "getCity.invalid && (getCity.dirty || getCity.touched)">Please Enter Your City <br></span>
+            </div>
+            <div class="col-md-4">
+                <label for="EnterName">Enter state</label>
+    <input type="text" class="form-control" formControlName="state" placeholder="Enter your state">
+    <span *ngIf = "getState.invalid && (getState.dirty || getState.touched)">Please Enter Your State <br></span>
+
+            </div>
+            <div class="col-md-4">
+                <label for="EnterName">Enter Country</label>
+                <input type="text" class="form-control" formControlName="country" placeholder="Enter your Country">
+                <span *ngIf = "getCountry.invalid && (getCountry.dirty || getCountry.touched)">Please Enter Your Country <br></span>
+            
+            </div>
+</div>   
+
+    <label for="EnterName">Enter Pincode</label>
+    <input type="number" class="form-control" formControlName="pin" placeholder="Enter your Pincode" required>
+    <span  *ngIf = "getPin.touched && !getPin.valid">
+        Pin code has to be 5 digits long
+      </span>
+</div>
+<br>
+<h1 class="display-4 text-center font-italic">Father's Detail</h1>
+
+<div formGroupName="Father">
+    <div class="row">
+        <div class="col-md-4">
+    <label >Enter First name </label>
+    <input type="text" class="form-control" formControlName="firstName" placeholder="First Name">
+    </div>
+
+    <div class="col-md-4">
+    <label >Enter Middle name</label>
+    <input type="text" class="form-control" formControlName="middleName" placeholder="Middle Name">
+    </div>
+
+    <div class="col-md-4">
+    <label >Enter last Name</label>
+    <input type="text" class="form-control" formControlName="lastName" placeholder="Enter Last Name">
+    </div>
+</div>
+
+    <label >Enter Email</label>
+    <input type="text" class="form-control" formControlName="email" >
+    <span *ngIf = "getFatherEmail.invalid && getFatherEmail.touched">Your Email Does not look right!<br></span>
+
+
+   
+    <label >Enter Education Qualification</label>
+    <input type="text" class="form-control" formControlName="educationQualification" placeholder="Enter Educational Qualification">
+    <div class="row">
+        
+    <div class="col">
+    <label >Enter Profession</label>
+    <input type="text" class="form-control" formControlName="Profession" placeholder="Enter Profession">
+    </div>
+    <div class="col">
+    <label >Enter Designation</label>
+    <input type="text" class="form-control" formControlName="Designation" placeholder="Enter Desination">
+</div>
+</div>
+    <label >Enter Phone</label>
+    <input type="number" class="form-control" formControlName="Phone" placeholder="Enter Phone number">
+    <span *ngIf = "getFatherPhone.invalid && getFatherPhone.touched">Please enter 10 digit number</span>
+</div>
+<br>
+<h1 class="display-4 text-center font-italic">Mother's Detail</h1>
+
+<div formGroupName="Mother">
+    <div class="row">
+    <div class="col-md-4">
+    <label >Enter First name </label>
+    <input type="text" class="form-control" formControlName="firstName" placeholder="Enter First Name">
+</div>
+<div class="col-md-4">
+    <label >Enter Middle name</label>
+    <input type="text" class="form-control" formControlName="middleName" placeholder="Enter Middle Name" >
+</div>
+<div class="col-md-4">
+
+    <label >Enter last Name</label>
+    <input type="text" class="form-control" formControlName="lastName" placeholder="Enter Last Name">
+    </div>
+</div>
+
+    <label >Enter Email</label>
+    <input type="text" class="form-control" formControlName="email" placeholder="Enter Email">
+    <span *ngIf = "getMotherEmail.invalid && getMotherEmail.touched">Your Email Does not look right!<br></span>
+
+    <label >Enter Education Qualification</label>
+    <input type="text" class="form-control" formControlName="educationQualification" placeholder="Enter Educational Qualification">
+
+    <div class="row">
+
+    <div class="col">
+    <label >Enter Profession</label>
+    <input type="text" class="form-control" formControlName="Profession" placeholder="PRofession">
+</div>
+
+<div class="col">
+    <label >Enter Designation</label>
+    <input type="text" class="form-control" formControlName="Designation" placeholder="Designation">
+</div>
+</div>
+    <label >Enter Phone</label>
+    <input type="number" class="form-control" formControlName="Phone" placeholder="Phone">
+    <span *ngIf = "getMotherPhone.invalid && getMotherPhone.touched">Please enter 10 digit number</span>
+
+</div>
+<br>
+<h1 class="display-4 text-center font-italic">Emergency Detail's</h1>
+
+<div formArrayName="Emergency">
+    <div *ngFor="let item of getEmergency.controls;index as i">
+        <div [formGroupName]="i">
+<div class="row">
+<div class="col">
+
+            <label >Relation</label>
+            <input type="text" class="form-control" formControlName="Relation" placeholder="Enter Relation">
+        </div>
+        <div class="col">
+            <label >Enter phone number :</label>
+            <input type="number" class="form-control" formControlName="Number" placeholder="Enter Number">
+    <span *ngIf = "getFatherPhone.invalid && getFatherPhone.touched">Please enter 10 digit number</span>
+
+        </div>
+        </div>
+            </div>
+            </div>
+            <div>
+    <button type="text" (click)="Add()" class="btn btn-outline-primary m-1 float-right">Add Emergency Contact</button><br>
+</div>
+    </div>
+
+    <br>
+<h1 class="display-4 text-center font-italic">Reference Detail's</h1>
+
+    <div formArrayName="ReferenceDetail">
+        <div *ngFor="let item of getReference.controls;index as i">
+            <div [formGroupName]="i">
+    
+                <div class="row">
+
+    <div class="col-md-4">              
+                <label >Reference through:</label>
+                <input type="text" class="form-control" formControlName="ReferenceThrough" placeholder="Reference through"> 
+</div>
+<div class="col-md-4">
+                <label >Reference Address Details:</label>
+                <input type="text" class="form-control" formControlName="Address" placeholder="Address"> 
+    </div>
+    <div class="col-md-4">
+                <label >Reference Contact Details:</label>
+                <input type="number" class="form-control" formControlName="TelephoneNo" placeholder="Contact">
+</div>
+            </div>
+
+                </div>
+                </div>
+                <div>
+        <button type="text" (click)="AddReference()" class="btn btn-outline-primary m-1 float-right">Add Reference Detail</button><br><br>
+    </div>
+        </div>
+
+
+
+
+
+
+
+<br>
+        <button type="submit" class="btn btn-outline-light btn-lg btn-block">Submit</button>
+
+        </form>
+<br>
+
+
+
+
+
+
+
+
+    </div>
+    <!-- //card footer -->
+    <div class="card-footer text-muted h6">
+      2 days to close 
+    </div>
+  </div>
+</div>
+
+
+<br>
+
+
+
+
+
+<br>
+
+<br>
+        
+
+<section id="about" class="py-5 text-center bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="info-header md-5">
+                    <h1 class="text-primary pb-3">
+                        All Data in JSON format
+                    </h1>
+                    <p class="lead pb-3">
+                        Please Touch Below accordian to check the data in JSON format
+                    </p>
+                </div>
+                <!--accordian-->
+
+                <div id="accordion" role="tablist">
+                    <div class="card">
+                        <div class="card-header bg-secondary text-light" id="heading1">
+                            <h5 class="mb-0">
+                                <div href="#collapse1" data-toggle="collapse"
+                                data-parent="#accordion">
+                                Get Json Data <small>Touch here.....</small>
+
+                            </div>
+                            </h5>
+                        </div>
+                        <div id="collapse1" class="collapse">
+                            <div class="card-body">
+                        <h5>The Json format is:</h5>{{addmissionForm.value | json}}
+                              
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="about" class="py-5 text-center ">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="info-header md-5">
+                    <h1 class="text-primary pb-3">
+                        All Data in Table Format
+                    </h1>
+                    <p class="pb-3 bg-secondary text-light h5"><br>
+                        You can see all the data in table format below
+                    </p>
+                </div>
+
+             <div class="card">
+
+                <div class="container">
+                    <div class="table-responsive">
+                   
+                      
+                                    <table class="table">
+                                        <thead class="thead-inverse">
+                                            <tr>
+                                                <th>FirstName</th>
+                                                <th>MiddleName</th>
+                
+                                                <th>LastName</th>
+                
+                                                <th>Date of Birth</th>
+                                                <th>Place of Birth</th>
+                                                <th>First Language</th>
+                                                <th>City</th>
+                                                <th>State</th>
+                                                <th>Country</th>
+                                                <th>Pin</th>
+                
+                                                <th>Father Name</th>
+                                               
+                                                <th>Father Email</th>
+                                                 
+                                                 <th>Father Education Qual.</th>       
+                                                 <th>Father Profession</th>
+                
+                                                <th>Father Designation</th>
+                                                <th>Father Phone Number</th>     
+                                                <th>Mother Name </th>
+                                               
+                                                <th>Mother Email</th>
+                                                      
+                                                 <th>Mother Education Qual.</th>       
+                                                 <th>Mother Profession</th>
+                
+                                                <th>Mother Designation</th>
+                                                <th>Mother Phone Number</th> 
+
+                                               
+                                               
+                                            </tr>
+                                        </thead>
+                
+                                        <!-- this will create grade wise colour and only display active data's -->
+                                        <tbody *ngFor="let item of studentArray; let idx= index" >
+                                          <tr>
+                                                <td scope="row">{{item.studentName.firstName}}</td>
+                                                <td>{{item.studentName.middleName}}</td>
+                                                <td>{{item.studentName.lastName}}</td>
+
+                                                <td>{{item.dob}}</td>
+                                                <td >{{item.PlaceOfBirth}}</td>
+                                                <td>{{item.FirstLanguage}}</td>
+
+                                                <td>{{item.Address.city}}</td>
+                                                <td>{{item.Address.state}}</td>
+                                                <td>{{item.Address.country}}</td>
+                                                <td>{{item.Address.pin}}</td>
+                                                
+                                                <td>{{item.Father.firstName}} {{item.Father.middleName}} {{item.Father.lastName}} </td>
+                                               
+                                                <td>{{item.Father.email}}</td>
+                                                <td>{{item.Father.educationQualification}}</td>
+                                                <td>{{item.Father.Profession}}</td>
+                                                <td>{{item.Father.Designation}}    </td>
+                                                <td>{{item.Father.Phone}}    </td>
+                                                
+                                                <td>{{item.Mother.firstName}} {{item.Mother.middleName}} {{item.Mother.lastName}}</td>
+                                               
+                                                <td>{{item.Mother.email}}</td>
+                                                <td>{{item.Mother.educationQualification}}</td>
+                                                <td>{{item.Mother.Profession}}</td>
+                                                <td>{{item.Mother.Designation}}    </td>
+                                                <td>{{item.Mother.Phone}}    </td>
+                                                
+                                             
+                                                
+                                                
+                                            </tr>
+                                          
+                                      
+                                       
+                                        </tbody>
+                                    </table>
+                                </div>
+                
+                        </div>
+             </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+

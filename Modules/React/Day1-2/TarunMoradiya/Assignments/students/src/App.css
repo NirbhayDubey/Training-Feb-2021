@@ -1,0 +1,32 @@
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  background: lavender;
+}
+.App {
+  margin: auto;
+  width: 80%;
+  text-align: center;
+}
+
+#students {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+
+#students > section {
+  background: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  color: #565656;
+}
+
+#students .img {
+  position: relative;
+  top: -25px;
+  border-radius: 50%;
+  width: 200px;
+}

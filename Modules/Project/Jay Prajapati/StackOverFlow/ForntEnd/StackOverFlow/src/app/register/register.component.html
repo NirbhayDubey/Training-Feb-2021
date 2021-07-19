@@ -1,0 +1,81 @@
+<!-- Register Form -->
+<div class="container mt-5 pt-5">
+    <div class="row justify-content-md-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Registration Form</h2>
+                </div>
+                <!-- {{registrationForm.value | json}} -->
+                <div class="card-body">
+                    <form [formGroup]="registrationForm">
+                        <div class="form-group">
+                            <label>Username</label>
+                            <input [class.is-invalid]="userName.invalid &&
+             userName.touched" type="text" formControlName="Username" class="form-control">
+                            <div *ngIf="userName.invalid &&
+                         userName.touched">
+                                <small *ngIf="userName.errors?.required" class="text-danger">
+                                    Username is required
+                                </small>
+                                <small *ngIf="userName.errors?.minlength" class="text-danger">
+                                    Username has atleast 3 character
+                                </small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>FullName</label>
+                            <input type="text" [class.is-invalid]="fullName.invalid && fullName.touched"
+                                formControlName="FullName" class="form-control">
+                            <div *ngIf="fullName.invalid &&
+                    fullName.touched">
+                                <small *ngIf="fullName.errors?.required" class="text-danger">
+                                    FullName is required
+                                </small>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" [class.is-invalid]="email.invalid && email.touched"
+                                formControlName="Email" class="form-control">
+                            <div *ngIf="email.invalid &&
+                    email.touched">
+                                <small *ngIf="email.errors?.required" class="text-danger">
+                                    Email is required
+                                </small>
+                                <small *ngIf="email.errors?.email" class="text-danger">
+                                    Invalid email format
+                                </small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" [class.is-invalid]="password.invalid && password.touched"
+                                formControlName="Password" class="form-control">
+                            <div *ngIf="password.invalid &&
+                    password.touched">
+                                <small *ngIf="password.errors?.required" class="text-danger">
+                                    password is required
+                                </small>
+                                <small *ngIf="password.errors?.pattern" class="text-danger">
+                                    Invalid password format
+                                </small>
+                            </div>
+
+                        </div>
+
+
+                        <button class="btn btn-primary btn-block" [disabled]="registrationForm.invalid" type="submit"
+                            (click)="registerUser()">
+                            Sign Up
+                        </button>
+                        <button class="btn btn-block text-primary border-none bg-light my-2" type="button" (click)="loginUser()">
+                            Already have an Account
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

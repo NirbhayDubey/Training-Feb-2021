@@ -1,0 +1,671 @@
+.bodyWrap {
+    overflow: hidden;
+    width: 100%;
+}
+
+.contentArea {
+    width: 100%;
+    min-height: 700px;
+    height: auto;
+    background: #f2f2f2;
+    position: relative;
+    overflow: hidden;
+}
+
+.contentArea .leftPanel {
+    width: 32%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    z-index: 1;
+    background-color: #f2f2f2;
+    transition: all 0.5s ease;
+}
+
+.contentArea .leftPanel.minus30 {
+    left: -30%;
+}
+
+.contentArea .rightPanel.width100 {
+    width: 100%;    
+}
+
+.contentArea .leftPanel .leftCont {
+    width: 100%;
+    min-height: 700px;
+    height: auto;
+    background: url("https://cdn.staticmb.com/images/leftPanel-Bg.jpg") no-repeat left top;
+    background-size: cover;
+    padding: 49px 50px 50px 50px;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.contentArea .leftPanel .leftCont .arrow {
+    width: 12px;
+    height: 21px;
+    background: url("https://cdn.staticmb.com/images/leftPanel-arrow1.png") no-repeat;
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -11px;
+}
+
+.contentArea .leftPanel .leftCont .arrow.close {
+    background: url("https://cdn.staticmb.com/images/leftPanel-arrow2.png") no-repeat;
+}
+
+.contentArea .leftPanel .leftCont h3 {
+    display: block;
+    font-family: "open_sansregular";
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 33px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.contentArea .leftPanel .leftCont ul {
+    width: 100%;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+}
+
+ul, li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+ol, ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.contentArea .leftPanel .leftCont ul li {
+    width: 100%;
+    height: auto;
+    list-style: none;
+    margin: 0px;
+    padding: 10px 0 10px 19px;
+    color: rgba(255,255,255,0.6);
+    font-size: 14px;
+    line-height: 19px;
+    background: url("https://cdn.staticmb.com/images/tickIcon.png") no-repeat left 16px;
+}
+
+.contentArea .rightPanel {
+    width: 68%;
+    min-height: 700px;
+    height: 100%;
+    position: absolute;
+    right: 0%;
+    z-index: 0;
+    background: url("https://cdn.staticmb.com/images/bg-icon-1.png") repeat 25px top #f2f2f2;
+    background-attachment: fixed;
+    transition: all 0.5s ease;
+}
+
+form {
+    margin: 0;
+}
+form, img {
+    padding: 0;
+}
+
+.registrationWrapper .formCont {
+    padding: 22px 30px 16px 30px;
+}
+.formCont {
+    width: 405px;
+    height: auto;
+    position: relative;
+    z-index: 2;
+    background-color: #fff;
+    margin: 30px auto 0;
+    padding: 22px 30px 47px 30px;
+    border-radius: 7px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -ms-border-radius: 7px;
+    border: solid 1px #d7d7d7;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.heading {
+    padding-bottom: 20px;
+    color: #333;
+    font-size: 20px;
+    text-align: left;
+    font-family: 'Open Sans';
+}
+
+.formRow {
+    padding: 0px;
+}
+
+.formField {
+    position: relative;
+    height: 55px;
+}
+
+.formField .radioLabel.fixCheckbox {
+    width: 100px;
+    clear: both;
+    margin-top: 10px;
+}
+
+.formField .radioLabel {
+    font-size: 12px;
+    color: #999;
+}
+
+.radioBlock {
+    margin-top: 10px;
+    height: 25px;
+}
+
+.radioBlock ul li:first-child {
+    margin-left: 0;
+}
+.radioBlock ul li {
+    display: inline;
+    margin-left: 30px;
+}
+
+.rightPanel .customRadioButton {
+    background: url("https://cdn.staticmb.com/images/loginCheckBoxSprite.png") no-repeat 0px -3px;
+    vertical-align: 1px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.customRadioButton {
+    padding: 0px;
+    margin: 0px;
+    display: inline-block;
+    width: 16px;
+    height: 17px;
+    background: url("https://cdn.staticmb.com/images/customRadioButtonGrey.png") no-repeat 0px 0px;
+    vertical-align: -1px;
+    vertical-align: -5px\9;
+    *vertical-align: 0px;
+}
+
+.rightPanel .customRadioButton.checked {
+    background: url("https://cdn.staticmb.com/images/loginCheckBoxSprite.png") no-repeat 0 -28px;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.customRadioButton input {
+    opacity: 0;
+    margin: 0px 0px 0px 1px;
+}
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+input {
+    line-height: normal;
+}
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+
+label.curPoint {
+    cursor: pointer;
+    position: relative;
+    top: -5px;
+    left: 5px;
+    font-family: 'Open Sans';
+    color: #666;
+    font-size: 14px;
+}
+
+input[type="text" i] {
+    padding: 1px 2px;
+}
+input {
+    // -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    padding: 1px 2px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+}
+
+.formField .inputText:focus {
+    border-color: #6c86cb;
+    border-bottom-width: 2px;
+    padding-bottom: 5px;
+    outline: none;
+}
+.formField.inputFocused .labelText {
+    top: 0px;
+    color: #999999;
+    font-size: 12px;
+    font-family: 'Open Sans';
+}
+
+
+.formCont .errorMsg {
+    clear: both;
+}
+
+.errorMsg {
+    width: 100%;
+    font-size: 12px;
+    color: #f44336;
+    display: block;
+    margin-bottom: 5px;
+    display: none;
+    position: relative;
+    padding-right: 25px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.errorMsg .errorIcon {
+    width: 18px;
+    height: 15px;
+    background: url("https://cdn.staticmb.com/images/errorIcon.png") no-repeat;
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 3px;
+}
+
+
+.labelText {
+    font-size: 14px;
+    color: #666;
+    display: block;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 10px;
+    transition: all 0.2s ease;
+    text-align: left;
+    font-family: 'Open Sans';
+}
+
+.formField .inputText {
+    border-color: #999999;
+    border-bottom-width: 1px;
+}
+
+.inputText {
+    padding: 5px 0px 6px 0px;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 15px;
+    width: 100%;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #999999;
+    font-size: 14px;
+    color: #666;
+    transition: all 0.2s ease;
+    text-align: left;
+    font-family: 'open_sansregular';
+}
+
+.formField a.showPassword {
+    margin-right: 25px\0/IE9;
+}
+
+.formField a.showPassword {
+    position: absolute;
+    right: 0px;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #999;
+    top: 22px;
+}
+a {
+    text-decoration: none;
+}
+a {
+    background-color: transparent;
+    outline: none;
+}
+
+.pwdHints, .postLogin .formContpopup .pwdHints, #LoginBlock .postLogin .pwdHint {
+    width: 220px;
+    border: 1px solid #d7d7d7;
+    z-index: 99;
+    background-color: #fff;
+    position: absolute;
+    right: -236px;
+    top: -1px;
+    box-sizing: border-box;
+    padding: 13px 20px 15px;
+    border-radius: 3px;
+    left: auto;
+}
+
+.pwdHintsHead {
+    font-family: "opensans-semibold";
+    font-size: 16px;
+    margin-bottom: 7px;
+}
+
+.pwdHintsItem {
+    line-height: 1.6em;
+    font-size: 12px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.formRow.mobileField {
+    position: relative;
+    height: 50px;
+}
+
+.formRow.mobileField .isdCode {
+    width: 115px;
+    margin-right: 19px;
+    float: left;
+}
+
+.formField.inputFocused .labelText {
+    top: 0px;
+    color: #999999;
+    font-size: 12px;
+    font-family: 'Open Sans';
+}
+
+.formField.inputFocused .inputText{
+    border-color:#6c86cb;
+    border-bottom-width:2px;
+}
+
+
+
+.cityArrow {
+    width: 13px;
+    height: 7px;
+    background: url("https://cdn.staticmb.com/images/loginCheckBoxSprite.png") no-repeat -3px -106px;
+    float: right;
+    margin-top: 27px;
+    margin-right: 4px;
+}
+
+.selectDropDown {
+    width: 100%;
+    height: auto;
+    max-height: 190px;
+    left: 0px;
+    padding: 5px 0px;
+    position: absolute;
+    right: 0px;
+    top: 47px;
+    background: #fff;
+    z-index: 10;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: none;
+    border: 1px solid #ccc;
+    box-shadow: 0 9px 13px -12px rgb(0 0 0 / 75%);
+    -moz-box-shadow: 0 9px 13px -12px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0 9px 13px -12px rgb(0 0 0 / 75%);
+    -ms-box-shadow: 0 9px 13px -12px rgba(0,0,0,0.75);
+}
+
+.operatingDropDown {
+    position: absolute;
+    left: 0px;
+    top: 44px;
+    right: 0px;
+    background: #fff;
+    z-index: 9;
+    max-height: 200px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: none;
+    border: #ccc solid 1px;
+}
+
+.selectDropDown ul {
+    width: 100%;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+}
+
+.operatingDropDown ul {
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+}
+
+.selectDropDown ul li {
+    width: 100%;
+    height: auto;
+    margin: 0px;
+    padding: 4px 8px;
+    color: #666;
+    font-size: 14px;
+    font-family: 'open_sansregular';
+    cursor: pointer;
+}
+
+.operatingDropDown ul li {
+    padding: 8px 10px;
+    margin: 0px;
+    border-bottom: 1px solid #ccc;
+    font-size: 13px;
+    color: #999;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.citySelect {
+    display: none;
+}
+
+.mobileISD {
+    width: 90px !important;
+    font-size: 11px;
+}
+.frm_cnt {
+    display: block;
+    float: left;
+}
+
+.formRow.mobileField .isdNumber {
+    width: 204px;
+    float: left;
+    position: relative;
+}
+
+.termsMBWrap {
+    margin: 25px 0px 14px 0 !important;
+    text-align: left !important;
+}
+
+.termsMBWrap {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.tc__checkbox {
+    position: relative;
+}
+
+.tc__checkbox input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.tc__checkbox input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.tc__checkbox label {
+    position: relative;
+    padding: 0 0 0 28px;
+    display: block;
+    cursor: pointer;
+    font-size: 11px;
+    font-family: 'Open Sans';
+    color: #303030;
+    line-height: 18px;
+}
+
+.tc__checkbox input:checked+label:before, .tc__checkbox input:checked+input+label:before {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 3px;
+    border-right: #d8232a solid 2px;
+    border-bottom: #d8232a solid 2px;
+    -webkit-transform: rotate(
+45deg
+);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(
+45deg
+);
+    z-index: 1;
+    width: 4px;
+    height: 8px;
+}
+
+.tc__checkbox label a {
+    text-decoration: underline;
+    color: #303030;
+}
+
+.tc__checkbox label:after {
+    content: "";
+    border: 1px solid #d7d7d7;
+    width: 18px;
+    height: 18px;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 2px;
+}
+
+.formRow.btnWrap {
+    margin-top: 9px;
+    height: auto;
+}
+
+.mui-btn--primary {
+    background-color: #d8232a;
+    color: #FFF;
+}
+.mui-btn {
+    width: 100%;
+    height: 40px;
+    padding: 0px;
+    margin: 0px;
+    display: block;
+    font-family: 'Open Sans';
+    font-size: 16px;
+    text-align: center;
+    line-height: 40px;
+    color: rgba(0,0,0,0.87);
+    background-color: #FFF;
+    position: relative;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+    background-image: none;
+    // vertical-align: middle;
+    white-space: nowrap;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -ms-border-radius: 2px;
+    animation-duration: 0.0001s;
+    -webkit-animation-duration: 0.0001s;
+    animation-name: mui-node-inserted;
+    -webkit-animation-name: mui-node-inserted;
+    transition: all 0.2s ease-in-out;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.login-block {
+    text-align: center;
+    padding: 16px 0 0 0;
+    color: #6e6e6e;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.login-block a {
+    color: #b51e24;
+    text-decoration: underline;
+}
+
+.clr {
+    clear: both;
+}
+
+.clear {
+    clear: both;
+}
+
+.mui-btn--primary {
+    background-color: #d8232a;
+    color: #FFF;
+}

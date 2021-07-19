@@ -1,0 +1,12 @@
+<div >
+
+<h4>Enter your First Number: <input type = "number" name="num1" class="ml-5" [(ngModel)]="num1"> <br></h4>
+<h4>Enter your Second Number: <input  type = "number" name="num2" class="m-3"[(ngModel)]="num2"> <br></h4>
+
+</div>
+<div style="text-align: center;">
+<button (click)="add()" class="btn m-2 btn-primary">Additon</button>
+<button (click)="sub()" class="btn m-2 btn-primary">Subtraction</button>
+<button (click)="mul()" class="btn m-2 btn-primary">Multiplication</button><br>
+</div>
+<h3 class="text-center bg-warning">Result is : {{ans}}</h3>

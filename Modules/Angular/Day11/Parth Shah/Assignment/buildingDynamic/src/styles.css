@@ -1,0 +1,65 @@
+.container{
+ padding: 5px;
+}
+
+/* .container:nth-child(2){
+    background: rgb(139,139,62);
+} */
+
+h4, .title{
+    font-weight: bolder;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+
+
+
+.center{
+    text-align: center;
+}
+
+
+
+input, select{
+    min-width: 450px;
+    height: 30px;
+    border: none;
+    border-bottom: 1.5px solid rgb(88, 88, 88);
+}
+
+input:focus, select:focus{
+    outline: none;
+    border-bottom: 2px solid rgb(34, 120, 126);
+}
+
+.center{
+    text-align: center;
+}
+
+label{
+    font-weight: bolder;
+}
+
+.form{
+    border: solid rgb(19, 19, 19);
+    margin: 0 20px;
+}
+
+
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+label{
+    font-weight: bolder;
+}
+
+.title{
+    margin: 0 20px;
+    padding: 10px 20px;
+    background-color: rgb(93, 107, 107) ;
+    color: white;
+}

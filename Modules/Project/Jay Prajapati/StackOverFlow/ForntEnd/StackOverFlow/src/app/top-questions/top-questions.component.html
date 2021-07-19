@@ -1,0 +1,44 @@
+
+<!-- {{topQuestions | json}} -->
+
+
+<div class="row py-3">
+  <div class="col-auto mr-auto h3">Top Questions</div>
+  <div class="col-auto"><button class="btn btn-primary" (click)="askQuestion()">Ask Question</button></div>
+</div>
+<hr>
+<div class="container-fluid">
+    <div class="border-bottom py-2" *ngFor="let q of topQuestions;">
+        <!-- <ul class="list-group list-group-horizontal">
+            <li class="list-group-item"><a href="">{{q.votesForQuestion}}</a></li>
+            <li class="list-group-item"><a href="">{{q.numberOfAnswers}}</a></li>
+            <li class="list-group-item"><a href="">{{q.totalViews}}</a></li>
+            <li class="list-group-item"><a href="">{{q.question}}</a></li>
+          </ul>        -->
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link border rounded p-2 m-2 text-center small d-lg-block d-none" routerLink="/questions/{{q.questionId}}">{{q.votesForQuestion}}<br>Votes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link border border-success rounded p-2 m-2 text-center small  d-lg-block d-none" routerLink="/questions/{{q.questionId}}">{{q.numberOfAnswers}}<br>Ans</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link border rounded p-2 m-2 text-center small d-lg-block d-none" routerLink="/questions/{{q.questionId}}">{{q.totalViews}}<br>Views</a>
+            </li>
+            <li class="nav-item">
+              <p><a class="nav-link m-2 rounded text-center" routerLink="/questions/{{q.questionId}}">{{q.question}}</a></p>
+            </li>
+          </ul>
+    </div>
+
+    <!-- Pagination -->
+    <!-- <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+      </nav> -->
+</div>

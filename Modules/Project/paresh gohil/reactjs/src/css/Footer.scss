@@ -1,0 +1,436 @@
+* {
+    box-sizing: border-box;
+}
+
+.mb-footer {
+    min-height: 150px;
+    width: 100%;
+    background-color: #f5f5f5;
+    z-index: 1;
+    border-top: #ccc solid 8px;
+    font-family: inherit;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+    display: block;
+}
+footer {
+    min-height: 200px;
+    bottom: 0;
+    position: relative;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
+}
+
+.mb-footer__row {
+    width: 100%;
+}
+
+.mb-footer * {
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+footer * {
+    box-sizing: border-box;
+}
+
+.mb-footer__main {
+    font-size: 12px;
+    line-height: 20px;
+    display: flex;
+}
+
+.mb-footer__content-box {
+    width: 1200px;
+    margin: auto;
+}
+
+.mb-footer__main--col {
+    width: 50%;
+    padding: 25px 0 5px 0;
+    color: #909090;
+}
+
+.mb-footer * .semi-bold {
+    font-family: inherit;
+    font-weight: 600;
+}
+.mb-footer__main--title {
+    margin-bottom: 10px;
+    line-height: 16px;
+    color: #303030;
+}
+
+.mb-footer__main--col nav {
+    margin-bottom: 20px;
+    padding-right: 120px;
+}
+
+.mb-footer * ul, .mb-footer * li {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.mb-footer__main--col li {
+    display: inline-block;
+}
+.mb-footer * ul, .mb-footer * li {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.mb-footer__main--col li a {
+    color: #909090;
+    line-height: 18px;
+    margin-right: 11px;
+    position: relative;
+    text-decoration: none;
+}
+
+.mb-footer__main--col li a:before {
+    content: '';
+    position: absolute;
+    right: -7px;
+    top: 2px;
+    width: 1px;
+    height: 13px;
+    background: #909090;
+}
+
+.mb-footer__main--logo {
+    display: inline-block;
+    width: 166px;
+    height: 30px;
+    margin-bottom: 10px;
+    background: url(https://cdn.staticmb.com/images/header_footer_sprite.svg) no-repeat 0 0;
+}
+
+.mb-footer__main--app-box {
+    margin-top: 25px;
+    display: flex;
+}
+
+.mb-footer__main--app-box .mb-footer__main__app-link.android-icon {
+    background-position: -22px -465px;
+}
+.mb-footer__main--app-box .mb-footer__main__app-link {
+    display: inline-block;
+    height: 32px;
+    width: 108px;
+    border-radius: 3px;
+    background: #000 url(https://cdn.staticmb.com/images/header_footer_sprite.svg) no-repeat 0 0;
+    margin-right: 12px;
+}
+
+.mb-footer__main--app-box .mb-footer__main__app-link.ios-icon {
+    background-position: -22px -518px;
+    margin-right: 60px;
+}
+.mb-footer__main--app-box .mb-footer__main__app-link {
+    display: inline-block;
+    height: 32px;
+    width: 108px;
+    border-radius: 3px;
+    background: #000 url(https://cdn.staticmb.com/images/header_footer_sprite.svg) no-repeat 0 0;
+    margin-right: 12px;
+}
+
+.mb-footer__main--app-box .mb-footer__main__social-link.facebook-icon {
+    background-position: -63px -559px;
+    background-color: #4267b2;
+}
+.mb-footer__main--app-box .mb-footer__main__social-link {
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    background: url(https://cdn.staticmb.com/images/header_footer_sprite.svg) no-repeat 0 0;
+    margin-right: 12px;
+}
+
+.mb-footer__main--app-box .mb-footer__main__social-link.twittwe-icon {
+    background-position: -63px -587px;
+    background-color: #38a1f3;
+}
+
+.mb-footer__main--app-box .mb-footer__main__social-link.linkedin-icon {
+    background-position: -63px -612px;
+    background-color: #0077b5;
+}
+
+.mb-footer__main--app-box .mb-footer__main__social-link.youtube-icon {
+    background-position: -63px -642px;
+    background-color: #ff0000;
+}
+
+.mb-footer--main-links {
+    border-top: #e8e8e8 solid 1px;
+    border-bottom: #e8e8e8 solid 1px;
+    padding: 15px 0;
+}
+.mb-footer__row {
+    width: 100%;
+}
+
+.mb-footer__content-box {
+    width: 1200px;
+    margin: auto;
+}
+
+.mb-footer--main-links .mb-footer__links {
+    display: inline-block;
+    padding-right: 46px;
+}
+
+.mb-footer--main-links .mb-footer__links a {
+    color: #303030;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.mb-footer--disclaimer {
+    padding: 15px 0;
+    font-size: 10px;
+    line-height: 16px;
+    color: #909090;
+}
+
+.mb-footer__content-box {
+    width: 1200px;
+    margin: auto;
+}
+
+.mb-footer--copyright {
+    background-color: #000;
+    color: #606060;
+    height: 40px;
+    font-size: 10px;
+    line-height: 40px;
+}
+
+
+
+
+
+
+////////////////////////////////////////////////////////////
+
+
+.contentArea .rightPanel {
+    width: 68%;
+    min-height: 700px;
+    height: 100%;
+    position: absolute;
+    right: 0%;
+    z-index: 0;
+    background: url(https://cdn.staticmb.com/images/bg-icon-1.png) repeat 25px top #f2f2f2;
+    background-attachment: fixed;
+    transition: all 0.5s ease;
+}
+
+.formCont {
+    width: 405px;
+    height: auto;
+    position: relative;
+    z-index: 2;
+    background-color: #fff;
+    margin: 30px auto 0;
+    padding: 22px 30px 47px 30px;
+    border-radius: 7px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -ms-border-radius: 7px;
+    border: solid 1px #d7d7d7;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.heading {
+    padding-bottom: 20px;
+    color: #333;
+    font-size: 20px;
+    text-align: left;
+    font-family: 'open_sansregular';
+}
+
+.formRow {
+    padding: 0px;
+}
+
+form {
+    margin: 0;
+}
+
+form, img {
+    padding: 0;
+}
+
+.formRow {
+    padding: 0px;
+}
+
+.formField {
+    position: relative;
+    height: 55px;
+}
+
+.labelText {
+    font-size: 14px;
+    color: #666;
+    display: block;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 20px;
+    transition: all 0.2s ease;
+    text-align: left;
+    font-family: 'open_sansregular';
+}
+
+.formField .inputText {
+    border-color: #999999;
+    border-bottom-width: 1px;
+}
+
+.inputText {
+    padding: 5px 0px 6px 0px;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 15px;
+    width: 100%;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #999999;
+    font-size: 14px;
+    color: #666;
+    transition: all 0.2s ease;
+    text-align: left;
+    font-family: 'open_sansregular';
+}
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.formCont .errorMsg {
+    clear: both;
+}
+
+.errorMsg {
+    width: 100%;
+    font-size: 12px;
+    color: #f44336;
+    display: block;
+    margin-bottom: 5px;
+    display: none;
+    position: relative;
+    padding-right: 25px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.errorMsg .errorIcon {
+    width: 18px;
+    height: 15px;
+    background: url(https://cdn.staticmb.com/images/errorIcon.png) no-repeat;
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 3px;
+}
+
+.formRow.btnField {
+    margin-top: 15px;
+}
+
+.formRow {
+    padding: 0px;
+}
+
+.mui-btn--primary {
+    background-color: #d8232a;
+    color: #FFF;
+}
+.mui-btn {
+    width: 100%;
+    height: 40px;
+    padding: 0px;
+    margin: 0px;
+    display: block;
+    font-family: 'open_sansregular';
+    font-size: 16px;
+    text-align: center;
+    line-height: 40px;
+    color: rgba(0,0,0,0.87);
+    background-color: #FFF;
+    position: relative;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+    background-image: none;
+//    vertical-align: middle;
+    white-space: nowrap;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -ms-border-radius: 2px;
+    animation-duration: 0.0001s;
+    -webkit-animation-duration: 0.0001s;
+    animation-name: mui-node-inserted;
+    -webkit-animation-name: mui-node-inserted;
+    transition: all 0.2s ease-in-out;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.formRow.btnWrap.otpPageText {
+    margin-top: 25px;
+}
+
+.formRow.btnWrap {
+    margin-top: 9px;
+    height: auto;
+}
+
+.formCont ul.requestText {
+    padding: 0;
+    margin: 15px 0 0;
+}
+
+ul, li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.formCont ul.requestText li span {
+    display: inline-block;
+    float: none;
+    margin: 0 auto;
+    vertical-align: middle;
+    width: 20px;
+}
+
+.codeIcon {
+    background-position: 0 -159px;
+    height: 20px;
+    width: 19px;
+    float: left;
+}
+
+.requestText li a {
+    display: inline-block;
+}

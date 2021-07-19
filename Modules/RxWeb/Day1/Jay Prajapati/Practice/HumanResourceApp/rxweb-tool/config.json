@@ -1,0 +1,32 @@
+{
+  "projects": {
+    "api": "HumanResourceApp.Api",
+    "model": "HumanResourceApp.Models",
+    "context": "HumanResourceApp.BoundedContext",
+    "domain": "HumanResourceApp.Domain",
+	"unitOfWork": "HumanResourceApp.UnitOfWork",
+    "infrastructure": "HumanResourceApp.Infrastructure",
+    "azureFunctionHttp":"",
+    "portal":"",
+    "azureFunctionBackground":""
+  },
+  "path": {
+    "dbConnection": {
+      "main": "Database.ConnectionString.Main"
+    },
+    "folder": {
+      "model": "DbEntities",
+      "context": "",
+	  "enums": "",
+	  "localizeValidationMessage": "wwwroot"
+    }
+  },
+  "annotations": {
+    "rxweb": false
+  },
+  "config": {
+    "generateEnums": false,
+    "commanTableSchema": "dbo",
+    "validationMessageLocalizationId": "15"
+  }
+}

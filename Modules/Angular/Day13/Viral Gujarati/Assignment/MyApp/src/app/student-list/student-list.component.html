@@ -1,0 +1,57 @@
+<div class='container p-3 bg-light'>
+    <h2 class='text-Dark bg-primary'>StudentList Component</h2>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered text-Dark">
+          <thead>
+            <tr>
+              <th scope="col">No.</th>
+              <th scope="col">StudentName</th>
+              <th scope="col">DOB</th>
+              <th scope="col">PlaceOfBirth</th>
+              <th scope="col">FirstLanguage</th>
+              <th scope="col">Address</th>
+              <th scope="col">FatherName</th>
+              <th scope="col">Father's Email</th>
+              <th scope="col">Father's Qualification</th>
+              <th scope="col">Father's Profession</th>
+              <th scope="col">Father's Designation</th>
+              <th scope="col">Father's Phone</th>
+              <th scope="col">MotherName</th>
+              <th scope="col">Mother's Email</th>
+              <th scope="col">Mother's Qualification</th>
+              <th scope="col">Mother's Profession</th>
+              <th scope="col">Mother's Designation</th>
+              <th scope="col">Mother's Phone</th>
+              <th scope="col">ReferenceThrough</th>
+              <th scope="col">Reference City</th>
+              <th scope="col">Reference Phone</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let s of studentList; let i= index">
+              <th scope="row">{{i+1}}</th>
+              <td>{{s.Name.FirstName}} {{s.Name.MiddleName}} {{s.Name.LastName}}</td>
+              <td>{{s.DOB}}</td>
+              <td>{{s.PlaceOfBirth}}</td>
+              <td>{{s.FirstLanguage}}</td>
+              <td>{{s.Address.City}},{{s.Address.State}},{{s.Address.Pin}}</td>
+              <td>{{s.Father.Name.FirstName}} {{s.Father.Name.MiddleName}} {{s.Father.Name.LastName}}</td>
+              <td>{{s.Father.Email}}</td>
+              <td>{{s.Father.EducationQualification}}</td>
+              <td>{{s.Father.Profession}}</td>
+              <td>{{s.Father.Designation}}</td>
+              <td>{{s.Father.Phone}}</td>
+              <td>{{s.Mother.Name.FirstName}} {{s.Mother.Name.MiddleName}} {{s.Mother.Name.LastName}}</td>
+              <td>{{s.Mother.Email}}</td>
+              <td>{{s.Mother.EducationQualification}}</td>
+              <td>{{s.Mother.Profession}}</td>
+              <td>{{s.Mother.Designation}}</td>
+              <td>{{s.Mother.Phone}}</td>
+              <td>{{s.ReferenceDetails.ReferenceThrough}}</td>
+              <td>{{s.ReferenceDetails.Address.City}}</td>
+              <td>{{s.ReferenceDetails.Address.TelNo}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+</div>

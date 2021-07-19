@@ -1,4 +1,6 @@
 {
     "secretKey": "RxTraining_secretKey",
-    "algorithm": "RxTraining_algorithm"
+    "algorithm": "RxTraining_algorithm",
+    "ID": "RxTraining_ID",
+    "SECRET": "RxTraining_SECRET"
 }

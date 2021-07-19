@@ -1,0 +1,72 @@
+<!-- {{queAnsDetails | json}} -->
+<div class="container-fluid pt-5">
+    <h2>{{queAnsDetails.question1}}</h2>
+    <hr>
+    <div class="row">
+        <div class="col-2 text-center ">
+            <button class="btn btn-light" (click)="UpVoteQuestion()"><i
+                    class="fa fa-caret-up text-secondary"></i></button>
+            <p class="m-0">{{queAnsDetails.vote}}</p>
+            <button class="btn btn-light" (click)="DownVoteQuestion()"><i
+                    class="fa fa-caret-down text-secondary"></i></button>
+            <p class="m-0"></p>
+            <button class="btn btn-light mt-2" (click)="BookmarkQuestion()"><i
+                    class="fa fa-bookmark text-secondary"></i></button>
+        </div>
+        <div class="col-10">
+            <p>{{queAnsDetails.questionBody}}</p>
+            <span *ngFor="let t of queAnsDetails.tags" class="pl-3">
+                <button type="button" class="btn btn-secondary">{{t.tagName}}</button>
+              </span>
+        </div>
+    </div>
+    <hr>
+    <h4>{{queAnsDetails.answers.length}} Answers</h4>
+    <hr>
+    <div *ngFor="let a of queAnsDetails.answers" class="border-bottom py-3">
+        <div class="row">
+
+            <div class="col-2 text-center">
+
+                <button class="btn btn-light" (click)="UpVoteAnswer(a.answerId)"><i
+                        class="fa fa-caret-up text-secondary"></i></button>
+                <p class="m-0 ">{{a.vote}}</p>
+                <button class="btn btn-light" (click)="DownVoteAnswer(a.answerId)"><i
+                        class="fa fa-caret-down text-secondary"></i></button>
+                <!-- <p class="m-0"></p>
+                <button class="btn btn-light"><i class="fa fa-bookmark text-secondary"></i></button> -->
+            </div>
+            <div class="col-10">
+                <p>{{a.answer1}}</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Answer Form -->
+    <div class="card my-3">
+        <h2 class="card-header">
+            Your Answer
+        </h2>
+        <div class="card-body">
+            <form [formGroup]="answerForm">
+                <div class="form-group">
+                    <textarea type="textarea" [class.is-invalid]="answer.invalid &&
+                    answer.touched" formControlName="Answer1" class="form-control"></textarea>
+                <div *ngIf="answer.invalid &&
+                answer.touched">
+                <small *ngIf="answer.errors?.required" class="text-danger">
+                    QuestionBody is required
+                </small>
+
+            </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" [disabled]="answerForm.invalid"  (click)="submit()">Put Answer</button>
+                </div>
+            </form>
+        </div>
+        <div class="card-footer">
+            Browse other questions or <a routerLink="/ask-question">ask your own question.</a>
+        </div>
+    </div>
+</div>

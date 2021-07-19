@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-color: 2px solid teal;
+}
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.student1 {
+  background: #eeeeee;
+  width: 19rem;
+  padding: 1rem;
+  margin: 2rem auto;
+  border-radius: 0.3rem;
+  text-align: center;
+  transition: all 0.3s linear;
+  border: 1px solid teal;
+}
+
+.s2 {
+  padding-top: 5rem;
+}
+
+.student1:hover {
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.pic {
+  border-radius: 50%;
+  border: 0.2rem solid teal;
+  position: relative;
+  float: left;
+}
+
+.logo {
+  position: relative;
+  float: right;
+}
+
+div {
+  font-size: 18px;
+  padding: 2px;
+}
+.div1 {
+  color: teal;
+}
+
+p {
+  color: red;
+}
+
+@media screen and (min-width: 768px) {
+  .list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

@@ -1,0 +1,27 @@
+<section>
+    <div class="container  my-5">
+      <div class="row">
+        <div class="col-8">
+          <div class="m-3">
+            <h3 class="display-4">Calculate area of rectangle</h3> <br>
+          <h4 class="font-italic text-primary"> Enter the value of length:   <input type="number" class="m-2" [(ngModel)]="l"><br></h4>
+          <h4 class="font-italic text-primary"> Enter the value of breath:  <input type="number" class="m-2" [(ngModel)]="b"><br></h4>
+        </div>
+        </div>
+        <div class="col-4">
+          
+          <div class="card m-4">
+            <h5 class="card-header bg-danger">Answer</h5>
+            <div class="card-body">
+              <h5 class="card-title">Area of Rectangle is :</h5>
+              <p class="card-text h4">{{ans}}</p>
+              <button (click)="mul()" type="submit" class="btn btn-primary">Calculate</button>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+  </section>
+
+  

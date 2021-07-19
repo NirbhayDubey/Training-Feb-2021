@@ -1,0 +1,187 @@
+.packers1 {
+  z-index: 1;
+  left: 50%;
+  pointer-events: none;
+  float: right;
+  margin-right: 5%;
+  transform: trlateX(-26%);
+  top: 92px;
+}
+.packers2 {
+  max-width: 420px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 27px 0px;
+  background: #ffffff;
+  pointer-events: initial;
+  padding-top: 24px;
+  position: relative;
+  left: 5px;
+}
+.css-103u7za {
+  -webkit-text-size-adjust: 100%;
+  color: #999999;
+  font-family: "Rubik", sans-serif;
+
+  line-height: 1.6;
+  pointer-events: initial;
+  box-sizing: inherit;
+}
+
+.packers3 {
+  -webkit-text-size-adjust: 100%;
+  color: #999999;
+  font-family: "Rubik", sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.6;
+  pointer-events: initial;
+  box-sizing: inherit;
+}
+.packers4 {
+  margin: 10px 0px 0px;
+  line-height: 21px;
+  font-size: 16px;
+  color: rgb(127, 127, 127);
+  text-align: center;
+  font-family: "Rubik", sans-serif;
+}
+
+.packers5 {
+  margin-top: 27px;
+}
+
+.packers6 {
+  margin: 0px 34px 7px;
+  display: flex;
+  -moz-box-align: center;
+  align-items: center;
+}
+
+.packers7 {
+  animation: 300ms linear 0s 1 normal none running animation-1qbobka;
+  object-fit: contain;
+  height: 70px;
+}
+
+.packers8 {
+  font-size: 16px;
+  line-height: 28px;
+  padding-right: 24px;
+  color: rgb(51, 51, 51);
+  margin-left: 20px;
+  font-family: "Rubik", sans-serif;
+}
+
+.packers9 {
+  animation: 300ms linear 0s 1 normal none running animation-1qbobka;
+  object-fit: cover;
+  position: absolute;
+  right: 0%;
+  top: 64%;
+  bottom: 11%;
+  z-index: 1;
+  height: 85px;
+  top: auto;
+}
+.packers10 {
+  width: calc(100% - 28px);
+  height: 60px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  margin: auto;
+  border: 3px solid rgb(85, 214, 167);
+  padding: 0px 14px;
+  box-shadow: 0px 3px #40b188;
+  border-radius: 10px;
+  background-color: rgb(85, 214, 167);
+  font-family: "Rubik", sans-serif;
+}
+
+.packers11 {
+  margin-bottom: 14px;
+  font-size: 17px;
+  line-height: 22px;
+  color: rgb(51, 51, 51);
+  text-align: center;
+  font-weight: bold;
+  font-family: "Rubik", sans-serif;
+}
+
+.packers12 {
+  min-height: 810px;
+  background: #f49858 
+  url("https://cdn.spark.app/media/housingcom/icon/packers_and_movers_bg.svg")
+    repeat scroll center center / cover;
+  border-radius: 0px 0px 54px 54px;
+}
+
+.packers13 {
+  display: flex;
+  margin-left: 5%;
+}
+
+.packers14 {
+  font-size: 28px !important;
+  line-height: 30px;
+  margin-top: 7px;
+  color: #fff;
+  font-family: "Rubik", sans-serif;
+}
+.packers15 {
+  font-size: 28px !important;
+  line-height: 30px;
+  margin-top: 7px;
+  margin-left: 5px;
+  color: #fff;
+  font-family: "Rubik", sans-serif;
+}
+
+.packers16{
+  font-size: 16px; margin-top: 14px;
+line-height: 27px; margin-left:5%; width: 338px; color: #561111;
+    margin-bottom: 28px; font-family: 'Rubik', sans-serif
+}
+
+.packers17{
+  animation: 300ms linear 0s 1 normal none running animation-1qbobka; object-fit: cover;
+height: 411px; padding-top: 50px;
+}
+
+.packers18{
+  object-fit: cover;
+height: 19px;
+margin: 41px; object-fit: cover;
+height: 19px; margin: 41px 41px -25px 41px; cursor: pointer
+}
+
+.css-rw1yyy {
+    animation: 300ms linear 0s 1 normal none running animation-1qbobka;
+    object-fit: cover;
+    width: 150px;
+    margin: 0px auto 10px;
+    display: block;
+    padding: 20px 20px 0px;
+}
+
+img, a {
+    border: none;
+    outline: none;
+}
+
+@media (min-width: 1100px)
+.css-1f0guh3 {
+    min-width: 520px;
+    border-radius: 10px;
+    box-shadow: 0 3px 27px 0 rgb(0 0 0 / 10%);
+    background: #fff;
+    margin: 0 auto;
+    pointer-events: initial;
+}
+.css-1f0guh3 {
+    padding: 0px 20px;
+    position: relative;
+    padding: 38px 20px 0;
+}

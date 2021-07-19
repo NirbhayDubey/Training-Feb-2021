@@ -1,0 +1,13 @@
+
+<!-- {{tags}} -->
+<div class="py-4">
+    <h2>Tags <small class="text-muted">{{tags.length}}</small></h2>
+</div>
+<hr>
+<div class="container-fluid px-0">
+    <div class="row px-0">
+        <div class="col-lg-3 col-md-4 col-sm-6 py-2" *ngFor="let t of tags;">
+            <span class="btn btn-dark">{{t}}</span>
+        </div>
+    </div>
+</div>

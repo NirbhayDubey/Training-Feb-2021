@@ -1,0 +1,19 @@
+<!-- <p>bookmarked-questions works!</p>
+<div class="container-fluid">
+    {{bookmarkedQuesions | json}}
+</div> -->
+<div class="container-fluid py-4 px-0">
+    <h3>Bookmarked Questions <small class="text-muted">{{bookmarkedQuestions.length}}</small></h3>
+    <hr>
+    <div class="container-fluid px-0">
+
+
+        <ul *ngFor="let q of bookmarkedQuestions;index as idx" class="container-fluid px-0">
+
+            <a routerLink="/questions/{{q.questionId}}" class="list-group-item"><strong>{{idx+1}}. </strong> {{q.question1}}<span class="float-right small text-dark d-lg-block d-none">{{q.timeOfAsk}}</span></a>
+            
+
+        </ul>
+
+    </div>
+</div>

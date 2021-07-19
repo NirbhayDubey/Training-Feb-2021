@@ -1,0 +1,9 @@
+<div class="container-fluid p-5 bg-dark">
+    <h1 class="text-light">Parent Component</h1>
+    <div style="text-align:center">
+        <h1>{{message}}</h1>
+    </div>
+    
+    <app-test [parentData]="name" (childEvent)="message=$event" (childData)="data=$event"></app-test>
+    <app-sibling [pData]="data"></app-sibling>
+</div>

@@ -1,0 +1,42 @@
+<div class="container pt-5">
+  <div>
+    <table class="table table-bordered">
+      <thead class="thead-dark">
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Grade</th>
+        <th>Average</th>
+        <th>Active</th>
+      </thead>
+      <tbody *ngFor ="let student of students" [ngSwitch]="student.Grade">
+        <tr  *ngSwitchCase = "'A'" [ngClass]="{'bg-success':true,'text-light':true }" [ngStyle]= "student.Active ? {'font-style':'italic'} : {'display': 'none'}">
+          <td>{{student.Id}}</td>
+          <td>{{student.Name}}</td>
+          <td>{{student.Age}}</td>
+          <td>{{student.Grade}}</td>
+          <td>{{student.Average}}</td>
+          <td>{{student.Active}}</td>
+        </tr>
+        <tr  *ngSwitchCase = "'B'" [ngClass]="{'bg-info':true,'text-light':true }" [ngStyle]= "student.Active ? {'font-style':'italic'} : {'display': 'none'}">
+          <td>{{student.Id}}</td>
+          <td>{{student.Name}}</td>
+          <td>{{student.Age}}</td>
+          <td>{{student.Grade}}</td>
+          <td>{{student.Average}}</td>
+          <td>{{student.Active}}</td>
+        </tr>
+        <tr  *ngSwitchCase = "'C'" [ngClass]="{'bg-danger':true,'text-light':true }" [ngStyle]= "student.Active ? {'font-style':'italic'} : {'display': 'none'}">
+          <td>{{student.Id}}</td>
+          <td>{{student.Name}}</td>
+          <td>{{student.Age}}</td>
+          <td>{{student.Grade}}</td>
+          <td>{{student.Average}}</td>
+          <td>{{student.Active}}</td>
+        </tr>
+
+        
+      </tbody>
+    </table>
+  </div>
+</div>

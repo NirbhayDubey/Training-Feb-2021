@@ -15,5 +15,16 @@ namespace ToyManufacturingCompany.Models
         public CustomerAddress Address { get; set; }
 #nullable disable
         public ICollection<Order> Orders { get; set; }
+
+
+        public override string ToString()
+        {
+            return "Id : " + this.Id + 
+                "\nFirstName : " + FirstName +
+                "\nLastName : " + LastName +
+                "\nPhoneNumber : " + Phone;
+        }
     }
+
+   
 }

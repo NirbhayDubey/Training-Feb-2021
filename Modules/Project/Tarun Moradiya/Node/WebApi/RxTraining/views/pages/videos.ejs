@@ -1,102 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <%- include('../partials/head', { title : 'RxTraining' }) %>
-</head>
-<body>
-    <header>
-        <%- include('../partials/header', {Tech}) %>
-    </header>
+  </head>
+  <body>
+    <header><%- include('../partials/header', {Tech, User}) %></header>
     <main>
-        <div class="container">
-            <h1 class="display-1 mb-5 d-inline-block"><%= techName %> Videos:</h1>
-            <button class="btn btn-info float-right" data-toggle="modal" data-target="#addModal">Add Topic</button>
-            <% modules.forEach(element => { %>
-                <br>
-                <div>
-                    <h1 class="d-inline-block"><%= element.topic %></h1>
-                    <a href="/technologies/<%= techId %>/modules/videos/<%= element._id %>/delete" class="btn btn-danger float-right deleteTech"><i class="fas fa-trash-alt"></i></a>
-                    <hr>
-                    <div class="row-hl d-flex flex-row flex-wrap justify-content-between align-items-stretch">
-                        <% element.contents.forEach(cont => { %>
-                            <div class="item-hl m-1" style="width: 30%; position: relative;">
-                                <a href="/technologies/<%= techId %>/modules/videos/<%= element._id %>/contents/<%= cont._id %>/delete" class="btn btn-danger float-right deleteTech" style="position: absolute; z-index: 1; right: 0;"><i class="fas fa-trash-alt"></i></a>
-                                <video src="<%= cont.contentUrl %>" class="w-100" controls></video>
-                                <p class="lead text-center w-100"><%= cont.contentName %></p>
-                            </div>
-                        <% }) %>
-                        <div class="item-hl p-4" style="width: 30%">
-                            <button class="btn btn-warning w-100 h-75" data-toggle="modal" data-target="#addContent"><i class="fas fa-plus"></i></button>
-                            <p class="lead text-center w-100">Add Video</p>
+      <div class="container">
+        <h1 class="display-1 mb-5 d-inline-block"><%= techName %> Videos:</h1>
+        <% if(User.isAdmin){ %>
+        <button
+          class="btn btn-info float-right"
+          data-toggle="modal"
+          data-target="#addModal"
+        >
+          Add Topic
+        </button>
+        <% } %> <% modules.forEach(element => { %>
+        <br />
+        <div>
+          <h1 class="d-inline-block"><%= element.topic %></h1>
+          <% if(User.isAdmin){ %>
+          <a
+            href="/technologies/<%= techId %>/videos/<%= element._id %>/delete"
+            class="btn btn-danger float-right deleteTech"
+            ><i class="fas fa-trash-alt"></i></a
+          ><% } %>
+          <hr />
+          <div
+            class="row-hl d-flex flex-row flex-wrap justify-content-between align-items-stretch"
+          >
+            <% element.contents.forEach(cont => { %>
+            <div class="item-hl m-1" style="width: 30%; position: relative">
+              <% if(User.isAdmin){ %>
+              <a
+                href="/technologies/<%= techId %>/videos/<%= element._id %>/contents/<%= cont._id %>/delete"
+                class="btn btn-danger float-right deleteTech"
+                style="position: absolute; z-index: 1; right: 0"
+                ><i class="fas fa-trash-alt"></i></a
+              ><% } %>
+              <video
+                src="<%= cont.contentUrl %>"
+                class="w-100"
+                controls
+              ></video>
+              <p class="lead text-center w-100"><%= cont.contentName %></p>
+            </div>
+            <% }) %> <% if(User.isAdmin){ %>
+            <div class="item-hl p-4" style="width: 30%">
+              <button
+                class="btn btn-warning w-100 h-75"
+                data-toggle="modal"
+                data-target="#addContent<%= element._id %>"
+              >
+                <i class="fas fa-plus"></i>
+              </button>
+              <p class="lead text-center w-100">Add Video</p>
 
-                            <div class="modal" id="addContent">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">Add Plan</h5>
-                                            <button class="close" data-dismiss="modal">&times;</button>
-                                        </div>
-                                        <form action="/technologies/<%= techId %>/modules/videos/<%= element._id %>/contents" method="POST" enctype="multipart/form-data">
-                                            <div class="modal-body">
-                                                <div class="form-group">
-                                                    <label for="contentName">Video Name</label>
-                                                    <input type="text"  id="contentName" name="contentName" class="form-control" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="content">Add Video</label>
-                                                    <input type="file"  id="content" name="content" class="form-control" multiple required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="description">Video Description</label>
-                                                    <textarea type="text"  id="description" name="description" class="form-control"></textarea>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button class="btn btn-secondary" data-dismiss="modal">close</button>
-                                                <button class="btn btn-primary" type="submit">Submit</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
+              <div class="modal" id="addContent<%= element._id %>">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Add Plan</h5>
+                      <button class="close" data-dismiss="modal">
+                        &times;
+                      </button>
                     </div>
+                    <form
+                      action="/technologies/<%= techId %>/videos/<%= element._id %>/contents"
+                      method="POST"
+                      enctype="multipart/form-data"
+                    >
+                      <div class="modal-body">
+                        <div class="form-group">
+                          <label for="contentName">Video Name</label>
+                          <input
+                            type="text"
+                            id="contentName"
+                            name="contentName"
+                            class="form-control"
+                            required
+                          />
+                        </div>
+                        <div class="form-group">
+                          <label for="content">Add Video</label>
+                          <input
+                            type="file"
+                            id="content"
+                            name="content"
+                            class="form-control"
+                            multiple
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button class="btn btn-secondary" data-dismiss="modal">
+                          close
+                        </button>
+                        <button class="btn btn-primary" type="submit">
+                          Submit
+                        </button>
+                      </div>
+                    </form>
+                  </div>
                 </div>
-            <% }) %>
+              </div>
+            </div>
+            <% } %>
+          </div>
         </div>
+        <% }) %>
+      </div>
     </main>
 
     <!-- add videos -->
     <div class="modal" id="addModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Add Plan</h5>
-                    <button class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <form action="/technologies/<%= techId %>/modules/videos" method="POST" enctype="multipart/form-data">
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label for="topic">Topic</label>
-                            <input type="text"  id="topic" name="topic" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="contents">Contents</label>
-                            <input type="file"  id="contents" name="contents" class="form-control" multiple required>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" data-dismiss="modal">close</button>
-                        <button class="btn btn-primary" type="submit">Submit</button>
-                    </div>
-                </form>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Add Plan</h5>
+            <button class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <form
+            action="/technologies/<%= techId %>/videos"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="topic">Topic</label>
+                <input
+                  type="text"
+                  id="topic"
+                  name="topic"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="contents">Contents</label>
+                <input
+                  type="file"
+                  id="contents"
+                  name="contents"
+                  class="form-control"
+                  multiple
+                  required
+                />
+              </div>
             </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" data-dismiss="modal">
+                close
+              </button>
+              <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+          </form>
         </div>
+      </div>
     </div>
 
     <!-- add content  -->
-    
+
     <%- include('../partials/footer') %>
-</body>
+  </body>
 </html>

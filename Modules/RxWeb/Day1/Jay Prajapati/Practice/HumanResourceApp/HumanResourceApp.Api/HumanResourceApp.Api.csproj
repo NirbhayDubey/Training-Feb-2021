@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <ItemGroup>
+    <ProjectReference Include="..\HumanResourceApp.Domain\HumanResourceApp.Domain.csproj" />
+    <ProjectReference Include="..\HumanResourceApp.BoundedContext\HumanResourceApp.BoundedContext.csproj" />
+    <ProjectReference Include="..\HumanResourceApp.Models\HumanResourceApp.Models.csproj" />
+    <ProjectReference Include="..\HumanResourceApp.Infrastructure\HumanResourceApp.Infrastructure.csproj" />
+    <ProjectReference Include="..\HumanResourceApp.UnitOfWork\HumanResourceApp.UnitOfWork.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.1" />
+    <PackageReference Include="RxWeb.Core.AspNetCore" Version="3.0.4-preview1" />
+    <PackageReference Include="RxWeb.Core.Localization" Version="3.0.1" />
+    <PackageReference Include="RxWeb.Core.Logging" Version="3.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+
+</Project>

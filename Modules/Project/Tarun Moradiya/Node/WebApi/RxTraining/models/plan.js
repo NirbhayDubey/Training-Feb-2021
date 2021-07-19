@@ -1,58 +1,58 @@
-const mongoose = require('mongoose');
-const Technology = require('./technology');
-const Joi = require('joi');
+const mongoose = require("mongoose");
+const Technology = require("./technology");
+const Joi = require("joi");
 
 //create schema
 
 const planSchema = new mongoose.Schema({
-    tech: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Technology'
+  tech: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Technology",
+  },
+  name: {
+    type: String,
+    required: true,
+  },
+  whatToLearn: {
+    type: String,
+    required: function () {
+      return !(this.practiceExercise && this.assignments);
     },
-    name: {
-        type: String,
-        required: true
+  },
+  practiceExercise: {
+    type: String,
+    required: function () {
+      return !(this.whatToLearn && this.assignments);
     },
-    whatToLearn: {
-        type: String,
-        required: function() {
-            return !(this.practiceExercise && this.assignments)
-        }
+  },
+  assignments: {
+    type: String,
+    required: function () {
+      return !(this.practiceExercise && this.whatToLearn);
     },
-    practiceExercise: {
-        type: String,
-        required: function() {
-            return !(this.whatToLearn && this.assignments)
-        }
-    },
-    assignments: {
-        type: String,
-        required: function() {
-            return !(this.practiceExercise && this.whatToLearn)
-        }
-    },
-    references: String
+  },
+  references: String,
 });
 
 //create class
-const Plan = mongoose.model('Plan', planSchema);
+const Plan = mongoose.model("Plan", planSchema);
 
 //validate
 async function validate(plan) {
-    const schema = Joi.object({
-        tech: Joi.string().required(),
-        name: Joi.string().required(),
-        whatToLearn: Joi.string().required(),
-        practiceExercise: Joi.string(),
-        assignments: Joi.string(),
-        references: Joi.string()
-    })
+  const schema = Joi.object({
+    tech: Joi.string().required(),
+    name: Joi.string().required(),
+    whatToLearn: Joi.string().required(),
+    practiceExercise: Joi.string(),
+    assignments: Joi.string(),
+    references: Joi.string(),
+  });
 
-    return await schema.validate(plan);
+  return await schema.validate(plan);
 }
 
 //exports
 module.exports = {
-    Plan,
-    validate
-}
+  Plan,
+  validate,
+};

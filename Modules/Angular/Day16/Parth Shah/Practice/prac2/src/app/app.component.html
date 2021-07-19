@@ -1,0 +1,46 @@
+<section class="py-4 m-3 ">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top py-1">
+    <div class="container">
+      <p>
+            <img src="../assets/img/21.jpg" alt="" height="50" width="50"><h3 class="d-inline align-middle text-light">
+                ractice Day9
+            </h3>
+          </p>
+        <button class="navbar-toggler" data-toggle="collapse"
+        data-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+      </div>
+       
+  </nav>
+  </section>
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Routing Application</h1>
+    <small class="lead">Applying nested routing here</small>
+  </div>
+</div>
+<!-- <nav>
+	<a routerLink="/departments" routerLinkActive="active">Departments</a>
+	<a routerLink="/employees" routerLinkActive="active">Employees</a>
+</nav>
+<router-outlet></router-outlet> -->
+
+
+
+
+
+<div class="card text-center">
+  <div class="card-header ">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item p-3">
+        <a routerLink="/departments" routerLinkActive="active">Departments</a>
+      </li>
+      <li class="nav-item p-3">
+        <a routerLink="/employees" routerLinkActive="active">Employees</a>
+      </li>     
+    </ul>
+  </div>
+  <div class="card-body">
+    <router-outlet></router-outlet>
+  </div>
+</div>

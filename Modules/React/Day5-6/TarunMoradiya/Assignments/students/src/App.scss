@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.student-img {
+  border-radius: 50%;
+  width: 50%;
+  position: relative;
+  top: -70px;
+}
+
+.student-data,
+.college-data {
+  border-top: 1px solid black;
+}
+
+.college-logo {
+  border-radius: 50%;
+  float: right;
+}
+
+.card-header {
+  background-color: burlywood;
+}

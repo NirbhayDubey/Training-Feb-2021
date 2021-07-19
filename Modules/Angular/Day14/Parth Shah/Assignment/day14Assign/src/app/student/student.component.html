@@ -1,0 +1,126 @@
+<!-- <div>
+   <p>Employee List</p> 
+</div>
+<div *ngFor="let item of employees">
+    <span>{{item.id}}</span><span>{{item.name}}</span>
+</div>
+<br>
+
+
+    <input type="number" [(ngModel)]="employee.id">
+    <input type="text" [(ngModel)]="employee.name">
+    <input type="text" [(ngModel)]="employee.email">
+    <input type="number" [(ngModel)]="employee.phone">
+<button (click)="submitData()">Submit</button> -->
+
+
+ <!--  -->
+
+ <div class="jumbotron jumbotron-fluid m-3">
+  <div class="container">
+    <h1 class="display-4  ">Welcome To Orchids International School!</h1>
+    <p class="lead bg-primary text-white">Here below Two cards are Student Component </p>
+  </div>
+</div>
+    
+ <div class="row m-1">
+    <div class="col-sm-6">
+        <div class="card text-center bg-warning text-white mb-3">
+            <h5 class="card-header bg-light text-dark h5">Check List of Student</h5>
+        <div class="card-body">
+            <h3>Student Component</h3>
+            <h1 class="display-4">
+            </h1><br>
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+                Launch Student List
+              </button>
+          
+
+
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Student List</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                        <h2 class="text-primary"> Below is the list of Student</h2>
+        
+                        <div class="list-group">
+                         
+                          <a href="#" *ngFor="let item of studentList" class="list-group-item list-group-item-action"> {{item.ID}} {{item.Name}}</a>
+                         
+                        </div>
+        
+                       
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card text-center bg-warning text-white mb-3">
+            <h5 class="card-header bg-light text-dark h5">Add Student</h5>
+        <div class="card-body">
+            <h3>Student Component</h3>
+            <h1 class="display-4">
+            </h1><br>
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal2">
+                Add Student
+              </button>
+          
+
+
+           
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--  -->
+  <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Employee List</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <h2 class="text-primary"> Add Student Here </h2>
+          <h5>Enter ID</h5>
+            <input type="number" class="form-control" [(ngModel)]="student.ID" placeholder="Enter ID">
+          <h5>Enter Name</h5>
+
+             <input type="text" [(ngModel)]="student.Name" class="form-control" placeholder="Enter Name">
+          <h5>Enter Average</h5>
+
+            <input type="text" [(ngModel)]="student.Average" class="form-control" placeholder="Enter Average">
+          <h5>Enter Grade</h5>
+
+             <input type="text" [(ngModel)]="student.Grade" class="form-control" placeholder="Enter Grade">
+          <h5>Enter Age</h5>
+
+             <input type="number" [(ngModel)]="student.Age" class="form-control" placeholder="Enter Age">
+        
+         
+           
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button (click)='submitData()' class="btn btn-primary" data-dismiss="modal" type="submit">Submit</button> 
+        </div>
+      </div>
+    </div>
+  </div>

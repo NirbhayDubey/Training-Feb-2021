@@ -1,0 +1,48 @@
+$form-bg-color: #f5faae;
+$form-width: 400px;
+$card-bg: lightyellow;
+
+.container {
+  margin: 20px;
+  padding: 40px;
+}
+
+form {
+  background-color: $form-bg-color;
+}
+
+.form-control {
+  margin-top: 0.4rem;
+}
+
+.img {
+  float: left;
+}
+.img1 {
+  float: right;
+}
+/* 
+.card {
+  font-weight: bold;
+  color: teal;
+  margin: 10px;
+
+  > .card-body {
+    background-color: $card-bg;
+    text-align: center;
+    border: 2px solid teal;
+  }
+} */
+
+.card {
+  font-weight: bold;
+  color: teal;
+  margin: 10px;
+
+  > .card-body {
+    background-color: $card-bg;
+    max-width: 20rem;
+    text-align: center;
+    border: 2px solid teal;
+  }
+}

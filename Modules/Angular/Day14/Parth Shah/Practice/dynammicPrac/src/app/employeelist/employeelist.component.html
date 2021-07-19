@@ -1,0 +1,82 @@
+
+<!-- <div>
+    <p>Employee Detail</p>
+</div>
+<div *ngFor="let item of employees">
+    <span>{{item.id}}</span><span>{{item.name}}</span><span>{{item.email}}</span><span>{{item.phone}}</span>
+</div> -->
+
+
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="display-4 text-center" >Employee List</h4>
+                    </div>
+                    <table class="table table-stripped">
+                        <thead class="thead-inverse">
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th >Email</th>  
+                                <th>Phone</th>  
+                                <th>Edit</th>  
+
+                                <th>Delete</th>                               
+                            </tr>
+                        </thead>
+
+                        <!-- this will create grade wise colour and only display active data's -->
+                        <tbody *ngFor="let item of employees let idx= index">
+                          <tr >
+                                <td scope="row">{{item.id}}</td>
+                                <td>{{item.name}}</td>
+                                <td>{{item.email}}</td>
+                                <td>{{item.phone}}</td>
+                                <td><button (click) ="edit(item)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal3">Edit</button></td>
+                               
+                                <td><button (click) ="remove(idx)" class="btn btn-danger">Delete</button></td>
+                                
+                               
+                            </tr>
+                        
+                      
+                       
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            </div>
+            </div>
+            </section>
+
+            <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Update Data</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                        <h2 class="text-primary"> Updated Data  Here </h2>
+
+                        <input type="number" class="form-control" [(ngModel)]="id" >
+                         <input type="text" [(ngModel)]="name" class="form-control">
+                        <input type="text" [(ngModel)]="email" class="form-control" >
+                         <input type="number" [(ngModel)]="phone" class="form-control" >
+                    
+                     
+                       
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button class="btn btn-primary" (click)="update()" data-dismiss="modal" type="submit">Submit</button>
+                    </div>
+                  </div>
+                </div>
+              </div>

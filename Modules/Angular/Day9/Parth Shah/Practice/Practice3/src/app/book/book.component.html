@@ -1,0 +1,204 @@
+<div class="container">
+<div class="card">
+  <div class="card-header">
+    Books Details
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Add Books Detail below</h5>
+
+
+    <div class="container p-2">
+      <form [formGroup]="bookForm" (ngSubmit)="submitdata()">
+          <!-- <ng-container class="form-group">
+          
+          </ng-container> -->
+      
+          <label for="EnterName">Name</label>
+          <input type="text"  class="form-control" formControlName="Name" >
+          <!-- [(ngModel)]="Name" -->
+      
+          <!-- <ng-container class="form-group">
+           
+          </ng-container> -->
+          <label for="author">Author</label>
+          <input type="text" class="form-control" formControlName="Author">
+         
+          <!-- <div class="form-group">
+             
+            </div> -->
+            <label for="EnterName">Price</label>
+            <input type="text" class="form-control"  formControlName="Price">
+      
+</form>      
+</div>
+
+
+  </div>
+</div><!-- fitst book card end-->
+</div>
+
+<div class="container my-3">
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body p-3">
+        <h5 class="card-title">Add Publisher's Detail</h5>
+
+
+        <form [formGroup]="bookForm" (ngSubmit)="submitdata()">
+          <!-- <ng-container class="form-group">
+          
+          </ng-container> -->
+      
+         
+      
+      
+            <div formGroupName="Publisher">
+              <label for="EnterName">PublisherName</label>
+              <input type="text" class="form-control" formControlName="PublisherName">
+              <label for="EnterName">Contact Number</label>
+                  <input type="text" class="form-control" formControlName="ContactNumber">
+                  <div formGroupName="Location">
+      
+                    <label for="EnterName">City</label>
+                      <input type="text" class="form-control" formControlName="City">
+
+                      <label for="EnterName">District</label>
+                  <input type="text" class="form-control" formControlName="District">
+
+                  <label for="EnterName">State</label>
+                  <input type="text" class="form-control" formControlName="State">
+                      </div>
+          
+          </div>
+      <div>
+</div>
+</form>          
+
+       
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body p-3">
+      <img src="../../assets/img/book.jpg" alt="" class="img-fluid" style="height: 387px;">
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div class="card my-3">
+  <h5 class="card-header">Featured</h5>
+  <div class="card-body">
+    <h5 class="card-title">Add Subscriber's Detail</h5>
+    <div class="container">
+      <form [formGroup]="bookForm" (ngSubmit)="submitdata()"> 
+      <div formArrayName="Subscribers">
+        <div *ngFor="let item of getSubscriber.controls;index as i">
+          <div [formGroupName]="i">
+            <label for="EnterName">Subscriber Name</label>
+          <input type="text" class="form-control" formControlName ="SubscriberName">
+          <label for="EnterName">Subscriber Contact Number</label>
+          <input type="text" class="form-control" formControlName ="SubscriberContactNumber">
+          <label for="EnterName">Purchase Date</label>
+          <input type="date" class="form-control" formControlName ="PurchaseDate">
+      </div> 
+        </div>
+      </div>
+  
+  
+      <br>
+  <button type="text" (click)="AddSubscriber()" class="btn btn-primary m-1">Add Subscriber</button>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+   
+
+  </div>
+    
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+<div class="card text-center m-5">
+  <div class="card-header">
+    View All Data 
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">All Details</h5>
+  
+      <h5>The Json format is:</h5>{{bookForm.value | json}}
+  
+    </div>
+
+  <div class="card-footer text-muted">
+    Thank You!
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <br>
+</div>
+
+    <div formArrayName="Subscribers">
+      <div *ngFor="let item of getSubscriber.controls;index as i">
+        <div [formGroupName]="i">
+          <label for="EnterName">Subscriber Name</label>
+        <input type="text" class="form-control" formControlName ="SubscriberName">
+        <label for="EnterName">Subscriber Contact Number</label>
+        <input type="text" class="form-control" formControlName ="SubscriberContactNumber">
+        <label for="EnterName">Purchase Date</label>
+        <input type="date" class="form-control" formControlName ="PurchaseDate">
+    </div> 
+      </div>
+    </div>
+
+
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+ 
+
+<br>
+  <div class="container">
+    <h5>The Json format is:</h5>{{bookForm.value | json}}
+
+  </div>
+</div>
+
+
+
+ -->
+
+                

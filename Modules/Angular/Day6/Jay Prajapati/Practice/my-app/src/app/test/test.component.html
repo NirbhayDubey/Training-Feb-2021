@@ -1,0 +1,16 @@
+<p>Hello world</p>
+<div><h2>inline template</h2>
+    <h5>{{3 + 5}}</h5>
+    <h2>{{url}}</h2>
+    <input [id]="myId" type = "text" value = "jay">
+    <input [(ngModel)]="name" type = "text">
+    <h2>Welcome {{name}}</h2>
+    <h2 [ngClass]="messageClasses">Welcome {{name}}</h2>
+    
+    <button (click)="onClick($event)">Greet</button>
+    {{greeting}}
+
+    <input #myInput type="text">
+    <button (click) = "logMessage(myInput.value)">log</button>
+
+</div>

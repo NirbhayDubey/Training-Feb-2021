@@ -1,0 +1,131 @@
+<div class="container-fluid ">
+    <form class="form" method="post">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+
+                    <a class="navbar-brand" href="#">
+
+                        <img src="https://secure-media.hotstarext.com/web-assets/prod/images/brand-logos/disney-hotstar-logo-dark.svg"
+                            alt="Hotstar" style="width:115px; height: 45px; padding-bottom: 10px;">
+                    </a>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="true" aria-expanded="false">TV</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" routerLink="/starplus">Star Plus</a>
+                            <a class="dropdown-item" href="starworld.html">Star World</a>
+                            <a class="dropdown-item" href="lifeok.html">Life OK</a>
+                            <a class="dropdown-item" href="starvijay.html">Star Vijay</a>
+                            <a class="dropdown-item" href="starbharat.html">Star Bharat</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item ">
+                        <a class="nav-link " href="movies" role="button" aria-haspopup="true"
+                            aria-expanded="false">Movies</a>
+
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="true" aria-expanded="false">Sports</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="https://www.cricbuzz.com/">Cricket</a>
+                            <a class="dropdown-item" href="https://www.skysports.com/football">FootBall</a>
+                            <a class="dropdown-item" href="https://www.flashscore.in/badminton">Badminton</a>
+                            <a class="dropdown-item" href="https://www.flashscore.in/volleyball">VolleyBall</a>
+                            <a class="dropdown-item" href="https://www.livescore.in/hockey">Hockey</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown ">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="true" aria-expanded="false">News</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="starplus.html">Hindi</a>
+                            <a class="dropdown-item" href="starplus.html">English</a>
+                            <a class="dropdown-item" href="starplus.html">Bengali</a>
+                            <a class="dropdown-item" href="starplus.html">Telugu</a>
+                            <a class="dropdown-item" href="starplus.html">Malayalam</a>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+
+        </nav>
+        <br>
+    </form>
+
+    <br>
+
+
+    <div class="embed-responsive embed-responsive-16by9">
+        <video class="embed-responsive-item" src="{{contentdetail.url}}" allowfullscreen type="video" controls></video>
+    </div>
+
+
+
+    <div class="detail-area">
+        <div></div>
+        <div class="container">
+            <div class="meta-wrap desktop">
+                <h1> {{contentdetail.title}}</h1>
+                <p class="show-title"><span class="meta-data-holder"></span></p>
+                <div class="tag-holder">
+                    <div class="tag">{{contentdetail.genre}}</div><span class="episode-divider"></span>
+
+                    <div class="tag">{{contentdetail.episode}}</div>
+                </div><span class="meta-data-holder"><span class="meta-deta"> {{contentdetail.releaseDate}}</span>
+                    <br>
+                    <span class="meta-deta">{{contentdetail.suitableAge}}+</span></span>
+                <div class="description"> {{contentdetail.description}}
+                </div>
+            </div>
+
+            <br>
+        </div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class=" footer col-xl-5 col-xs-4 col-sm-12 col-sm-7 "
+                style="margin-left: -30px; margin-top: 10px; margin-right: 20px;">
+                <h2>About Disney+ HotStar</h2>
+                <p>
+                    © 2021 STAR. All Rights Reserved. HBO, Home Box Office and all related channel and programming logos
+                    are
+                    service marks of, and all related programming visuals and elements are the property of, Home Box
+                    Office,
+                    Inc.
+                    All rights reserved. </p>
+                <p>HotStar</p>
+            </div>
+            <div class="col-sm-4">
+                <ul class="list-unstyled link-list">
+                    <img src="https://secure-media.hotstarext.com/web-assets/prod/images/brand-logos/disney-hotstar-logo-dark.svg"
+                        alt="Hotstar" style="width:215px; height: 85px; padding-bottom: 10px;">
+
+                </ul>
+            </div>
+
+            <div class="copy">
+                <div class="container">
+                    <h3>Contact With Us </h3>
+                    <a href="https://twitter.com/DisneyPlusHS"><i class="fa fa-twitter"></i></a>
+                    <a href="https://www.facebook.com/DisneyPlusHotstar"><i class="fa fa-facebook"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</footer>

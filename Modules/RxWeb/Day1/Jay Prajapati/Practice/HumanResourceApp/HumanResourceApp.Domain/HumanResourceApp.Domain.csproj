@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\HumanResourceApp.BoundedContext\HumanResourceApp.BoundedContext.csproj" />
+    <ProjectReference Include="..\HumanResourceApp.UnitOfWork\HumanResourceApp.UnitOfWork.csproj" />
+    <ProjectReference Include="..\HumanResourceApp.Models\HumanResourceApp.Models.csproj" />
+    <ProjectReference Include="..\HumanResourceApp.Infrastructure\HumanResourceApp.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+</Project>

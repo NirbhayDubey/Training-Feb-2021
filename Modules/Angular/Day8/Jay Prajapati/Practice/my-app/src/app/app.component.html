@@ -1,0 +1,83 @@
+<!-- // Structral Directives
+// ngIf -->
+<div class="container py-5">
+  <div class="col-md-9">
+    <h2 *ngIf='displayName'>Hello World</h2>
+    <!-- <ng-tamplate #elseBlock>
+      <h3>
+        Name is Hidden
+      </h3>
+    </ng-tamplate> -->
+  
+  
+  <!-- //ngSwitch -->
+  
+  <div [ngSwitch] = "color" class=" ">
+    <div *ngSwitchCase = "'red'">You Picked red color</div>
+    <div *ngSwitchCase = "'blue'">You Picked blue color</div>
+    <div *ngSwitchCase = "'green'">You Picked green color</div>
+    <div *ngSwitchCase = "'yellow'">You Picked yellow color</div>
+    <div *ngSwitchDefault>Pick color</div>
+  </div>
+  
+  <!-- // ngFor -->
+  
+  <div *ngFor="let color of colors;index as i">
+    <ul>
+      <li>{{i}} {{color}}</li>
+    </ul>
+  </div>
+  
+  
+  <div *ngFor="let color of colors;odd as o">
+      <h2>{{o}} {{color}}</h2>
+  </div>
+  <!-- ngClass -->
+
+  <!-- <div [ngClass] ="isSpecial ? 'special' : ''">
+    This div is special
+  </div>
+
+  <div [ngClass] = "currentClasses">This div is initially Saveable, unchanged and not special</div> -->
+
+  <input type="text" [(ngModel)]="show" disabled>
+  <button (click)="showorhide()">Showorhide</button>
+  <div *ngIf="show">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing 
+      elit. Odit aliquam, quis hic incidunt recusandae iure
+      upiditate accusamus laboriosam voluptates deserunt, 
+      provident mollitia, tempore expedita laborum quaerat
+       maiores atque neque. Obcaecati?</p>
+  </div>
+
+  <div *ngIf="true ; then courseList else noCourse">
+   
+  </div>
+  <ng-template #courseList>
+    List of courses
+  </ng-template>
+  <ng-template #noCourse>
+    No courses yet
+  </ng-template>
+  <div hidden>
+    Is it Visible??
+  </div>
+  <div [hidden]="true">
+    Is It Visible???
+  </div>
+  <ul class="nav nav-pills">
+    <li class="nav-item" ><a class="nav-link" [class.active]="viewMode=='map'" (click)="viewMode='map'">Map View</a></li>
+    <li class="nav-item" ><a class="nav-link" [class.active]="viewMode=='list'" (click)="viewMode='list'">List View</a></li>
+  </ul>
+  <div [ngSwitch]="viewMode">
+    <div *ngSwitchCase="'map'">Map View Content</div>
+    <div *ngSwitchCase="'list'">List View Content</div>
+    <div *ngSwitchDefault>Otherwise</div>
+  </div>
+ 
+
+
+  </div>
+</div>
+
+

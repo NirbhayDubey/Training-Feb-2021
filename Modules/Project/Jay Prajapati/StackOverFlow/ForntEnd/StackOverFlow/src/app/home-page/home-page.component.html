@@ -1,0 +1,207 @@
+<div class="row position-fixed my-nav" >
+    <div class="container ">
+      <nav class="navbar navbar-expand-md bg-light navbar-light fixed-top  shadow-lg ">
+        <div class="dropdown">
+          <button class="navbar-toggler" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+            id="dropdownLink">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="dropdown-menu d-md-none " aria-labelledby="dropdownLink">
+            <a  routerLink='/home' routerLinkActive="" class="text-dark nav-link"><strong class="ml-2">HOME</strong></a>
+            <p class="ml-2">PUBLIC</p>
+            <a  routerLink='/questions' routerLinkActive=""class="dropdown-item"><i class="fa fa-globe"></i> Questions</a>
+            <a  routerLink='/tags' routerLinkActive=""class="dropdown-item">Tags</a>
+            <a routerLink='/users' routerLinkActive=""class="dropdown-item">Users</a>
+            <!-- <p class="ml-2">FIND A JOB</p>
+            <a href="" class="dropdown-item">Jobs</a>
+            <a href="" class="dropdown-item">Companies</a> -->
+          </div>
+        </div>
+        <a href="index.html" class="navbar-brand d-none d-md-block"><img src="../assets/Images/Logo.png"
+            alt="StackOverFlow" width="150px"></a>
+  
+        <!-- <ul class="nav mr-auto">
+          <li class="nav-item">
+            <a href=""  class="nav-link text-dark">Products</a>
+          </li>
+  
+        </ul> -->
+        <a href="index.html" class="navbar-brand d-md-none  ">
+          <img src="../assets/Images/smalLogo.png" alt="StackOverFlow" width="35px">
+  
+        </a>
+        <!-- <form class="form-inline my-2 my-lg-0 d-none d-lg-block ml-auto">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0"(click) = "SearchQuestion()"type="submit">Search</button>
+        </form> -->
+  
+        <ul class="nav ml-auto" >
+          <li class="nav-item" [class.d-none]="!isUserLoggedIn()">
+            <a routerLink="/profile/userProfile" class="nav-link text-dark px-2" data-toggle="tooltip" data-placement="bottom" title="Profile"><i class="fa fa-user"></i></a>
+          </li>
+          <li class="nav-item" [class.d-none]="!isUserLoggedIn()">
+            <a href="" class="nav-link text-dark px-2" data-toggle="tooltip" data-placement="bottom" title="Inbox"><i class="fa fa-inbox"></i></a>
+          </li>
+          <li class="nav-item"[class.d-none]="!isUserLoggedIn()">
+            <a href="" class="nav-link text-dark px-2" data-toggle="tooltip" data-placement="bottom" title="achivements"><i class="fa fa-trophy" aria-hidden="true"></i></a>
+          </li>
+          <li class="nav-item"[class.d-none]="!isUserLoggedIn()">
+            <a href="" class="nav-link text-dark px-2" data-toggle="tooltip" data-placement="bottom" title="Help"><i class="fa fa-question-circle" aria-hidden="true"></i></a>
+          </li>
+          <li class="nav-item"[class.d-none]="!isUserLoggedIn()">
+            <a href="" class="nav-link text-dark px-2" data-toggle="tooltip" data-placement="bottom" title="Stack Exchange"><i class="fa fa-stack-exchange"></i></a>
+          </li>
+          <li class="nav-item"[class.d-none]="!isUserLoggedIn()">
+            <button type="button" class="nav-link text-dark px-2 border-0 bg-light"
+            data-toggle="tooltip" data-placement="bottom" title="Log Out" (click)="logOutUser()"><i class="fa fa-sign-out" aria-hidden="true"></i></button>
+          </li>
+          <li class="nav-item"[class.d-none]="isUserLoggedIn()">
+            <a routerLink="/login" class="nav-link text-dark px-2">Login</a>
+          </li>
+          <li class="nav-item"[class.d-none]="isUserLoggedIn()">
+            <a routerLink="/register" class="nav-link text-dark px-2">Sign Up</a>
+          </li>
+        </ul>
+        
+  
+  
+        <!-- <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                  <span class="navbar-toggler-icon"></span>
+              </button> -->
+  
+      </nav>
+    </div>
+  </div>
+  
+  
+  <div class="row mt-5 pt-2 mx-0">
+    <div class="col-md-2 col-sm-3 d-none d-md-block bg-light border-right shadow-sm">
+      <div class="container-fluid my-sidenav">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link text-dark" routerLink='/home' routerLinkActive="active-item"><strong>Home</strong></a>
+          </li>
+          <li class="nav-item">PUBLIC
+            <a class="nav-link text-dark" routerLink='/questions'routerLinkActive="active-item"><i class="fa fa-globe d-none d-lg-inline"></i> Question</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" routerLink='/tags' routerLinkActive="active-item">Tags</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" routerLink='/users' routerLinkActive="active-item">Users</a>
+          </li>
+          <!-- <li class="nav-item">FIND A JOB
+            <a class="nav-link text-dark" routerLink='/' >Jobs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="#">Companies</a>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-10">
+        
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  
+  <footer class="container-fluid">
+    <div class="row bg-dark pt-3">
+      <div class="col-xl-1">
+        <a href="index.html">
+          <img src="../assets/Images/smalLogo.png" alt="StackOverFlow" width="35px">
+  
+        </a>
+      </div>
+      <div class="col-xl-2">
+        <ul class="nav flex-column text-light">STACK OVERFLOW
+          <li class="nav-item">
+            <a class="nav-link text-secondary" aria-current="page" href="#">Quesitons</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="#">Jobs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="#">Developer Jobs Directory</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="#" tabindex="-1" aria-disabled="true">Salary Calculator</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="#" tabindex="-1" aria-disabled="true">Mobile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="#" tabindex="-1" aria-disabled="true">Disable Responsiveness</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-xl-2">
+        <ul class="nav flex-column text-light">PRODUCTS
+          <li class="nav-item">
+            <a class="nav-link text-secondary" aria-current="page" href="#">Teams</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="#">Telent</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="#">Advertising</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="#" tabindex="-1" aria-disabled="true">Enterprise</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-xl-2">
+        <ul class="nav flex-column text-light">COMPANY
+          <li class="nav-item">
+            <a class="nav-link text-secondary" aria-current="page" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="#">Pres</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="#">Work Here</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="#" tabindex="-1" aria-disabled="true">Legal</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="#" tabindex="-1" aria-disabled="true">Privace Policy</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="#" tabindex="-1" aria-disabled="true">Terms of Service</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="#" tabindex="-1" aria-disabled="true">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="#" tabindex="-1" aria-disabled="true">Cookie Settings</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="#" tabindex="-1" aria-disabled="true">Cookie Policy</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-xl-2">
+        <ul class="nav flex-column text-light">STACK EXCHANGE NETWORK
+          <li class="nav-item">
+            <a class="nav-link text-secondary" aria-current="page" href="#">Technology</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="#">Life/Arts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="#">Culture/Recreation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="#">Science</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="#">Other</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-xl-3"></div>
+  
+    </div>
+  </footer>

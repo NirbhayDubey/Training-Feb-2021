@@ -1,0 +1,68 @@
+#right{
+    overflow: auto;
+  }
+  #left{
+    overflow: auto;
+  }
+  .atag{
+    font-size: larger;
+    font-weight: bold;
+    color: rgb(8, 7, 7);
+
+  }
+  #wrapper{
+border: solid black;
+padding: 10px;
+}
+#header{
+height: 110px;
+background-color: red;
+}
+
+#nav{
+height: 50px;
+background-color: rgb(223, 116, 46);
+margin-top: 10px;
+padding-left: 3px;
+}
+#container{
+
+margin-top: 10px;
+}
+#container::after {content:" ";display:block ; clear:both}
+#left{
+width :25%;
+height: 600px;
+background-color: rgb(233, 233, 67);
+float: left;
+}
+#right{
+float: right;
+width:74%;
+height: 600px;
+background-color: rgb(175, 160, 91);
+}
+#footer{
+height: 50px;
+background-color: rgb(180, 89, 102);
+margin-top: 10px;
+text-align: center;
+}
+
+.head{
+font-size: x-large;
+
+}
+.about{
+font-size:large;
+}
+.card-body{
+    background-color:   #14142c;
+}
+
+@media(max-width: 600px){
+.about,.head,#footer,#right,#left,#header,.h3,.trust{
+font-size: 12px;
+}
+
+}

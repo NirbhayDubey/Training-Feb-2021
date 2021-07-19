@@ -1,0 +1,13 @@
+.nav-item :hover{
+    background-color:darkgrey;
+    border-radius: 20px;
+    
+}
+.nav-item{
+    margin-right: 2px;
+}
+.active-item{
+    background-color: hsl(27deg 90% 58%);
+    border-radius: 20px;
+}
+

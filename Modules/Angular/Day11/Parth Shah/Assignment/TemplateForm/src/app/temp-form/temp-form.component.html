@@ -1,0 +1,214 @@
+<!--  give some brief about template driven form  -->
+<section>
+    <div class="row no-gutters">
+      <div class="col-md-3  p-0">
+        <div class="ch">
+
+          <app-left></app-left>
+        </div>
+       
+      </div>
+      <div class="col-md-9">
+        <div class="container my-2">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="card">
+                      <div class="card-header ">
+            <h6 class="text-center font-italic h3">Big Basket Register Form</h6>
+                      </div>
+                      <div class="container p-1 m-0 my-4">
+                        <small>* All fields are required fields</small><br>
+                        <small>* Validation done</small>
+            <form #registerForm="ngForm" (ngSubmit)="registerUser(registerForm)">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">First and last name</span>
+                    </div>
+                    <input type="text" aria-label="First name" class="form-control" name="firstName" placeholder="Enter First Name" ngModel required #firstName="ngModel">
+
+                    <input type="text" aria-label="Last name" class="form-control" name="lastName" placeholder="Enter Last Name" ngModel required #lastName="ngModel"> 
+                  </div>
+                <small id="fname" class="form-text" *ngIf="firstName.touched && !firstName.valid">Please enter your First Name </small>
+                <small id="lname" class="form-text" *ngIf="lastName.touched && !lastName.valid">Please enter your Last Name<br> <br></small>
+
+                  <div class="form-check form-check-inline mb-3">
+                    <input class="form-check-input" type="radio" name="Gender"  id="inlineRadioGender" ngModel value="male"  required>
+                    <label class="form-check-label" for="inlineRadio1">Male</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="Gender" id="inlineRadioGender" ngModel value="female" required>
+                    <label class="form-check-label" for="inlineRadio2">Female</label>
+                  </div>
+                  
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Email Address</span>
+                      </div>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="emailAddress" placeholder="Enter Email" ngModel email required #emailAddress="ngModel">
+                      </div>
+                      <small id="emailHelp" class="form-text" *ngIf="emailAddress.touched && !emailAddress.valid">Email Doesn't look like EMAIL! <br> <br></small>
+
+        
+        
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">Password</span>
+                          </div>
+                  <input type="password" class="form-control" id="exampleInputPassword1" name="Password"  placeholder="Enter Password" ngModel required #Password="ngModel">
+                </div>
+                <small id="pwd" class="form-text" *ngIf="Password.touched && !Password.valid">Please enter password <br> <br></small>
+        
+        
+        
+        
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                              <label class="input-group-text" for="inputGroupSelect01">Country</label>
+                            </div>
+                            <select class="custom-select" id="inputGroupSelect01" name="Country" ngModel required>
+                              <option selected>Choose...</option>
+                              <option value="India">India</option>
+                              <option value="America">America</option>
+                              <option value="China">China</option>
+                              <option value="Africa">Africa</option>
+                              <option value="England">England</option>
+                              <option value="Other">Other</option>
+        
+                            </select>
+                          </div>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control"  placeholder="Enter State" name="State" ngModel required #State="ngModel">
+                <small id="State" class="form-text" *ngIf="State.touched && !State.valid">Please enter State<br> <br></small>
+                        
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control"  placeholder="Enter City"  name="City" ngModel required #City="ngModel">
+                <small id="City" class="form-text" *ngIf="City.touched && !City.valid">Please enter City<br> <br></small>
+
+                    </div>   
+                    </div>  
+        
+        
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">Phone Number</span>
+                          <span class="input-group-text">+91</span>
+                        </div>
+                        <input type="number" class="form-control" aria-label="number" name="Phone Number" ngModel required #number="ngModel">
+                      </div>
+                      <small id="number" class="form-text" *ngIf="number.touched && !number.valid">Please enter number<br> <br></small>
+        
+              
+        
+        <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+  Watch Terms and Condition
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Terms and Condition</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio id natus ipsa unde, dicta consectetur temporibus cupiditate, fugit tenetur possimus ut? Soluta, iste et animi explicabo numquam quo veniam culpa.
+       <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="termsField" ngModel required>
+        <label class="form-check-label" for="exampleCheck1">Agree to Terms and Conditions</label>
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
+        
+        
+        
+        <br><br>
+        <small>The Submit button not working untill you fill all required fields and Accept Terms and condition in above modal <br></small>
+
+        <br>
+        
+        
+                <button type="submit" class="btn btn-primary" [disabled]="!registerForm.valid">Submit</button>
+              </form>
+            </div>
+         </div>
+        
+</div>
+</div>
+</div>
+<section  class="py-5 text-center bg-light">
+  <div class="container">
+      <div class="row">
+          <div class="col">
+              <div class="info-header md-5">
+                  <h1 class="text-primary pb-3">
+                      All Data in JSON format
+                  </h1>
+                  <p class="lead pb-3">
+                      Please Touch Below accordian to check the data in JSON format
+                  </p>
+              </div>
+              <!--accordian-->
+
+              <div id="accordion" role="tablist">
+                  <div class="card">
+                      <div class="card-header bg-secondary text-light" id="heading1">
+                          <h5 class="mb-0">
+                              <div href="#collapse1" data-toggle="collapse"
+                              data-parent="#accordion">
+                              Get Json Data <span>Touch here.....</span>
+
+                          </div>
+                          </h5>
+                      </div>
+                      <div id="collapse1" class="collapse">
+                          <div class="card-body">
+                            <div class="container">
+                              <h5>The Json format is:</h5>{{registerForm.value | json}}
+                             </div>
+                            
+                          </div>
+                      </div>
+                  </div>
+
+                  
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+    </div>
+    </div>
+  </section>
+
+ 
+  <footer id="main-footer" class="bg-dark text-light mt-5 p-4">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p class="lead text-center">Copyright &copy; 2021 Big Basket)</p>
+            </div>
+        </div>
+    </div>
+ </footer>

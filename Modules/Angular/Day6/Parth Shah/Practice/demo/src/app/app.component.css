@@ -1,0 +1,10 @@
+
+.center{
+    display: flex;
+    justify-content: center;
+    padding:  5px;
+    margin: 5px;
+  }
+  img{
+      height: 250px;
+  }

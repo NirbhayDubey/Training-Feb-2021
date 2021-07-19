@@ -1,0 +1,27 @@
+
+<div class="container">
+    <div class="card m-1">
+        <div class="card-header h6">
+   
+        <h4 class="center"> Student Application Form </h4>
+        </div>
+        <div>
+            <!-- //personal information -->
+    <df #template [questions]="questions$ | async">
+        <p class="title">Personal Information</p>
+    </df>
+    <!-- Educational information -->
+    <df #template [questions]="questions2$ | async">
+        <p class="title">Educational information</p>
+    </df>
+
+        </div>
+        <div>
+            </div>
+            </div>
+        <button class="btn btn-dark btn-lg btn-block " (click)="onSubmit()">Submit</button>
+        </div>
+        
+        <!-- <div>
+            <h5>The Json format is:</h5>{{form.value | json}}
+        </div> -->

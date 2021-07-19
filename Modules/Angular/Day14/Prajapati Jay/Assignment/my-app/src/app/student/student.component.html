@@ -1,0 +1,28 @@
+<div class="container p-5">
+    <h2>Student Component</h2>
+
+    
+    <table class='table table-bordered'>
+        <thead class="thead-dark">
+            <th>Id</th>
+            <th>Name</th>
+            <th>Standard</th>
+            <th>Age</th>
+            <th>Delete</th>
+            <!-- <th>Delete</th> -->
+        </thead>
+        <tbody *ngFor="let student of studentService.getAllStudent()">
+            <tr>
+                <td>{{student.id}}</td>
+                <td>{{student.name}}</td>
+                <td>{{student.std}}</td>
+                <td>{{student.age}}</td>
+                <!-- <td><button type="button" class="btn btn-success">Update</button></td> -->
+                <td><button type="button" class="btn btn-danger" (click)="deleteStudent(student.id)" >Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="button" class="btn btn-primary" (click)="addStudent(s)">Add Student</button>
+</div>
+
+

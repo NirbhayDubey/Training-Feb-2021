@@ -1,0 +1,132 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-1">
+  <div class="container">
+    <a class="navbar-brand" href="#">Assignment Day-9 </a>
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container py-5">
+  <form [formGroup]="StudentForm" (ngSubmit)="Submit()">
+
+    <div formGroupName="Name">
+      <h4>Name :</h4>
+      <label>FirstName :<br> <input type="text" formControlName="FirstName" /></label><br />
+      <label>MiddleName :<br> <input type="text" formControlName="MiddleName" /></label><br />
+      <label>LastName :<br> <input type="text" formControlName="LastName" /></label><br />
+    </div>
+
+    <label>DOB :<br>
+      <input type="date" formControlName="DOB" /> </label><br />
+
+    <label>PlaceOfBirth :<br>
+      <input type="text" formControlName="PlaceOfBirth" /> </label><br />
+
+    <label>First Language :<br>
+      <input type="text" formControlName="FirstLanguage" /> </label><br />
+
+    <div formGroupName="Address">
+      <label>City :<br>
+        <input type="text" formControlName="City" /> </label><br />
+      <label>State :<br>
+        <input type="text" formControlName="State" /> </label><br />
+      <label>PinCode :<br>
+        <input type="number" formControlName="Pin" /> </label><br />
+    </div>
+
+    <div formGroupName="Father">
+      <label>
+        <h4>Father Details :</h4>
+      </label>
+
+      <div formGroupName="Name">
+        <label>FirstName : <br><input type="text" formControlName="FirstName" /></label><br />
+
+        <label>MiddleName :<br>
+          <input type="text" formControlName="MiddleName" /></label><br />
+        <label>LastName :<br> <input type="text" formControlName="LastName" /></label><br />
+
+      </div>
+
+      <label>Email :<br>
+        <input type="text" formControlName="Email" /></label><br />
+
+      <label>Education Qualification :<br>
+        <input type="text" formControlName="EducationQualification" /></label><br />
+
+      <label>Profession :<br>
+        <input type="text" formControlName="Profession" /></label><br />
+
+      <label>Designation :<br>
+        <input type="text" formControlName="Designation" /></label><br />
+
+      <label>Phone :<br>
+        <input type="number" formControlName="Phone" /></label><br />
+    </div>
+
+    <div formGroupName="Mother">
+      <label>
+        <h4>Mother Details : </h4>
+      </label>
+      <div formGroupName="Name">
+        <label>FirstName :<br>
+          <input type="text" formControlName="FirstName" /></label><br />
+
+        <label>MiddleName :<br>
+          <input type="text" formControlName="MiddleName" /></label><br />
+
+        <label>LastName :<br>
+          <input type="text" formControlName="LastName" /></label><br />
+
+      </div>
+      <label>Email :<br>
+        <input type="text" formControlName="Email" /></label><br />
+
+      <label>Education Qualification :<br>
+        <input type="text" formControlName="EducationQualification" /></label><br />
+
+      <label>Profession :<br>
+        <input type="text" formControlName="Profession" /></label><br />
+
+      <label>Designation :<br>
+        <input type="text" formControlName="Designation" /></label><br />
+
+      <label>Phone :<br> <input type="number" formControlName="Phone" /></label><br />
+    </div>
+
+    <div formArrayName="EmergencyContactList">
+      <label>
+        <h4>EmergencyContactList : </h4>
+      </label><br />
+      <div *ngFor="let item of getEmergencyContactList.controls; index as i">
+        <ng-container [formGroupName]="i">
+          <label>Relation :<br>
+            <input type="text" formControlName="Relation" /></label><br />
+
+          <label>Phone Number :<br>
+            <input type="number" formControlName="Number" /></label><br />
+        </ng-container>
+      </div>
+    </div>
+    <div formGroupName="ReferenceDetails">
+      <label>
+        <h4>ReferenceDetails : </h4>
+      </label><br />
+      <label>Reference Through :<br>
+        <input type="text" formControlName="ReferenceThrough" /></label><br />
+
+      <div formGroupName="Address">
+        <label>Address : </label><br />
+        <label>City :<br>
+          <input type="text" formControlName="City" /></label><br />
+
+        <label>Telephone Number :<br>
+          <input type="number" formControlName="TelNo" /></label><br />
+      </div>
+    </div>
+    <button type="submit">Submit Data</button>
+  </form>
+</div>

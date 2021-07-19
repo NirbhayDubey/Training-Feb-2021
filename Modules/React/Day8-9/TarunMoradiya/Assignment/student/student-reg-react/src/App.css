@@ -1,0 +1,21 @@
+body {
+  background: #f6f6f6;
+}
+
+.icard {
+  margin: auto;
+  border-radius: 1rem;
+
+  width: 50rem;
+  background-color: antiquewhite;
+}
+
+.icard #logo {
+  border-radius: 50%;
+  width: 100px;
+}
+
+.icard li {
+  background-color: antiquewhite;
+  border: none;
+}

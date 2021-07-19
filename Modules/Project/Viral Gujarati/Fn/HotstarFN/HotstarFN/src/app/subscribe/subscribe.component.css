@@ -1,0 +1,25 @@
+
+.normal{
+	padding: 20px;
+	background-color: gray;
+	color: black;
+}
+
+.btn{
+	/* font-size: 14px; */
+	/* font-weight: 500; */
+	color: #fff;
+	padding: 15px 18px 15px;
+	border-radius: 3px;
+	text-align: center;
+	text-transform: uppercase;
+	background: var(--BRAND_BLUE);
+	border: none;
+	/* outline: 0; */
+	outline-color: transparent;
+	position: relative;
+	cursor: pointer;
+	margin-top: 15px;
+	font-weight: 600;
+	font-size: 16px;
+}

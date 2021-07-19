@@ -11,7 +11,7 @@ app.use(log)
 
 function log(req,res,next)
 {
-    console.log(loggin)
+    console.log(login)
 }
 
 app.use('/emps',emps)

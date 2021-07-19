@@ -1,0 +1,24 @@
+<h1 class="border border-dark p-3 bg-light">  {{title}} Project</h1>
+<div class="card center align-middle bg-info p-3" style="width: 18rem;">
+  <div class="card-body">
+    <img src="../assets/img/123.jpeg" class="img-fluid border 1px">  
+<!-- one way binding -->
+    
+    <h5 class="card-title">Parth Shah's Detail</h5>
+    <p class="card-text text-light">//One way Binding example:</p>
+    <p class="card-text">Name : {{Name}}</p>
+    <p class="card-text">Address :  {{Address}}</p>
+    <p class="card-text">Skills: {{Skills}}</p>
+    <p class="card-text text-light">//Interpolation example:</p>
+
+    <p class="card-text">Your Age is : {{getAge()}}</p>
+
+    <p class="card-text text-light">//Property Binding example</p>
+    <input type="button" class="btn btn-dark" [value]="btn" (click)="check()"> <br>
+
+    <p class="card-text text-light">//Two Way Binding example</p>
+    <input type="text" [(ngModel)]="Name" />
+
+  </div>
+</div>
+<div><app-footer></app-footer></div>

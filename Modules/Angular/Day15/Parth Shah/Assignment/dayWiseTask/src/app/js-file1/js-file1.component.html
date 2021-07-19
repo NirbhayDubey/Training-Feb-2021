@@ -1,0 +1,103 @@
+         <script>
+               function calc()
+          {
+              var num1 = Number(document.getElementById('num1').value);
+              var num2 = Number(document.getElementById('num2').value);
+              var result = 0;
+                
+                if(document.getElementById('add').checked)
+                {
+              result = num1 + num2;
+                }
+                else if(document.getElementById('sub').checked)
+                {
+              result = num1 - num2;
+                }
+                else if(document.getElementById('mul').checked)
+                {
+              result = num1 * num2;
+                }
+                else
+                {
+              result = num1 / num2;
+                }
+                document.getElementById("resultArea").innerHTML ='<h3 class="ans text-light p-3 mt-3 bg-info"> The Result is :'+result;
+                return false;
+              }
+          
+  
+  
+              function fun(){  
+              location.reload(true);
+            
+                }   
+          
+  
+         </script>
+         
+<div class="container">
+    <div class="card text-center">
+        <div class="card-header">
+          <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+              <a class="nav-link active"  routerLink="/JsFile" routerLinkActive="active">JavaScript</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/day1Js" routerLinkActive="active" >Day 12</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/day2Js" routerLinkActive="active" >Day 13</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/day3Js" routerLinkActive="active" >Day 14</a>
+              </li>
+         
+          </ul>
+        </div>
+        <div class="card-body">
+            <h2 class="display-4 text-danger bg-light text-center font-weight-bold">Calculator</h2>
+            <div class="bg-secondary p-5 mt-5" style="font-size: larger; font-weight: bold;">
+            
+                <div class="form-group">
+                    <label for="usr">Enter Number 1</label>
+                    <input type="text" class="form-control" id="num1" name="Number 1">
+                    <label for="usr">Enter Number 2</label>
+                    <input type="text" class="form-control" id="num2" name="Number 2">
+        
+                </div>
+                <label for="usr">Choose option</label>
+                <div class="form-check">
+        
+                    <label class="form-check-label" for="radio1">
+                      <input type="radio" class="form-check-input" id="add" name="optradio" value="+">Addition
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <label class="form-check-label" for="radio2">
+                      <input type="radio" class="form-check-input" id="sub" name="optradio" value="-">Subtraction
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input" id="mul" name="optradio" value="x" >Multiplication
+                    </label>
+                  </div>
+                 
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input" id="div" name="optradio" value="/" >Division
+                    </label>
+                  </div><br>
+                  <div class="form-group">
+                  <button type="submit" class="btn btn-primary" onclick="return calc();">Calculate</button>
+                <button type="reset" value = "Reset data" class="btn btn-danger" onClick = "fun()">Reset</button>
+            </div>
+            <h1 id="resultArea"></h1>
+           
+        
+         
+        </div>
+      </div>
+    </div>
+    
+    <div class="m-5"></div>

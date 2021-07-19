@@ -1,0 +1,147 @@
+<section class="py-5 m-3 ">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top py-1">
+    <div class="container">
+      <p>
+            <img src="../assets/img/21.jpg" alt="" height="50" width="50"><h3 class="d-inline align-middle text-light">
+                ractice Day8
+            </h3>
+          </p>
+        <button class="navbar-toggler" data-toggle="collapse"
+        data-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+      </div>
+       
+  </nav>
+  </section>
+
+
+  <app-second></app-second>
+
+
+
+
+   
+
+    <div class="container my-3">
+      <div class="card">
+          <h5 class="card-header">Check List of Student</h5>
+          <div class="card-body">
+            <h5 class="card-title">Click!</h5>
+            <p class="card-text">Click below butoon to check list of Employee</p>
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+              Launch student List
+            </button>
+            
+          </div>
+          </div>
+        </div>
+      
+      
+        
+        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Student List</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                  <h2 class="text-primary"> Below is the list of student</h2>
+
+                  <div class="list-group">
+                   
+                    <a href="#" *ngFor="let student of studentList" class="list-group-item list-group-item-action">{{student.name}}</a>
+                   
+                  </div>
+
+                  <!-- <ul>
+                    <li *ngFor="let student of studentList">{{student.name}}</li>
+              
+                  </ul> -->
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--login modal trigger-->
+      
+      
+      
+
+    
+
+
+    <div class="container my-3">
+      <div class="card">
+          <h5 class="card-header">Change the color of table :</h5>
+          <div class="card-body">
+            <h5 class="card-title">Click!</h5>
+            <p class="card-text">Click below butoon to change the colour of table</p>
+
+            <select class="browser-default custom-select" (change)="changeClass($event)">
+              <option selected>Open this select menu</option>
+              <option value="1">Red Colour</option>
+              <option value="2">Green Colour</option>
+            </select>
+            <!--/Blue select-->
+            
+          </div>
+          </div>
+        </div>
+      
+        
+
+    <section id="posts">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-9">
+                  <div class="card">
+                      <div class="card-header">
+                          <h4>Latest Detail of Student</h4>
+                      </div>
+                      <table class="table table-stripped" [ngClass]="applyCss">
+                          <thead class="thead-inverse">
+                              <tr>
+                                  <th>ID</th>
+                                  <th>Name</th>
+                                  <th>Address</th>      
+                                  <th>Edit</th>  
+                                  <th>Delete</th>                               
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr *ngFor="let item of studentList; let idx= index">
+                                  <td scope="row">{{item.ID}}</td>
+                                  <td>{{item.name}}</td>
+                                  <td>{{item.Address}}</td>
+                                  <td><button (click) ="edit(item)" class="btn btn-primary">Edit</button></td>
+                                  <td><button (click) ="remove(idx)" class="btn btn-danger">Delete</button></td>
+                              </tr>
+                            
+                         
+                          </tbody>
+                      </table>
+                  </div>
+              </div>
+
+
+              <div class="col-md-3">
+                <div class="card text-center bg-primary text-white mb-3">
+                    <div class="card-body">
+                        <h3>Update</h3>
+                        <h1 class="display-4">
+                        </h1><br>
+                        <input type="text" [(ngModel)]="name" class="form-control"><br>
+                        <input type="text" [(ngModel)]="Address" class="form-control"><br>
+                        <button (click)="update()" class="btn btn-warning">Update</button>
+
+                    </div>
+                </div>
+
+            

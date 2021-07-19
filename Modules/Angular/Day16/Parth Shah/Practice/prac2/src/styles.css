@@ -1,0 +1,104 @@
+/* You can add global styles to this file, and also import other style files */
+h1 {
+    color: #369; 
+    font-family: Arial, Helvetica, sans-serif;   
+    font-size: 250%;
+  }
+  h2, h3 { 
+    color: #444;
+    font-family: Arial, Helvetica, sans-serif;   
+    font-weight: lighter;
+  }
+  body { 
+    margin: 2em; 
+  }
+  body, input[text], button { 
+    color: #888; 
+    font-family: Cambria, Georgia; 
+  }
+  
+  button {
+    font-family: Arial;
+    background-color: #eee;
+    border: none;
+    padding: 2px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    cursor: hand;
+    
+  }
+  button:hover {
+    background-color: #cfd8dc;
+  }
+  button:disabled {
+    background-color: #eee;
+    color: #aaa; 
+    cursor: auto;
+  }
+  
+  /* Navigation link styles */
+  
+  
+  /* items class */
+  .items {
+    margin: 0 0 2em 0;
+    list-style-type: none;
+    padding-left: 0;
+    width: 10em;
+  }
+  .items li {
+    cursor: pointer;
+    position: relative;
+    left: 0;
+    background-color: #EEE;
+    margin: .5em;
+    padding: .3em;
+    height: 1.6em;
+    border-radius: 4px;
+  }
+  .items li:hover {
+    color: #607D8B;
+    background-color: #DDD;
+    left: .1em;
+  }
+  .items li.selected:hover {
+    background-color: #BBD8DC;
+    color: white;
+  }
+  
+  .items .text {
+    position: relative;
+    top: -3px;
+  }
+  
+  .items li {
+    cursor: pointer;
+    position: relative;
+    left: 0;
+    background-color: #EEE;
+    margin: .5em;
+    padding: .3em;
+    height: 2.4em;
+    border-radius: 4px;
+    color: black;
+  }
+  
+  
+  .items li.selected {
+    background-color: #CFD8DC;
+    color: white;
+  }
+  /* everywhere else */
+  * { 
+    font-family: Arial, Helvetica, sans-serif; 
+  }
+
+  body{
+      background-color: #542c3c;
+  }
+  .card-body{
+    background-color: #607D8B;
+  }
+  p{
+    color: whitesmoke;
+  }

@@ -2,6 +2,7 @@
 using ToyStore.Models;
 using ToyStore.Data;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace ToyStore
 {
@@ -9,8 +10,13 @@ namespace ToyStore
     {
         static void Main(string[] args)
         {
-           
-            int Cid = 1;
+            //int Id;
+
+            //var context = new ToyStoreContext();
+            //var Orders = context.Order
+            //                      .FromSqlRaw("GetOrder 4")
+            //                      .ToList();
+
 
             Console.WriteLine("\n1. Display Products\n" +
                 "2. Display Customer Details\n" +
@@ -19,6 +25,7 @@ namespace ToyStore
                 "5. Exit\n");
             Console.Write("Choose Option: ");
             int op1 = Convert.ToInt32(Console.ReadLine());
+            int Cid = 1;
             while (op1 != 5)
             {
                 switch (op1)

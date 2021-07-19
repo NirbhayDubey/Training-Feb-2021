@@ -1,0 +1,59 @@
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  height: 50px;
+  text-align: center;
+}
+
+.a1 {
+  padding-top: 10px;
+  padding-left: 500px;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.table {
+  border: 3px solid black;
+}
+
+.tr1 {
+  border: 1px solid black;
+}
+
+.th1 {
+  border: 1px solid black;
+}
+
+.card {
+  font-weight: bold;
+  color: teal;
+  margin: 10px;
+  border: 2px solid teal;
+}
+.card-title {
+  background-color: teal;
+  border: 2px solid teal;
+  color: #f5faae;
+}
+.card-body {
+  background-color: lightyellow;
+  border: 2px solid teal;
+}
+
+.img {
+  float: left;
+}
+.img1 {
+  float: right;
+}

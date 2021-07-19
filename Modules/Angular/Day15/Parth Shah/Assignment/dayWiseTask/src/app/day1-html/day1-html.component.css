@@ -1,0 +1,35 @@
+thead {color: green;}
+tbody {color: blue;}
+tfoot {color: red;}
+
+table, th, td {
+  border: 1px solid black;
+  vertical-align: middle;
+  border-collapse: collapse;
+}
+th,
+td {
+    padding: 9px;
+    text-align: center;
+}
+table {
+    width: 90%;
+    background-color: #f7f8fc;
+}
+table {
+    text-align: center;
+}
+h1{
+    font-style: italic;
+  }
+  tbody, thead, tfoot{
+      font-weight: bold;
+  }
+  table, th, td, tr{
+ border: 2px solid powderblue;
+ margin: 30px;
+  }
+
+.body{
+    background-color:   #14142c;
+}

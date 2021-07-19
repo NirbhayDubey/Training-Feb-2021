@@ -1,0 +1,45 @@
+.nav-link {
+  color: #064420 !important;
+  font-size:medium!important;
+  font-weight: bold;
+  opacity: 0.7;
+}
+
+  
+  .nav-link:hover {
+    opacity: 1.5;
+  }
+  
+  .nav-link::before {
+      
+    transition: 1s;
+    height: 5px !important;
+    content: "";
+    position: absolute;
+    background-color: #031D44 !important;
+  }
+  
+  
+  .btn-primary:hover{
+      color: black;
+      background: transparent !important;
+      font-weight: bold;
+  }
+  .btn-secondary:hover{
+    color: black;
+    background: transparent !important;
+    font-weight: bold;
+  }
+#dropdownMenuButton{
+  background: transparent;
+  outline: none;
+  color: #064420;
+  border: none;
+  border-style: none;
+  font-weight: bold;
+  opacity: 0.7;
+}
+
+#dropdownMenuButton:hover{
+  opacity: 1;
+}

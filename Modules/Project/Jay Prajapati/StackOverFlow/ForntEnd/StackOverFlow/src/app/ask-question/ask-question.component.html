@@ -1,0 +1,67 @@
+<div class="container col-lg-9 pt-5 mt-5">
+
+    <div class="row align-items-end">
+        <div class="container py-3">
+            <div class="card">
+                <h3 class="card-header">
+                    Ask a Question
+                </h3>
+
+
+                <div class="card-body">
+                    <form [formGroup]="questionForm">
+                        <div class="form-group">
+                            <label for="title" class="form-label">Title</label>
+                            <p class="small">Be specific and imagine you’re asking a question to another person</p>
+                            <input type="text" [class.is-invalid]="question1.invalid &&
+                            question1.touched" class="form-control" value="" formControlName="Question1">
+                            <div *ngIf="question1.invalid &&
+                            question1.touched">
+                                <small *ngIf="question1.errors?.required" class="text-danger">
+                                    Title is required
+                                </small>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="body" class="form-label">Body</label>
+                            <p class="small">Include all the information someone would need to answer your question</p>
+
+                            <textarea type="text" [class.is-invalid]="questionBody.invalid &&
+                            questionBody.touched" class="form-control"
+                                formControlName="QuestionBody">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique reiciendis blanditiis quae, odio perferendis aut illum officia aspernatur optio iusto dicta, cupiditate atque iure fuga error accusamus corrupti ipsam sunt.</textarea>
+                            <div *ngIf="questionBody.invalid &&
+                                questionBody.touched">
+                                <small *ngIf="questionBody.errors?.required" class="text-danger">
+                                    QuestionBody is required
+                                </small>
+
+                            </div>
+                        </div>
+                        <div formArrayName="Tags">
+                            <label class="mt-2 font-weight-bold">Tags : </label><br />
+                            <div *ngFor="let item of getTagList.controls; index as i">
+                                <div [formGroupName]="i" class="row">
+                                    <div class="col-md-6">
+
+                                        <input type="text" class="form-control my-2" formControlName="TagName" />
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <button class="btn-dark my-2" (click)="AddList()">Add New Relation <i class="fa fa-plus"
+                                    aria-hidden="true"></i></button>
+                        </div>
+                        <div>
+                            <button class="btn btn-primary" (click)="submit()">Post your question</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+   

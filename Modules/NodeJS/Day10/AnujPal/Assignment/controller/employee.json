@@ -1,1 +1,32 @@
-[{"empID":1,"fname":"Pal","lname":"Anuj","city":"Ahmedabad","country":"India","dob":"06-03-1998","gender":"M","assignments":["a1","a2","a3","a4","a5"]},{"empID":2,"fname":"Dube","lname":"Shivam","city":"Ahmedabad","country":"India","dob":"06-03-1998","gender":"M","assignments":["a1","a2","a3"]}]
+[
+    {
+        "empID": 1,
+        "fname": "Pal",
+        "lname": "Anuj",
+        "city": "Ahmedabad",
+        "country": "India",
+        "dob": "06-03-1998",
+        "gender": "M",
+        "assignments": [
+            "a1",
+            "a2",
+            "a3",
+            "a4",
+            "a5"
+        ]
+    },
+    {
+        "empID": 2,
+        "fname": "Dube",
+        "lname": "Shivam",
+        "city": "Ahmedabad",
+        "country": "India",
+        "dob": "06-03-1998",
+        "gender": "M",
+        "assignments": [
+            "a1",
+            "a2",
+            "a3"
+        ]
+    }
+]

@@ -1,118 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <%- include('../partials/head', { title : 'RxTraining' }) %>
-</head>
-<body>
-    <header>
-        <%- include('../partials/header', {Tech}) %>
-    </header>
+  </head>
+  <body>
+    <header><%- include('../partials/header', {Tech, User}) %></header>
     <main>
-        <div class="container">
-
-            <div class="card-deck m-auto mt-5">
-                <div class="card">
-                    <div class="card-header bg-primary p-3 text-light font-weight-bold">
-                        <h4 class="d-inline-block">Common</h4>
-                        <button class="btn btn-warning float-right addTechbtn" data-toggle="modal" data-target="#addModal"><i class="fas fa-plus"></i></button>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group">
-                            <% const common = Tech.filter(t => t.techType == 'common') %>
-                            <% common.forEach((element => { %>
-                                <li class="list-group-item">
-                                    <a href="/technologies/<%= element._id %>/modules/videos" class="list-group-item-action"><%= element.name %></a>
-                                    <a href="/technologies/<%= element._id %>/delete" class="btn btn-danger float-right deleteTech"><i class="fas fa-trash-alt"></i></a>
-                                    <!-- <div class="d-inline">
-                                        <div class="d-none elementName"><%= element.name %></div>
-                                        <div class="d-none elementType"><%= element.techType %></div>
-                                        <button class="btn btn-warning float-right updateTechbtn mr-1" data-toggle="modal" data-target="#editModal">
-                                            <i class="fas fa-edit"></i>
-                                        </button>
-                                    </div> -->
-                                </li>
-                            <% })) %>  
-                        </ul>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header bg-primary p-3 text-light font-weight-bold">
-                        <h4 class="d-inline-block">FrontEnd Framework</h4>
-                        <button class="btn btn-warning float-right addTechbtn" data-toggle="modal" data-target="#addModal"><i class="fas fa-plus"></i></button>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group">
-                            <% const front = Tech.filter(t => t.techType == 'frontend') %>
-                            <% front.forEach((element => { %>
-                                <li class="list-group-item">
-                                    <a href="/technologies/<%= element._id %>/modules/videos" class="list-group-item-action"><%= element.name %></a>
-                                    <a href="/technologies/<%= element._id %>/delete" class="btn btn-danger float-right"><i class="fas fa-trash-alt"></i></a>
-                                    <!-- <div class="d-inline">
-                                        <div class="d-none elementName"><%= element.name %></div>
-                                        <div class="d-none elementType"><%= element.techType %></div>
-                                        <button class="btn btn-warning float-right updateTechbtn mr-1" data-toggle="modal" data-target="#editModal">
-                                            <i class="fas fa-edit"></i>
-                                        </button>
-                                    </div> -->
-                                </li>
-                            <% })) %>  
-                        </ul>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header bg-primary p-3 text-light font-weight-bold">
-                        <h4 class="d-inline-block">BackEnd Framework</h4>
-                        <button class="btn btn-warning float-right addTechbtn" data-toggle="modal" data-target="#addModal"><i class="fas fa-plus"></i></button>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group">
-                            <% const back = Tech.filter(t => t.techType == 'backend') %>
-                            <% back.forEach((element => { %>
-                                <li class="list-group-item">
-                                    <a href="/technologies/<%= element._id %>/modules/videos" class="list-group-item-action"><%= element.name %></a>
-                                    <a href="/technologies/<%= element._id %>/delete" class="btn btn-danger float-right"><i class="fas fa-trash-alt"></i></a>
-                                    <!-- <div class="d-inline">
-                                        <div class="d-none elementName"><%= element.name %></div>
-                                        <div class="d-none elementType"><%= element.techType %></div>
-                                        <button class="btn btn-warning float-right updateTechbtn mr-1" data-toggle="modal" data-target="#editModal">
-                                            <i class="fas fa-edit"></i>
-                                        </button>
-                                    </div> -->
-                                </li>
-                            <% })) %>  
-                        </ul>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="card-deck m-auto mt-5">
+          <div class="card">
+            <div class="card-header bg-primary p-3 text-light font-weight-bold">
+              <h4 class="d-inline-block">Common</h4>
+              <% if(User.isAdmin){ %>
+              <button
+                class="btn btn-warning float-right addTechbtn"
+                data-toggle="modal"
+                data-target="#addModal"
+              >
+                <i class="fas fa-plus"></i>
+              </button>
+              <% } %>
             </div>
+            <div class="card-body">
+              <ul class="list-group">
+                <% const common = Tech.filter(t => t.techType == 'common') %> <%
+                common.forEach((element => { %> <% if (User.isAdmin ||
+                (User.permissions.indexOf(""+element._id) != "-1")){ %>
+                <li class="list-group-item">
+                  <a
+                    href="/technologies/<%= element._id %>/videos"
+                    class="list-group-item-action"
+                    ><%= element.name %></a
+                  >
+                  <% if(User.isAdmin){ %>
+                  <a
+                    href="/technologies/<%= element._id %>/delete"
+                    class="btn btn-danger float-right deleteTech"
+                    ><i class="fas fa-trash-alt"></i
+                  ></a>
+                  <% } %>
+                  <!-- <div class="d-inline">
+                                        <div class="d-none elementName"><%= element.name %></div>
+                                        <div class="d-none elementType"><%= element.techType %></div>
+                                        <button class="btn btn-warning float-right updateTechbtn mr-1" data-toggle="modal" data-target="#editModal">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                    </div> -->
+                </li>
+                <% } %> <% })) %>
+              </ul>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header bg-primary p-3 text-light font-weight-bold">
+              <h4 class="d-inline-block">FrontEnd Framework</h4>
+              <% if(User.isAdmin){ %>
+              <button
+                class="btn btn-warning float-right addTechbtn"
+                data-toggle="modal"
+                data-target="#addModal"
+              >
+                <i class="fas fa-plus"></i>
+              </button>
+              <% } %>
+            </div>
+            <div class="card-body">
+              <ul class="list-group">
+                <% const front = Tech.filter(t => t.techType == 'frontend') %>
+                <% front.forEach((element => { %> <% if (User.isAdmin ||
+                (User.permissions.indexOf(""+element._id) != "-1")){ %>
+                <li class="list-group-item">
+                  <a
+                    href="/technologies/<%= element._id %>/videos"
+                    class="list-group-item-action"
+                    ><%= element.name %></a
+                  >
+                  <% if(User.isAdmin){ %>
+                  <a
+                    href="/technologies/<%= element._id %>/delete"
+                    class="btn btn-danger float-right"
+                    ><i class="fas fa-trash-alt"></i></a
+                  ><% } %>
+                  <!-- <div class="d-inline">
+                                        <div class="d-none elementName"><%= element.name %></div>
+                                        <div class="d-none elementType"><%= element.techType %></div>
+                                        <button class="btn btn-warning float-right updateTechbtn mr-1" data-toggle="modal" data-target="#editModal">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                    </div> -->
+                </li>
+                <% } %> <% })) %>
+              </ul>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header bg-primary p-3 text-light font-weight-bold">
+              <h4 class="d-inline-block">BackEnd Framework</h4>
+              <% if(User.isAdmin){ %>
+              <button
+                class="btn btn-warning float-right addTechbtn"
+                data-toggle="modal"
+                data-target="#addModal"
+              >
+                <i class="fas fa-plus"></i></button
+              ><% } %>
+            </div>
+            <div class="card-body">
+              <ul class="list-group">
+                <% const back = Tech.filter(t => t.techType == 'backend') %> <%
+                back.forEach((element => { %> <% if (User.isAdmin ||
+                (User.permissions.indexOf(""+element._id) != "-1")){ %>
+                <li class="list-group-item">
+                  <a
+                    href="/technologies/<%= element._id %>/videos"
+                    class="list-group-item-action"
+                    ><%= element.name %></a
+                  >
+                  <% if(User.isAdmin){ %>
+                  <a
+                    href="/technologies/<%= element._id %>/delete"
+                    class="btn btn-danger float-right"
+                    ><i class="fas fa-trash-alt"></i></a
+                  ><% } %>
+                  <!-- <div class="d-inline">
+                                        <div class="d-none elementName"><%= element.name %></div>
+                                        <div class="d-none elementType"><%= element.techType %></div>
+                                        <button class="btn btn-warning float-right updateTechbtn mr-1" data-toggle="modal" data-target="#editModal">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                    </div> -->
+                </li>
+                <% } %> <% })) %>
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
     </main>
 
     <!-- ADD Technology -->
     <div class="modal" id="addModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Add Technology</h5>
-                    <button class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <form action="/technologies" method="POST">
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label for="techType">Tech. Type</label>
-                            <input type="text"  id="techType" name="techType" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text"  id="name" name="name" class="form-control">
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" data-dismiss="modal">close</button>
-                        <button class="btn btn-primary" type="submit">Submit</button>
-                    </div>
-                </form>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Add Technology</h5>
+            <button class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <form action="/technologies" method="POST">
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="techType">Tech. Type</label>
+                <input
+                  type="text"
+                  id="techType"
+                  name="techType"
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" class="form-control" />
+              </div>
             </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" data-dismiss="modal">
+                close
+              </button>
+              <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+          </form>
         </div>
+      </div>
     </div>
 
     <!-- edit Technology -->
@@ -143,5 +201,5 @@
         </div>
     </div> -->
     <%- include('../partials/footer') %>
-</body>
+  </body>
 </html>

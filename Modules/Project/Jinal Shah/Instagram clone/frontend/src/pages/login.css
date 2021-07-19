@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #fafafa !important;
+}
+
+.phone {
+  height: 750px;
+  float: right;
+  margin: 10px;
+}
+
+.instagram-logo {
+  margin: 15px auto;
+}
+
+.info {
+  font-weight: 600px;
+  line-height: 20px;
+  font-size: 17px;
+  color: #999;
+}
+
+.or {
+  font-size: 15px !important;
+  color: #999;
+  font-weight: 600;
+}
+.or::before {
+  content: "";
+  background: #efefef;
+  display: block;
+  height: 2px;
+  width: 110px;
+  position: relative;
+  top: 11px;
+}
+.or::after {
+  content: "";
+  background: #efefef;
+  display: block;
+  height: 2px;
+  width: 110px;
+  position: relative;
+  bottom: 10px;
+  left: 160px;
+}
+
+.form-group {
+  margin-bottom: 6px !important;
+}
+.form-control {
+  background: #fafafa !important;
+  border: 1px solid #efefef !important;
+  font-size: 12px !important;
+}
+::placeholder {
+  color: #999 !important;
+}
+
+.btn {
+  margin: 12px auto;
+  padding: 2px !important;
+  font-weight: 600 !important;
+}
+.btn-primary {
+  background-color: #3897f0 !important;
+  border: 1px solid #3897f0 !important;
+}
+
+.fb1 a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #385185;
+  font-weight: 500;
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+.fb-logo {
+  width: 16px;
+  height: 16px;
+}
+
+.forgot {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.forgot a {
+  color: #003569;
+}
+
+.signup {
+  padding: 25px 20px;
+  text-align: center;
+  color: #262626;
+}
+
+.signup a {
+  color: #3897f0;
+}
+
+.app1 {
+  width: 135px;
+  height: 40px;
+  margin: 0 5px;
+}
+
+.links ul li {
+  display: inline-block;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.links ul li a {
+  color: #003569;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.copyright {
+  color: #999;
+}
+
+.trems .term {
+  text-decoration: none;
+}

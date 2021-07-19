@@ -1,0 +1,85 @@
+/* You can add global styles to this file, and also import other style files */
+h1 {
+    color: rgb(20, 19, 20);
+}
+h2 {
+    color: rgb(240, 45, 61);
+}
+h3 {
+    color: blue;
+}
+fieldset {
+    background-color: cadetblue;
+}
+button {
+	font-size: 100%;
+	margin: 0 2px;
+}
+
+div[ng-reflect-ng-switch], app-unknown-item {
+  margin: .5rem 0;
+  display: block;
+  background-color: rgb(224, 233, 102);
+}
+
+#noTrackByCnt,
+#withTrackByCnt {
+	color: rgb(21, 0, 139);
+	max-width: 450px;
+	
+	margin: 4px;
+}
+
+.box {
+	border: 1px solid black;
+	padding: 6px;
+	max-width: 450px;
+}
+
+.child-div {
+	margin-left: 1em;
+	font-weight: normal;
+}
+
+.context {
+	margin-left: 1em;
+}
+
+.hidden {
+	display: none;
+}
+
+.parent-div {
+	margin-top: 1em;
+	font-weight: bold;
+}
+
+.course {
+	font-weight: bold;
+	font-size: x-large;
+}
+
+.helpful {
+	color: red;
+}
+
+.saveable {
+	color: limegreen;
+}
+
+.study,
+.modified {
+  font-family: "Brush Script MT", cursive;
+  font-size: 2rem;
+}
+
+.toe {
+	margin-left: 1em;
+	font-style: italic;
+}
+
+
+.to-toc {
+	margin-top: 10px;
+	display: block;
+}

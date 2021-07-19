@@ -1,0 +1,31 @@
+<div class="container">
+    <h3>Student list</h3>
+    <table class="table table-bordered">
+        <thead>
+            <th>
+                ID
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Address
+            </th>
+            <th>
+                Actions
+            </th>
+        </thead>
+        <tbody>
+            <ng-container *ngfor = " let a of listvalue; let i = index">
+                <tr>
+                    <td>{{a.id}}</td>
+                    <td>{{a.name}}</td>
+                    <td>{{a.address}}</td>
+                    <td><button class="btn btn-primary" (click) = "edit(a)"> Edit</button>
+                    <button class="btn btn-primary" (click) = "remove(a)"> Delete</button>
+                    </td>
+                </tr>
+            </ng-container>
+        </tbody>
+    </table>
+</div>

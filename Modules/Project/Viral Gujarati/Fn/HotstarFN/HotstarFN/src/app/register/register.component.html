@@ -1,0 +1,59 @@
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Registration</h5>
+                <button type="button" class="close" routerLink="" onclick="" data-dismiss="modal"
+                    aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="form" (ngSubmit)="submit()">
+
+                    <div class="from-group">
+                        <label for="exampleInputName">Name</label>
+                        <input type="text" class="form-control" formControlName="Name">
+                        <span class="error" *ngIf="Name.invalid && Name.touched">Name is required</span>
+
+                    </div>
+                    <div class="from-group">
+                        <label for="exampleInputUsername">Username</label>
+                        <input type="text" class="form-control" formControlName="Username">
+                        <span class="error" *ngIf="Username.invalid && Username.touched">Username is required</span>
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" formControlName="Email">
+                        <small id="emailHelp" class="form-text text-muted"></small>
+                        <span class="error" *ngIf="Email.invalid && Email.touched">Email is required</span>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" formControlName="Password">
+                        <span class="error" *ngIf="Password.invalid && Password.touched">Password</span>
+
+                    </div>
+                    <div class="from-group">
+                        <label for="exampleInputaddress">Address</label>
+                        <input type="text" class="form-control" formControlName="Address">
+                        <span class="error" *ngIf="Address.invalid && Address.touched">Address is required</span>
+
+                    </div>
+
+                    <button type="submit" class="btn" data-dismiss="modal">Submit</button><br>
+                    <span *ngIf="form.invalid" class="error">All valid Detail require for Login</span>
+
+                </form>
+            </div>
+        
+        </div>
+    </div>
+</div>

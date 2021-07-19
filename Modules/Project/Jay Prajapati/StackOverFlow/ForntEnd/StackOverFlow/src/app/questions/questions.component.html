@@ -1,0 +1,36 @@
+<!-- {{allQuestions | json}} -->
+
+<div class="row py-3">
+  <div class="col-auto mr-auto h3">All Questions</div>
+  <div class="col-auto"><button class="btn btn-primary" (click)="askQuestion()">Ask Question</button></div>
+</div>
+<!-- {{searchForm.value | json}} -->
+<form [formGroup]="searchForm" class="form-inline my-2 my-lg-0 d-none d-lg-block ml-auto py-3">
+  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" formControlName="Que">
+  <button class="btn btn-outline-success my-2 my-sm-0"(click) = "SearchQuestion()"type="submit">Search</button>
+</form>
+<h6>{{allQuestions.length}} Questions</h6>
+<hr>
+<div class="container-fluid ">
+  <div class="row border-bottom" *ngFor="let q of allQuestions;">
+    <div class="col-lg-1">
+      <ul class="nav">
+        <li class="nav-item d-none d-lg-block">
+          <a class="nav-link p-1 m-1 text-center small" href="questions/{{q.questionId}}">{{q.vote}}<br><small>votes</small></a>
+          <a class="nav-link border border-success bg-success rounded text-center text-light small"
+            href="questions/{{q.questionId}}">{{q.answers.length}}<br><small>answers</small></a>
+          <a class="nav-link m-1 text-center small" href="questions/{{q.questionId}}">{{q.totalViews}} <small>views</small></a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-lg-11 pb-2">
+      <a class="nav-link rounded text-primary font-weight-bold" href="questions/{{q.questionId}}">{{q.question1}}</a>
+      <p class="pl-3">{{q.questionBody}}</p>
+      <span *ngFor="let t of q.tags" class="pl-3">
+        <button type="button" class="btn btn-secondary">{{t.tagName}}</button>
+      </span>
+    </div>
+    
+  </div>
+  
+</div>

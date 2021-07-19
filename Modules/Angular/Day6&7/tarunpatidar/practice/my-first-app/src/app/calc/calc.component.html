@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="col-mg-5">
+        <div class="form-group mb-2">
+            <label class="form-label">Value1 : </label>
+            <input class="form-control" [(ngModel)] ="value1" type="number" value = 0>
+            <br>
+        </div>
+        <div class="form-group mb-2">
+            <label>Value2 : </label>
+            <input class="form-control" [(ngModel)] = "value2" type="number" value= 0>
+        </div>
+
+        <button type="button" class="btn btn-dark m-2 p-3" (click) ="add()"><strong>+</strong></button>
+        <button type="button" class="btn btn-dark m-2 p-3" (click) ="sub()"><strong>-</strong></button>
+        <button type="button" class="btn btn-dark m-2 p-3" (click) ="mul()"><strong>*</strong></button>
+        <button type="button" class="btn btn-dark m-2 p-3" (click) ="div()"><strong>/</strong></button>
+        <h2>Ans : {{result}}</h2>
+    </div>
+</div>

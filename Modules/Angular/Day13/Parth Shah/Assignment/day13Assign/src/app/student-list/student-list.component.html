@@ -1,0 +1,120 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header h6">
+<h6 class="h4 text-danger">Child Component</h6>
+<section id="about" class="text-center ">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="info-header md-5">
+                    <h1 class="text-primary pb-3">
+                        All Data in Table Format
+                    </h1>
+                    <p class="pb-3 bg-secondary text-light h5"><br>
+                        You can see all the data in table format below
+                    </p>
+                
+                </div>
+
+             <div class="card">
+
+                <div class="container">
+                    <div class="table-responsive">
+                   
+                      
+                                    <table class="table">
+                                        <thead class="thead-inverse">
+                                            <tr>
+                                                <th>FirstName</th>
+                                                <th>MiddleName</th>
+                
+                                                <th>LastName</th>
+                
+                                                <th>Date of Birth</th>
+                                                <th>Place of Birth</th>
+                                                <th>First Language</th>
+                                                <th>City</th>
+                                                <th>State</th>
+                                                <th>Country</th>
+                                                <th>Pin</th>
+                
+                                                <th>Father Name</th>
+                                               
+                                                <th>Father Email</th>
+                                                 
+                                                 <th>Father Education Qual.</th>       
+                                                 <th>Father Profession</th>
+                
+                                                <th>Father Designation</th>
+                                                <th>Father Phone Number</th>     
+                                                <th>Mother Name </th>
+                                               
+                                                <th>Mother Email</th>
+                                                      
+                                                 <th>Mother Education Qual.</th>       
+                                                 <th>Mother Profession</th>
+                
+                                                <th>Mother Designation</th>
+                                                <th>Mother Phone Number</th> 
+
+                                               
+                                               
+                                            </tr>
+                                        </thead>
+                
+                                        <!-- this will create grade wise colour and only display active data's -->
+                                        <tbody *ngFor="let item of listValue; let idx= index" >
+                                          <tr>
+                                                <td scope="row">{{item.studentName.firstName}}</td>
+                                                <td>{{item.studentName.middleName}}</td>
+                                                <td>{{item.studentName.lastName}}</td>
+
+                                                <td>{{item.dob}}</td>
+                                                <td >{{item.PlaceOfBirth}}</td>
+                                                <td>{{item.FirstLanguage}}</td>
+
+                                                <td>{{item.Address.city}}</td>
+                                                <td>{{item.Address.state}}</td>
+                                                <td>{{item.Address.country}}</td>
+                                                <td>{{item.Address.pin}}</td>
+                                                
+                                                <td>{{item.Father.firstName}} {{item.Father.middleName}} {{item.Father.lastName}} </td>
+                                               
+                                                <td>{{item.Father.email}}</td>
+                                                <td>{{item.Father.educationQualification}}</td>
+                                                <td>{{item.Father.Profession}}</td>
+                                                <td>{{item.Father.Designation}}    </td>
+                                                <td>{{item.Father.Phone}}    </td>
+                                                
+                                                <td>{{item.Mother.firstName}} {{item.Mother.middleName}} {{item.Mother.lastName}}</td>
+                                               
+                                                <td>{{item.Mother.email}}</td>
+                                                <td>{{item.Mother.educationQualification}}</td>
+                                                <td>{{item.Mother.Profession}}</td>
+                                                <td>{{item.Mother.Designation}}    </td>
+                                                <td>{{item.Mother.Phone}}    </td>
+                                                
+                                             
+                                                
+                                                
+                                            </tr>
+                                          
+                                      
+                                       
+                                        </tbody>
+                                    </table>
+                                </div>
+                
+                        </div>
+             </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</div>
+</div>
+</div>
+
+
+

@@ -8,5 +8,8 @@
         public int OrderId { get; set; }
         public Order order { get; set; }
         public Toy Toy { get; set; }
+        public int CustomerId { get; set; }
+        
+       
     }
 }

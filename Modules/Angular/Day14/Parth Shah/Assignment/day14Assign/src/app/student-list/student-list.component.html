@@ -1,0 +1,91 @@
+
+<div class="mx-4">
+  <h1  class="text-center bg-light">Student List Component </h1>
+</div>
+<div class="m-3"></div>
+            <div class="row m-1">
+                <div class="col-md-9">
+                    <div class="card table-responsive">
+                        <div class="card-header">
+                            <h4 class="display-4" >Student Details </h4>
+                        </div>
+                        <table class="table table-stripped">
+                            <thead class="thead-inverse">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Age</th>      
+                                    <th>Average</th> 
+                                    <th >Grade</th>  
+                                    <th>Edit</th>  
+
+                                    <th>Delete</th>                               
+                                </tr>
+                            </thead>
+
+                            <!-- this will create grade wise colour and only display active data's -->
+                            <tbody *ngFor="let item of studentList; let idx= index" >
+                              <tr >
+                                    <td scope="row">{{item.ID}}</td>
+                                    <td>{{item.Name}}</td>
+                                    <td>{{item.Age}}</td>
+                                    <td>{{item.Average}}</td>
+                                    <td >{{item.Grade}}</td>
+                                    
+                                    <td><button (click) ="edit(item)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal3">Edit</button></td>
+                                    <td><button (click) ="remove(idx)" class="btn btn-danger">Delete</button></td>
+                                </tr>
+                                
+
+                                
+                          
+                           
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+              
+                <div class="col-md-3">
+                  <img src="../../assets/img/464.png" class="img-fluid" style="height: 613px;">
+                  </div>
+                  
+  </div>
+
+  
+
+               
+
+  
+  <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Update Data</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <h2 class="text-primary"> Updated Data  Here </h2>
+
+            <p>Update ID</p>
+            <input type="number" class="form-control" [(ngModel)]="ID" >
+            <p>Update Name</p>
+             <input type="text" [(ngModel)]="Name" class="form-control">
+             <p>Update Age</p>
+            <input type="number" [(ngModel)]="Age" class="form-control" >
+            <p>Update Average</p>
+             <input type="number" [(ngModel)]="Average" class="form-control" >
+             <p>Update Grade</p>
+             <input type="text" [(ngModel)]="Grade" class="form-control" >
+        
+         
+           
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button class="btn btn-primary" (click)="update()" data-dismiss="modal" type="submit">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>

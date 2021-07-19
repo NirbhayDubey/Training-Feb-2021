@@ -12,8 +12,8 @@ using Newtonsoft.Json;
 
 namespace day17Assignment.Controllers
 {
-    [Authorize(Roles = UserRoles.User)] //only user can authenticate this 
-    [Authorize]
+/*    [Authorize(Roles = UserRoles.User)] //only user can authenticate this 
+    [Authorize]*/
     [Route("api/[controller]")]
     [ApiController]
     public class PatientsController : ControllerBase

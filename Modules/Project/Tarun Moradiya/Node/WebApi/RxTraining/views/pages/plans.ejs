@@ -1,205 +1,374 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <%- include('../partials/head', { title : 'RxTraining' }) %>
-</head>
-<body>
-    <header>
-        <%- include('../partials/header', {Tech}) %>
-    </header>
+  </head>
+  <body>
+    <header><%- include('../partials/header', {Tech, User}) %></header>
     <main>
-        <div class="container">
-            <h1 class="display-1 d-inline-block">Training Plan</h1>
-            <button class="btn btn-info float-right" data-toggle="modal" data-target="#addModal">Add Plan</button>
-            <hr>
-            <div class="row">
-                <% if (typeof plans != 'undefined') { %>
-                    <div class="col-2">
-                        <% let commonHead = Tech.filter(t => t.techType == 'common') %>
-                        <% commonHead.forEach(head => { %>
-                            <% let commonPlan = plans.filter(p => p.tech.name == head.name) %>
-                            <a class="list-group-item list-group-item-action font-weight-bold" href="#tech<%= head._id %>"><%= head.name %></a>
-                            <% commonPlan.forEach(element => { %>
-                                <ul class="list-group">
-                                    <a class="list-group-item list-group-item-action" href="#day<%= element._id %>"><%= element.name %></a>
-                                </ul>
-                            <% }) %>
-                            <br>
-                        <% }) %>
-                        
-                    </div>
-                    <div class="col-10">
-                        <% commonHead.forEach(head => { %>
-                            <br>
-                            <% let commonPlan = plans.filter(p => p.tech.name == head.name) %>
-                            <h1 class="display3" id="tech<%= head._id %>"><%= head.name %></h1>
-                            <hr>
-                            <% commonPlan.forEach(element => { %>
-                                <h1 class="display4" id="day<%= element._id %>"><%= element.name %></h1>
-                                <div id="accordion<%= element._id %>" role="tablist">
-                                    <div class="card">
-                                        <div class="card-header" role="tab" id="heading1<%= element._id %>">
-                                            <h5 class="mb-0">
-                                                <a href="#collapse1<%= element._id %>" data-toggle="collapse">What to learn:</a>
-                                            </h5>
-                                        </div>
-                                        <div id="collapse1<%= element._id %>" class="collapse show" data-parent="#accordion<%= element._id %>">
-                                            <div class="card-body">
-                                                <%= element.whatToLearn %>                                </div>
-                                        </div>
-                                    </div>
-                        
-                                    <div class="card">
-                                        <div class="card-header" role="tab" id="heading2<%= element._id %>">
-                                            <h5 class="mb-0">
-                                                <a href="#collapse2<%= element._id %>" data-toggle="collapse">Practice Exercise:</a>
-                                            </h5>
-                                        </div>
-                                        <div id="collapse2<%= element._id %>" class="collapse" data-parent="#accordion<%= element._id %>">
-                                            <div class="card-body"> 
-                                                <%= element.practiceExercise %>                                </div>
-                                        </div>
-                                    </div>
-                        
-                                    <div class="card">
-                                        <div class="card-header" role="tab" id="heading3<%= element._id %>">
-                                            <h5 class="mb-0">
-                                                <a href="#collapse3<%= element._id %>" data-toggle="collapse">Assignments:</a>
-                                            </h5>
-                                        </div>
-                                        <div id="collapse3<%= element._id %>" class="collapse" data-parent="#accordion<%= element._id %>">
-                                            <div class="card-body">
-                                                <%= element.assignments %>                                </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-header" role="tab" id="heading4<%= element._id %>">
-                                            <h5 class="mb-0">
-                                                <a href="#collapse4<%= element._id %>" data-toggle="collapse">References:</a>
-                                            </h5>
-                                        </div>
-                                        <div id="collapse4<%= element._id %>" class="collapse" data-parent="#accordion<%= element._id %>">
-                                            <div class="card-body">
-                                                <%= element.references %>                                </div>
-                                        </div>
-                                    </div>
-            
-                            </div>
-                            <% }) %>
-                        <% }) %>
-                    <% } else if (typeof plan != 'undefined') { %>
-                        <div class="col-2">
-                            <ul class="list-group">
-                                <% plan.forEach(element => { %>
-                                <a class="list-group-item list-group-item-action" href="#day<%= element._id %>"><%= element.name %></a>
-                                <% }) %>
-                            </ul>
-                        </div>
-                        <div class="col-10">
-                            <% plan.forEach(element => { %>
-                                <h1 class="display4" id="day<%= element._id %>"><%= element.name %></h1>
-                                <div id="accordion<%= element._id %>" role="tablist">
-                                    <div class="card">
-                                        <div class="card-header" role="tab" id="heading1<%= element._id %>">
-                                            <h5 class="mb-0">
-                                                <a href="#collapse1<%= element._id %>" data-toggle="collapse">What to learn:</a>
-                                            </h5>
-                                        </div>
-                                        <div id="collapse1<%= element._id %>" class="collapse show" data-parent="#accordion<%= element._id %>">
-                                            <div class="card-body">
-                                                <%= element.whatToLearn %>                                </div>
-                                        </div>
-                                    </div>
-                        
-                                    <div class="card">
-                                        <div class="card-header" role="tab" id="heading2<%= element._id %>">
-                                            <h5 class="mb-0">
-                                                <a href="#collapse2<%= element._id %>" data-toggle="collapse">Practice Exercise:</a>
-                                            </h5>
-                                        </div>
-                                        <div id="collapse2<%= element._id %>" class="collapse" data-parent="#accordion<%= element._id %>">
-                                            <div class="card-body"> 
-                                                <%= element.practiceExercise %>                                </div>
-                                        </div>
-                                    </div>
-                        
-                                    <div class="card">
-                                        <div class="card-header" role="tab" id="heading3<%= element._id %>">
-                                            <h5 class="mb-0">
-                                                <a href="#collapse3<%= element._id %>" data-toggle="collapse">Assignments:</a>
-                                            </h5>
-                                        </div>
-                                        <div id="collapse3<%= element._id %>" class="collapse" data-parent="#accordion<%= element._id %>">
-                                            <div class="card-body">
-                                                <%= element.assignments %>                                </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-header" role="tab" id="heading4<%= element._id %>">
-                                            <h5 class="mb-0">
-                                                <a href="#collapse4<%= element._id %>" data-toggle="collapse">References:</a>
-                                            </h5>
-                                        </div>
-                                        <div id="collapse4<%= element._id %>" class="collapse" data-parent="#accordion<%= element._id %>">
-                                            <div class="card-body">
-                                                <%= element.references %>                                </div>
-                                        </div>
-                                    </div>
-            
-                                </div>
-                            <% }) %>
-                        </div>
-                        
-                    <% } %>
-                    
+      <div class="container">
+        <h1 class="display-1 d-inline-block">Training Plan</h1>
+        <% if(User.isAdmin){ %>
+        <button
+          class="btn btn-info float-right ml-2"
+          data-toggle="modal"
+          data-target="#addModal"
+        >
+          Add Plan
+        </button>
+        <button
+          class="btn btn-info float-right"
+          data-toggle="modal"
+          data-target="#addPlansModal"
+        >
+          Add Plans
+        </button>
+        <% } %>
+        <hr />
+        <div class="row">
+          <% if (typeof plans != 'undefined') { %>
+          <div class="col-2">
+            <% let commonHead = Tech.filter(t => t.techType == 'common') %> <%
+            commonHead.forEach(head => { %> <% let commonPlan = plans.filter(p=>
+            p.tech.name == head.name) %>
+            <a
+              class="list-group-item list-group-item-action font-weight-bold"
+              href="#tech<%= head._id %>"
+              ><%= head.name %></a
+            >
+            <% commonPlan.forEach(element => { %>
+            <ul class="list-group">
+              <a
+                class="list-group-item list-group-item-action"
+                href="#day<%= element._id %>"
+                ><%= element.name %></a
+              >
+            </ul>
+            <% }) %>
+            <br />
+            <% }) %>
+          </div>
+          <div class="col-10">
+            <% commonHead.forEach(head => { %>
+            <br />
+            <% let commonPlan = plans.filter(p => p.tech.name == head.name) %>
+            <h1 class="display3" id="tech<%= head._id %>"><%= head.name %></h1>
+            <hr />
+            <% commonPlan.forEach(element => { %>
+            <h1 class="display4" id="day<%= element._id %>">
+              <%= element.name %>
+            </h1>
+            <div id="accordion<%= element._id %>" role="tablist">
+              <div class="card">
+                <div
+                  class="card-header"
+                  role="tab"
+                  id="heading1<%= element._id %>"
+                >
+                  <h5 class="mb-0">
+                    <a
+                      href="#collapse1<%= element._id %>"
+                      data-toggle="collapse"
+                      >What to learn:</a
+                    >
+                  </h5>
                 </div>
-            </div>
-        </div>
-    </main>
+                <div
+                  id="collapse1<%= element._id %>"
+                  class="collapse show"
+                  data-parent="#accordion<%= element._id %>"
+                >
+                  <div class="card-body"><%= element.whatToLearn %></div>
+                </div>
+              </div>
 
-        <!-- ADD PLAN MODAL  -->
-        <div class="modal" id="addModal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Add Plan</h5>
-                        <button class="close" data-dismiss="modal">&times;</button>
-                    </div>
-                    <form action="/plans" method="POST">
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label for="tech">Technology</label>
-                                <input type="text"  id="tech" name="tech" class="form-control" value="<%= typeof plan != 'undefined' ? techName.name : '' %>">
-                            </div>
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text"  id="name" name="name" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="whatToLearn">What To Learn</label>
-                                <textarea type="text"  id="whatToLearn" name="whatToLearn" class="form-control"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="practiceExercise">Practice Exercise</label>
-                                <textarea type="text"  id="practiceExercise" name="practiceExercise" class="form-control"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="assignments">Assignments</label>
-                                <textarea type="text"  id="assignments" name="assignments" class="form-control"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="references">References</label>
-                                <textarea type="text"  id="references" name="references" class="form-control"></textarea>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-secondary" data-dismiss="modal">close</button>
-                            <button class="btn btn-primary" type="submit">Submit</button>
-                        </div>
-                    </form>
+              <div class="card">
+                <div
+                  class="card-header"
+                  role="tab"
+                  id="heading2<%= element._id %>"
+                >
+                  <h5 class="mb-0">
+                    <a
+                      href="#collapse2<%= element._id %>"
+                      data-toggle="collapse"
+                      >Practice Exercise:</a
+                    >
+                  </h5>
                 </div>
+                <div
+                  id="collapse2<%= element._id %>"
+                  class="collapse"
+                  data-parent="#accordion<%= element._id %>"
+                >
+                  <div class="card-body"><%= element.practiceExercise %></div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div
+                  class="card-header"
+                  role="tab"
+                  id="heading3<%= element._id %>"
+                >
+                  <h5 class="mb-0">
+                    <a
+                      href="#collapse3<%= element._id %>"
+                      data-toggle="collapse"
+                      >Assignments:</a
+                    >
+                  </h5>
+                </div>
+                <div
+                  id="collapse3<%= element._id %>"
+                  class="collapse"
+                  data-parent="#accordion<%= element._id %>"
+                >
+                  <div class="card-body"><%= element.assignments %></div>
+                </div>
+              </div>
+              <div class="card">
+                <div
+                  class="card-header"
+                  role="tab"
+                  id="heading4<%= element._id %>"
+                >
+                  <h5 class="mb-0">
+                    <a
+                      href="#collapse4<%= element._id %>"
+                      data-toggle="collapse"
+                      >References:</a
+                    >
+                  </h5>
+                </div>
+                <div
+                  id="collapse4<%= element._id %>"
+                  class="collapse"
+                  data-parent="#accordion<%= element._id %>"
+                >
+                  <div class="card-body"><%= element.references %></div>
+                </div>
+              </div>
             </div>
+            <% }) %> <% }) %> <% } else if (typeof plan != 'undefined') { %>
+            <div class="col-2">
+              <ul class="list-group">
+                <% plan.forEach(element => { %>
+                <a
+                  class="list-group-item list-group-item-action"
+                  href="#day<%= element._id %>"
+                  ><%= element.name %></a
+                >
+                <% }) %>
+              </ul>
+            </div>
+            <div class="col-10">
+              <% plan.forEach(element => { %>
+              <h1 class="display4" id="day<%= element._id %>">
+                <%= element.name %>
+              </h1>
+              <div id="accordion<%= element._id %>" role="tablist">
+                <div class="card">
+                  <div
+                    class="card-header"
+                    role="tab"
+                    id="heading1<%= element._id %>"
+                  >
+                    <h5 class="mb-0">
+                      <a
+                        href="#collapse1<%= element._id %>"
+                        data-toggle="collapse"
+                        >What to learn:</a
+                      >
+                    </h5>
+                  </div>
+                  <div
+                    id="collapse1<%= element._id %>"
+                    class="collapse show"
+                    data-parent="#accordion<%= element._id %>"
+                  >
+                    <div class="card-body"><%= element.whatToLearn %></div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div
+                    class="card-header"
+                    role="tab"
+                    id="heading2<%= element._id %>"
+                  >
+                    <h5 class="mb-0">
+                      <a
+                        href="#collapse2<%= element._id %>"
+                        data-toggle="collapse"
+                        >Practice Exercise:</a
+                      >
+                    </h5>
+                  </div>
+                  <div
+                    id="collapse2<%= element._id %>"
+                    class="collapse"
+                    data-parent="#accordion<%= element._id %>"
+                  >
+                    <div class="card-body"><%= element.practiceExercise %></div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div
+                    class="card-header"
+                    role="tab"
+                    id="heading3<%= element._id %>"
+                  >
+                    <h5 class="mb-0">
+                      <a
+                        href="#collapse3<%= element._id %>"
+                        data-toggle="collapse"
+                        >Assignments:</a
+                      >
+                    </h5>
+                  </div>
+                  <div
+                    id="collapse3<%= element._id %>"
+                    class="collapse"
+                    data-parent="#accordion<%= element._id %>"
+                  >
+                    <div class="card-body"><%= element.assignments %></div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div
+                    class="card-header"
+                    role="tab"
+                    id="heading4<%= element._id %>"
+                  >
+                    <h5 class="mb-0">
+                      <a
+                        href="#collapse4<%= element._id %>"
+                        data-toggle="collapse"
+                        >References:</a
+                      >
+                    </h5>
+                  </div>
+                  <div
+                    id="collapse4<%= element._id %>"
+                    class="collapse"
+                    data-parent="#accordion<%= element._id %>"
+                  >
+                    <div class="card-body"><%= element.references %></div>
+                  </div>
+                </div>
+              </div>
+              <% }) %>
+            </div>
+
+            <% } %>
+          </div>
         </div>
+      </div>
+    </main>
+    <!-- addPlansModal -->
+    <div class="modal" id="addPlansModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Add Plan</h5>
+            <button class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <form action="/plans/multiple" method="POST">
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="plans">Plans:</label>
+                <textarea
+                  type="text"
+                  id="plans"
+                  name="plans"
+                  class="form-control"
+                  rows="15"
+                ></textarea>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" data-dismiss="modal">
+                close
+              </button>
+              <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- ADD PLAN MODAL  -->
+    <div class="modal" id="addModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Add Plan</h5>
+            <button class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <form action="/plans" method="POST">
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="tech">Technology</label>
+                <input
+                  type="text"
+                  id="tech"
+                  name="tech"
+                  class="form-control"
+                  value="<%= typeof plan != 'undefined' ? techName.name : '' %>"
+                />
+              </div>
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="whatToLearn">What To Learn</label>
+                <textarea
+                  type="text"
+                  id="whatToLearn"
+                  name="whatToLearn"
+                  class="form-control"
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <label for="practiceExercise">Practice Exercise</label>
+                <textarea
+                  type="text"
+                  id="practiceExercise"
+                  name="practiceExercise"
+                  class="form-control"
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <label for="assignments">Assignments</label>
+                <textarea
+                  type="text"
+                  id="assignments"
+                  name="assignments"
+                  class="form-control"
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <label for="references">References</label>
+                <textarea
+                  type="text"
+                  id="references"
+                  name="references"
+                  class="form-control"
+                ></textarea>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" data-dismiss="modal">
+                close
+              </button>
+              <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
     <%- include('../partials/footer') %>
-</body>
+  </body>
 </html>

@@ -1,0 +1,160 @@
+<div  class="container py-5">
+    <h2 class="bg-info text-light text-center py-4">Student Admission Form</h2>
+    <form [formGroup]="StudentForm" (ngSubmit)="Submit()">
+      <div formGroupName="Name" ><label class="font-weight-bold">Student Details</label><br>
+        <ng-container class="form-group">
+          <label class="mt-2">FirstName :</label> 
+          <input type="text" class="form-control" formControlName="FirstName" />
+        </ng-container>
+        <ng-container class="form-group">
+          <label class="mt-2">MiddleName : </label>
+            <input type="text" class="form-control" formControlName="MiddleName" />
+        </ng-container>
+        <ng-container class="form-group">
+          <label class="mt-2">LastName : </label> 
+          <input type="text" class="form-control" formControlName="LastName" />
+        </ng-container>
+      </div>
+  
+      <ng-container class="form-group">
+        <label class="mt-2">DOB :</label>
+          <input type="date" class="form-control" formControlName="DOB" />
+      </ng-container>
+      <ng-container class="form-group">
+        <label class="mt-2">PlaceOfBirth :</label>
+          <input type="text" class="form-control" formControlName="PlaceOfBirth" />
+      </ng-container>
+      <ng-container class="form-group">
+        <label class="mt-2">First Language :</label>
+          <input type="text" class="form-control" formControlName="FirstLanguage" />
+      </ng-container>
+      <div formGroupName="Address"><label>Address :</label>
+        <ng-container class="form-group">
+          <label class="mt-2">City :</label>
+            <input type="text" class="form-control" formControlName="City" />
+        </ng-container>
+        <ng-container class="form-group">
+          <label class="mt-2">State :</label>
+            <input type="text" class="form-control" formControlName="State" />
+        </ng-container>
+        <ng-container class="form-group">
+          <label class="mt-2">PinCode :</label>
+            <input type="number" class="form-control" formControlName="Pin" />
+        </ng-container>
+      </div><br>
+      <div formGroupName="Father">
+        <label  class="mt-2 font-weight-bold">Father Details</label>
+        <div formGroupName="Name">
+          <ng-container class="form-group">
+            <label class="mt-2">FirstName : </label>
+              <input type="text" class="form-control" formControlName="FirstName" />
+          </ng-container>
+          <ng-container class="form-group">
+            <label class="mt-2">MiddleName :</label>
+              <input type="text" class="form-control" formControlName="MiddleName" />
+          </ng-container>
+          <ng-container class="form-group">
+            <label class="mt-2">LastName : </label>
+              <input type="text" class="form-control" formControlName="LastName" />
+          </ng-container>
+        </div>
+        <ng-container class="form-group">
+          <label class="mt-2">Email : </label>
+            <input type="text" class="form-control" formControlName="Email" />
+        </ng-container>
+        <ng-container class="form-group">
+          <label class="mt-2">Education Qualification :</label>
+            <input type="text" class="form-control" formControlName="EducationQualification" />
+        </ng-container>
+        <ng-container class="form-group">
+          <label class="mt-2">Profession : </label>
+            <input type="text" class="form-control" formControlName="Profession" />
+        </ng-container>
+        <ng-container class="form-group">
+          <label class="mt-2">Designation :</label>
+            <input type="text" class="form-control" formControlName="Designation" />
+        </ng-container>
+        <ng-container class="form-group">
+          <label class="mt-2">Phone : </label>
+            <input type="number" class="form-control" formControlName="Phone" />
+        </ng-container>
+      </div>
+  
+      <div formGroupName="Mother">
+        <label class="mt-2 font-weight-bold">Mother Details : </label>
+        <div formGroupName="Name">
+          
+          <ng-container class="form-group">
+            <label class="mt-2">FirstName : </label>
+              <input type="text" class="form-control" formControlName="FirstName" />
+          </ng-container>
+          <ng-container class="form-group">
+            <label class="mt-2">MiddleName : </label>
+              <input type="text" class="form-control" formControlName="MiddleName" />
+          </ng-container>
+          <ng-container class="form-group">
+            <label class="mt-2">LastName : </label>
+              <input type="text" class="form-control" formControlName="LastName" />
+          </ng-container>
+        </div>
+        <ng-container class="form-group">
+          <label class="mt-2">Email : </label>
+            <input type="text" class="form-control" formControlName="Email" />
+        </ng-container>
+        <ng-container class="form-group">
+          <label class="mt-2">Education Qualification : </label>
+            <input type="text" class="form-control" formControlName="EducationQualification" />
+        </ng-container>
+        <ng-container class="form-group">
+          <label class="mt-2">Profession : </label>
+            <input type="text" class="form-control" formControlName="Profession" />
+        </ng-container>
+        <ng-container class="form-group">
+          <label class="mt-2">Designation : </label>
+            <input type="text" class="form-control" formControlName="Designation" />
+        </ng-container>
+        <ng-container class="form-group">
+          <label class="mt-2">Phone : </label>
+            <input type="number" class="form-control" formControlName="Phone" />
+        </ng-container>
+      </div>
+      <div formArrayName="EmergencyContactList">
+        <label class="mt-2 font-weight-bold">Emergency Contact List : </label><br />
+        <div *ngFor="let item of getEmergencyContactList.controls; index as i" >
+          <ng-container [formGroupName]="i" >
+            <ng-container class="">
+              <label>Relation : <input type="text" class="" formControlName="Relation" /></label>
+            </ng-container>
+            <ng-container>
+              <label class="ml-md-2">Phone Number :
+                <input type="number" class="" formControlName="Number" /></label>
+            </ng-container>
+          </ng-container>
+          
+        </div>
+        <button class="btn-dark ml-2" (click)="AddList()">Add New Relation <i class="fa fa-plus" aria-hidden="true"></i></button>
+      </div>
+      <div formGroupName="ReferenceDetails">
+        <label class="mt-2">ReferenceDetails : </label><br />
+        <ng-container class="form-group">
+          <label class="mt-2">Reference Through :</label>
+            <input type="text" class="form-control" formControlName="ReferenceThrough" />
+        </ng-container>
+        <div formGroupName="Address">
+          <label class="mt-2 font-weight-bold">Address : </label><br />
+          <ng-container class="form-group">
+            <label >City : </label>
+              <input type="text" class="form-control" formControlName="City" />
+          </ng-container>
+          <ng-container class="form-group">
+            <label class="mt-2">Telephone Number :</label>
+              <input type="number" class="form-control" formControlName="TelNo" />
+          </ng-container>
+  
+  
+        </div>
+      </div>
+      <button type="submit" class="btn btn-block btn-info mt-5" >Submit Data</button>
+    </form>
+    {{StudentForm.value | json}}
+</div>

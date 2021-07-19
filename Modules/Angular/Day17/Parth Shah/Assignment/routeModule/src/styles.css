@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+li a:hover  {
+    background-color: black;
+  }
+
+  .list-group a:hover {
+    background-color: chartreuse;
+  }
+
+  .list-group a {
+    color: black;
+    font-size: large;
+    font-weight: 900;
+  }
+
+  body{
+    /* background-color: #24141c; */
+    background-color: #1c1c2c;
+  }

@@ -1,0 +1,1796 @@
+$comWidth:      315px;
+$elemWidth:     280px;
+$elemFullWidth: 630px;
+
+
+.customRadioButton{ background:url("https://post.magicbricks.com/static/images/postPropertyRevIcons.svg") no-repeat 0 -29px; vertical-align: 1px; width: 20px; height: 20px; margin-right:3px; display:inline-block; cursor:pointer;}
+.customRadioButton.checked{ background-position:0 -69px;}
+.customCheckBox{ background:url("https://post.magicbricks.com/static/images/postPropertyRevIcons.svg") no-repeat 0 -209px; vertical-align: 0px; width: 20px; height: 20px; margin-right: 4px; display:inline-block; cursor:pointer; vertical-align: 2px;}
+.customCheckBox.checked{ background-position: 0 -249px; display:inline-block;}
+label.curPoint{ cursor: pointer; color: #303030; }
+label.curPoint.addPhoto{margin-left:8px;}
+label.curPoint.disable{color: #d4d4d4;}
+.customRadioButton.disable{opacity:  .4; }
+.customRadioButton input{cursor: pointer; filter: alpha(opacity=0);}
+.customCheckBox input{cursor: pointer; filter: alpha(opacity=0);}
+
+.macUI .customRadioButton{vertical-align: 3px;}
+.macUI .customCheckBox{vertical-align: 4px;}
+
+#allData .customRadioButton{margin-right: 5px;}
+
+
+
+.formEle label.curPoint{top: -5px;}
+label.curPoint {
+    cursor: pointer;
+    position: relative;
+    top: 1px;
+    left: 1px;
+    font-family: Open Sans;
+}
+.formEle .customCheckBox input, .formEle .customRadioButton input{height:20px; width: 20px;}
+.luxuryTableHeadCom{margin-right:-20px;}
+.priceBlk ul.priceSel .unitBlockAreaDropDown ul li{padding: 2px 8px; cursor: pointer; float:none;}
+.propFeatures ul.pFeatureSel .unitBlockAreaDropDown ul li{padding: 2px 8px; cursor: pointer; float:none;}
+#editSec .unitBlockAreaDropDown ul li{padding: 2px 8px; cursor: pointer; float:none;}
+
+.formErr { 
+    color: #c0392b;
+    display: none;
+    left: 0; padding: 4px 9px; position: absolute; top: 34px; z-index: 10;
+    font-size: sm;
+    //background: none repeat scroll 0 0 #ffe8e6; border: 1px solid red;  border-radius: 3px; box-shadow: 0 8px 10px #888; color: gray; display: none; font: 14px open_sansregular; left: 0; padding: 4px 9px; position: absolute; top: 34px; z-index: 10;
+}
+//.formErr .formErrArrow {background: url('https://post.magicbricks.com/static/images/ppStep1Sprite.png') no-repeat -46px -56px; width: 11px; height: 8px;  display: inline-block; height: 7px; left: 17px; position: absolute; top: -7px; width: 14px; outline: none; }
+.priceBlk .formErr{top: 52px;}	
+#personalPantryError.formErr{left: 135px; top: 25px;}
+#personalWashroomError.formErr{left: 135px; top: 60px;}
+#additionalRoomError.formErr{top: 25px;}
+#propertyDescriptionError.formErr, #landmarksError.formErr{top: 84px; max-width: 500px; white-space: inherit;}
+#carParkingError.formErr{top: 0px; left: 83px;}
+#editParkingForm #carParkingError.formErr{top: 27px; left: 83px;}
+#openCarParkingError.formErr{top: 0px; left: 66px; z-index:100;}
+#isMultipleUnitsAvlError.formErr{top: 25px;  left: 53px;}
+#ownershipTypeError.formErr{top: 25px;}
+#amenityfacingError.formErr{top: 25px;}
+#flooringTypeError.formErr{top: 25px;}
+#totalAmenitiesError.formErr{top: 25px;}
+#leaseStatusTextError.formErr{top: -1px;}
+#roadWidthFacingPlotError.formErr{width: 350px;}
+.formEle #propertyDescriptionError.formErr{top: -1px; word-wrap: break-word;}
+.formEle #landNeighbourhoodDescErr.formErr{top: -1px; white-space: nowrap;}
+.editSec .priceBlk #totalPriceError.formErr{left: 18px; top: -1px; outline: none;}
+.formErr{outline: none;}
+.loginSec #mobileError.formErr .formErrArrow{left:105px;}
+
+.ppSecBlockRWidth{width: 1037px; margin:auto;}
+// .postingStep1__pointblock {
+//     width: 342px;
+//     height: 1px;
+//     float: right;
+// }
+// .postingStep1__pointblock__data {
+//     position: fixed;
+//     background: #fff;
+//     width: 342px;
+//     min-height: 180px;
+//     top: 120px;
+//     border: 1px solid #eaeaea;
+//     border-radius: 0;
+//     padding: 12px 24px;
+// }
+// .postingStep1__pointblock__data:before {
+//     content: "";
+//     height: 14px;
+//     width: 14px;
+//     border: 1px solid #eaeaea;
+//     -webkit-transform: rotate(
+// 45deg
+// );
+//     transform: rotate(
+// 45deg
+// );
+//     left: -8px;
+//     top: 100px;
+//     background: #fff;
+//     position: absolute;
+//     border-top: 0;
+//     border-right: 0;
+// }
+
+// .postingStep1__pointblock__data:before {
+//     top: 50px!important;
+// }
+// .postingStep1__pointblock__datatop.postingStep1__pointblock__datatopstep1 {
+//     border-bottom: 0 dashed #eaeaea;
+// }
+
+// .postingStep1__pointblock__datatop {
+//     padding-bottom: 0;
+// }
+// .postingStep1__pointblock__step1ico {
+//     background: url("https://post.magicbricks.com/static/images/postPropertyRevIcons.svg") no-repeat 0 -141px;
+//     width: 44px;
+//     height: 48px;
+//     margin-bottom: 24px;
+// }
+// .postingStep1__pointblock__step1heading {
+//     font-size: 18px;
+//     color: #303030;
+//     padding-bottom: 8px;
+// }
+// .postingStep1__pointblock__step1headingsb, .postingStep1__pointblock__step1lisb, .postingStep1__pointblock__step1redemhsb, .postingStep1__pointblock__step1subheadingsb {
+//     font-weight: 600;
+// }
+//.postPropHeader{width: 1010px; margin:auto; padding:64px 20px 32px;}
+.postPropHeader{padding:64px 0px 32px;}
+.postPropHeader.postPropHeader__default{text-align:left;}
+.mHeader1{ color: #303030; font-size: 14px;}
+.mHeader1 .highLight{ color: #303030; font-size: xl + 10; font-weight: bold; padding-bottom: 10px;}
+.mHeader1 .highLight___semibold{font-weight: bold;}
+.mHeader2{ color: #303030; font-size: 18px;}
+.mHeader2 .free{color: red; font-weight: bold}
+
+.stepStrip{ background: url('https://post.magicbricks.com/static/images/ppStep1Sprite.png') repeat-x 0 0; height: 55px; position: relative;}
+.stepStrip .container{ width: 982px; margin:auto;}
+.stepStrip .container .step1,
+.stepStrip .container .step1Dev,
+.stepStrip .container .step2,
+.stepStrip .container .step2Dev{ height: 55px; float:left;}
+.stepStrip .container .step1{ background: red;}
+.stepStrip .container .step1 .rStep1Act{ float:left; width: 27px; height: 28px; background: url('https://post.magicbricks.com/static/images/ppStep1Sprite.png') repeat-x 0 -172px; display: block; margin: 15px 14px 0 18px;}
+.stepStrip .container .step1 .rStep1ActData{ float: left; font-weight: bold; font-size: 20px; color: #ffffff; width: 120px; line-height: 20px; padding-top: 9px;}
+.stepStrip .container .step1 .rStep1ActData .step1ActSubH{ font-size: 15px; font-weight: regular; display: block;}
+.stepStrip .container .step1Dev{background: url('https://post.magicbricks.com/static/images/ppStep1Sprite.png') repeat-x 0 -56px; width: 20px; height: 55px;}
+.stepStrip .container .step2{background: url('https://post.magicbricks.com/static/images/ppStep1Sprite.png') repeat-x 0 -375px;}
+.stepStrip .container .step2 .rStep2Act{ float:left; width: 27px; height: 28px; background: url('https://post.magicbricks.com/static/images/ppStep1Sprite.png') repeat-x 0 -232px; display: block; margin: 15px 14px 0 18px;}
+.stepStrip .container .step2 .rStep2ActData{ float: left; font-size: 20px; color: #bdbdbd; width: 140px; line-height: 20px; padding-top: 9px;}
+.stepStrip .container .step2 .rStep2ActData .step2ActSubH{ font-size: 15px; display: block;}
+.stepStrip .container .step2Dev{background: url('https://post.magicbricks.com/static/images/ppStep1Sprite.png') repeat-x 0 -113px; width: 21px; height: 55px; display: block;}
+
+
+form#postPropertyForm { padding-bottom:58px; }
+.step1MainCont{ width: 1010px; margin:auto; margin-bottom: 0px; padding: 0 20px;}
+#postProperty.step1MainCont{width: 672px; margin: 0; min-height: calc(100vh - 50px);background: white;}
+.step1MainCont .ppSecBlock{ border-top: solid 0px #e6e6e6;}
+.step1MainCont .ppSecBlock.ppSecBlock--wwidth{ width: 675px;}
+.step1MainCont .ppSecBlock:first-child{ border-top: solid 0px white;}
+
+.dataBlock{ padding: 10px 0px 15px 0px;width:672px;background: white;}
+.dataBlock .secHeading{ font-size: 18px; color: #303030 ; padding-bottom: 28px; font-weight: bold; }
+.dataBlock .secHeading.bedBlock{padding-bottom: 20px;}
+
+.unitBlockArea .unitBlockAreaDropDown {display:none; width:95px; max-height:250px; overflow:auto; position:absolute; top:21px; left:0px; z-index:9; background:white; border:1px solid #ccc; box-shadow:0 5px 10px -4px rgba(0, 0, 0, 0.75);}
+.unitBlockArea .unitBlockAreaDropDown ul li {margin:0px; padding:3px 5px 4px; border:none; font-size:14px; cursor:default;}
+.unitBlockArea .unitBlockAreaDropDown ul li:hover{background:#f8f8f8;}
+
+.unitBlockArea .unitBlockAreaDropDown {display:none; width:95px; max-height:250px; overflow:auto; position:absolute; top:21px; left:0px; z-index:9; background:white; border:1px solid #ccc; box-shadow:0 5px 10px -4px rgba(0, 0, 0, 0.75);}
+.unitBlockArea .unitBlockAreaDropDown ul li {margin:0px; padding:3px 5px 4px; border:none; font-size:14px; cursor:default;}
+.unitBlockArea .unitBlockAreaDropDown ul li:hover{background:#f8f8f8;}
+
+// .radioBlock.myPropFeature{width: 475px; float: left; padding-top: 2px;}
+.editFurnishedSec .radioBlock.myPropFeature{margin-left: 0px;}
+.radioBlock.myPropFeature ul li{ margin-right: 16px; padding-top: 20px; width: $elemWidth;}
+#furnishedStatus2.radioBlock.myPropFeature ul li{margin-left:0;}
+
+.formEle { padding-bottom: 20px; color: #303030;}
+.formEle.catcha{ padding-top: 41px;}
+.formEle.hiddenElem{ padding-bottom: 18px; margin-top: 11px; }
+#anchorToPlotAreaDiv.formEle.hiddenElem{margin-top: 10px\9;}
+.formEle.hiddenElemParent{ padding-bottom: 11px;}
+.formEle .formLabel{padding-right: 24px; font-size: 14px; float:left; line-height: 16px; color: gray;}
+// .formEle .formLabel.optional{}
+.formEle .formLabel.inputDrop{ padding-top: 8px;}
+.formEle .formLabel.twoLine{line-height: 15px;}
+.formEle .formLabel.price{ padding-top: 8px;}
+.formEle .formValue{ font-size: 14px; position: relative; float: left;}
+.formEle .formValue .formCom{ float:left; position: relative;}
+.formEle .formValue .formCom.formComCW220{width: $elemWidth;}
+.formEle .valiDated{display: none; float:left; width: 14px; height: 11px; background: url('https://post.magicbricks.com/static/images/postPropertyRevIcons.svg') no-repeat 0 -765px; margin-left: 10px; margin-top: 12px;}
+#propertyArea .formEle .valiDated{ position: absolute; right:-25px;}
+.formEle .donePlaceHolder{width: 16px; height: 16px; float: left; display: block; margin-left: 7px;  margin-top: 5px;}
+.formEle .donePlaceHolder .valiDated{margin-left: 0px; margin-top: 0px;}
+.ifNogLogin .formEle .formLabel{padding-top: 3px;}
+.formEle .formValue .formCom.perWidth{width: 100px; padding-top: 6px; white-space: nowrap; text-align: right;}
+.formEle .formValue .formCom.markFree{padding: 7px 0 0 0px;}
+// .formEle .formValue.rupeeSpc{}
+.formEle .formValue .toWhom{ padding-top: 15px;} 
+//.formEle .formValue.monRent{ margin-left: -15px;}
+.formEle .formValue.formValueResFBroker{padding-top: 12px;}
+
+.formEle.v--display .formLabel{width: 100%; font-size: 12px; color: gray; padding-bottom: 4px;}
+.formEle.v--display .formLabel:after{content:"";display: block; height:0;}
+
+.radioBlock ul li{ float:left; margin-left: 20px;}
+.showPrice .radioBlock ul{float: left;}
+.showPrice .radioBlock ul li,
+#pgFurnishingDetails .radioBlock ul li{ margin-left: 0px;  margin-right: 35px; margin-bottom: 10px;}
+.showPrice .radioBlock ul:first-child{padding-bottom: 15px;}
+#priceInAmountSpan1, #priceInAmountSpan2, #priceInAmountSpan3{background: url('https://post.magicbricks.com/static/images/ppStep1Sprite.png') no-repeat -91px -589px; padding-left: 10px;}
+
+.radioBlock.comBSpace{ padding-bottom: 18px; float:left; padding-top:5px;}  
+.radioBlock ul li:first-child{ margin-left:0;}
+.ciDrop{ border:0; border-bottom: solid 1px #d7d7d7; border-radius: 0px; height: 32px; line-height: 32px; font-size: 14px; padding:0px 20px 2px 0px; width: $elemWidth; background: url('https://post.magicbricks.com/static/images/ppStep1Sprite.png') no-repeat right -436px; text-align:left; color: #303030; font-weight:normal; outline: none; cursor: pointer; text-overflow:ellipsis; overflow: hidden;}
+.ciDrop.btnInput{ height: 32px;}
+.ciDrop.inputText.maintCharge{ width: $elemWidth; margin-right: 10px;}
+.ciDrop.inputText.covered{width: $elemWidth; margin-left: 0px; margin-top: -10px;}
+.ciDrop.validTill{width: 104px;}
+.ciDrop.inputText{height: 32px; line-height: 32px; background: none;  padding:0px 8px 0 0px; width: $elemWidth; cursor: text;}
+.ciDrop.inputText.otherFinishFaci{width:420px;}
+.ciDrop.inputText.priceByWidth{width:160px;}
+
+.ciDrop.inputText::-webkit-input-placeholder{color:#999;}
+.ciDrop.inputText:-moz-placeholder{color:#999;}
+.ciDrop.inputText::-moz-placeholder{color:#999; }
+.ciDrop.inputText:-ms-input-placeholder{color:#999; }
+
+.ciDrop.monthlyDD{width:$elemWidth;}
+.ciDrop.coveredDD{width: 101px;margin-top: 5px;margin-left: 130px;}
+.ciDrop.brokerageRate{width: $elemWidth;}
+.ciDrop.inputText.pps{width: $elemWidth;}
+.ciDrop.avbF{width: 135px;}
+.ciDrop.avbFfirst {margin-right: 13px;}
+// .ciDrop.ageOfCons{}
+.ciDrop.basePriceDD{width: 81px;}
+.ciDrop.inputText.basicInput{width: $elemWidth;}
+.didNt{ font-size: 11px; padding-top: 5px; color: #919191; padding-left: 2px;}
+.didNt a{ color: #0060b7;}
+.didNt a:hover{ text-decoration: none;}
+// .radioBlock ul li.comLabel{}
+
+#additinalFeature1 .radioBlock ul li.comLabel{padding-right: 24px;}
+
+// .radioBlock ul li.comLabel.more{}
+.radioBlock ul li.comFirst{ margin-left:0;}
+input.ciDrop.inputText.basicInput[type="text"]:disabled {background: #f1f1f1; color: #999;} 
+
+.inputContainer{ display:inline-block; position: relative;}
+
+.priceBlk .priceHeader{ font-size: 13px; color: #4d4d4d;}
+.priceBlk .ciDrop { width: 61px;}
+.priceBlk .ciDrop.totalPrice{ width: 280px;margin-left: -675px;}
+#editPrice .priceBlk .ciDrop.totalPrice{ width: 145px;}
+// .ciDrop.listingType{ width: 427px; height: 34px;}
+.priceBlk ul.priceSel{ float:left;}
+.priceBlk ul.priceSel li{ float:left; padding-right: 19px;}
+.priceBlk ul.priceSel li:last-child{ padding-right:0;}
+.priceBlk ul.priceSel li.verBlock{ padding-left:0;}
+.priceBlk ul.priceSel li .orLabel{ padding-top: 6px; color: gray; font-size: 14px; display: block;}
+.priceIcon{background: url('https://post.magicbricks.com/static/images/ppStep1Sprite.png') no-repeat 0 -282px; width: 8px; height: 13px; display:block; margin-right: 9px; float:left; margin-top:11px;}
+.priceIconToolTip{background: url('https://post.magicbricks.com/static/images/ppStep1Sprite.png') no-repeat -36px -588px; width: 6px; height: 10px; margin-right: 0px;  display:inline-block; vertical-align: -1px;}
+.priceIconSmall{background: url('https://post.magicbricks.com/static/images/ppStep1Sprite.png') no-repeat -36px -588px; width: 6px; height: 10px; display:inline-block; margin-right: 9px; float:left; margin-top:4px;}
+.priceBlk .priceIcon{ margin-top: 29px; display: none;}
+.addPPS{ margin: 12px 0 0 0; display:inline-block;}
+.addPPS.areaBlock{ margin-left:0; margin-top:0; font-weight: bold;}
+.addPPS span{ display:inline-block; background: url('https://post.magicbricks.com/static/images/ppStep1Sprite.png') no-repeat 0 -298px; width: 11px; height: 11px; margin-right:9px;}
+.addPPS a{ color: #303030; text-decoration: underline; font-weight: bold; color: #303030;}
+.addPPS a:hover{text-decoration: none;}
+// .addPPS:hover span{}
+.addPPS:hover a{ text-decoration: none;}
+
+#editPricePage .priceBlk ul.priceSel li{padding-right: 5px; position: relative;}
+.propFeatures .priceHeader{color: gray; padding-bottom: 5px;}
+.propFeatures .ciDrop { width: 72px;}
+.propFeatures .ciDrop.roadFacing{ width: $elemWidth;}
+.propFeatures .ciDrop.furSta { width: $elemWidth;}
+.propFeatures ul.pFeatureSel{ float:left;}
+.propFeatures ul.pFeatureSel li{ float:left; position: relative;}
+// .propFeatures ul.pFeatureSel li .formErr{}
+.propFeatures ul.pFeatureSel>li {
+    min-height: 80px;
+    padding-right: 28px;
+}
+#editConfigruationPage .propFeatures ul.pFeatureSel li, .propFeatures ul.pFeatureSel li.verBlock, .propFeatures ul.pFeatureSel li:first-child {
+    padding-left: 0;
+}
+.newBedRoomStruc .inputContainer {
+    float: left;
+    width: 280px;
+}
+.listForSelect {
+    float: left;
+    border-radius: 3px;
+    border: 1px solid #e0e0e0;
+    border-left: 0;
+    position: relative;
+}
+//
+.propFeatures ul.pFeatureSel li .listForSelect>ul>li {
+    padding-right: 0;
+}
+.listForSelect .csBV, .listForSelect .csF, .listForSelect .csfDD {
+    cursor: pointer;
+}
+.listForSelect ul li {
+    float: left;
+    color: #606060;
+    border-left: 1px solid #e0e0e0;
+    height: 36px;
+    line-height: 32px;
+    width: 42px;
+    text-align: center;
+}
+.propFeatures ul.pFeatureSel li .listForSelect>ul>li.csfDD {
+    padding-right: 9px;
+    background-position: 36px;
+}
+
+.propFeatures ul.pFeatureSel li .listForSelect>ul>li {
+    padding-right: 0;
+}
+.listForSelect ul li.csfDD, .listForSelect ul li.csfDD.active, .listForSelect ul li.csfDD.active:hover, .listForSelect ul li.csfDD:hover {
+    background-position: 36px;
+    width: 53px;
+    white-space: nowrap;
+}
+.listForSelect ul li.csfDD {
+    background: url("https://post.magicbricks.com/static/images/newBedDD.png") no-repeat 23px;
+    padding-right: 10px;
+    width: 53px;
+}
+#bathroomsDiv .csB, #bedroomsDiv .csB, #cabinsLi .csB {
+    z-index: 2;
+}
+.propFeatures ul.pFeatureSel li .listForSelect>ul>li.csB {
+    height: 224px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 20;
+}
+.listForSelect ul li.csB:last-child {
+    border-left: 0;
+    display: block;
+    width: 53px;
+    display: none;
+}
+.listForSelect ul li.csB {
+    position: absolute;
+    right: 0;
+    top: 37px;
+}
+#bedroomsDiv .listForSelect ul li ol {
+    width: 53px;
+}
+.listForSelect ul li ol {
+    color: #606060;
+    border: 1px solid #e0e0e0;
+    border-top: 0;
+    height: 32px;
+    line-height: 32px;
+    width: 44px;
+    text-align: center;
+    background: #fff;
+}
+.listForSelect ul li.csfDD, .listForSelect ul li.csfDD.active, .listForSelect ul li.csfDD.active:hover, .listForSelect ul li.csfDD:hover {
+    background-position: 36px;
+    width: 53px;
+    white-space: nowrap;
+}
+#FloorNoDiv, #totalFloor {
+    width: 100%;
+}
+.propFeatures ul.pFeatureSel li:last-child{ padding-right: 0px;}
+.propFeatures ul.pFeatureSel li:first-child{ padding-left:0;}
+.propFeatures ul.pFeatureSel li.verBlock{ padding-left:0;}
+#editConfigruationPage .propFeatures ul.pFeatureSel li{padding-left: 0;}
+
+.bedRoomSpecBlock{ width: 410px; padding-top: 10px;  margin: 0 auto 30px auto;}
+.bedRoomSpecBlock .header{background: #ededed; font-size: 14px; color: gray; text-align:center;  padding: 0px; height: 46px; line-height: 46px; position: relative; width:  410px;}
+.bedRoomSpecBlock .header .showHideDetail{height: 9px; width: 10px; position: absolute; right: 16px; top: 19px; display: inline-block; background: url('https://post.magicbricks.com/static/images/showHideBedRoom.png') no-repeat 0 -11px; cursor: pointer; }
+.bedRoomSpecBlock .header .showHideDetail.active{background: url('https://post.magicbricks.com/static/images/showHideBedRoom.png') no-repeat 0 0; }
+.bedRoomSpecBlock .bedRoomspecData{ border: solid 1px #e9e9e9; padding-bottom: 13px;}
+.bedRoomSpecBlock .bedRoomspecData .bedroomHeading{ padding-left: 65px; text-align:center; font-size: 14px; color: gray; padding-top: 8px; padding-bottom: 12px;}
+.bedRoomSpecBlock .bedRoomspecData .bedroomHeading .multi{ padding: 0 25px; display:inline-block;}
+#attachedBalconydiv.formEle, #attachedBathroomdiv.formEle, #AvailableFromLi.formEle, #AvailableFromLi .formEle, #dealsSection .formEle, #dealsSection .formValue, #maintenanceChargesDiv.formEle, #otherChargestxt.formEle, #packagedropdown.formEle, #packagetext.formEle, #pgcommonAreadiv.formEle, #pgFurnishingDetails .formEle, #PossessionLi .formEle, #prefilledInfo .formEle, #priceIncludes.formEle, #showPriceAsDiv.formEle, #stampAndOtherChargesdiv.formEle, #transactionTypeLi.formEle, ._multiStoreyPrice.formEle, .checkBoxBlock.formEle, .formEle.brokerConnectBlock, .formEle.formEleWithCorner, .formEle.fullwidth, .fullwidthStep2RC .formLabel, .newBedRoomStruc #FloorNoDiv .inputContainer, .newBedRoomStruc #furnishedDiv .inputContainer, .newBedRoomStruc #totalFloor .inputContainer, .toWhomeFUll.formEle {
+    width: 630px;
+}
+
+.newBedRoomStruc .inputContainer {
+    float: left;
+    width: 280px;
+}
+#furnishedDiv .listForSelect ul li, .propFeatures ul.pFeatureSel li .listForSelect>ul>li.blOptionNowr {
+    width: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    min-width: 42px;
+}
+.pp__magiccasn__int {
+    display: none;
+}
+
+.pp__magiccasn__int {
+    font-size: 12px;
+    color: #303030;
+    font-weight: 600;
+    padding-left: 7px;
+}
+
+.formCom.formComPosAbsTR {
+    position: absolute;
+    right: -50px;
+}
+.bedScroller{ max-height: 132px; overflow:hidden;}
+.bedScroller:hover{ overflow: auto;}
+.bedUl li{ padding: 0 0 10px;}
+.bedUl .ftlt{ float:left;}
+.bedUl .labelVal{ width: 97px; padding-left: 20px; padding-top: 6px;}
+.bedUl .firstInp{ width: 127px;}
+.bedUl .secondInp{ width: 105px;}
+.bedUl .unit{ padding-top: 6px;}
+.bedUl .ftlt input{border: solid 1px #e0e0e0; border-radius: 3px; height: 32px; line-height: 32px; font-size: 14px; padding:0px 8px 0 7px; width: 77px; text-align:left;}
+.bedScroller #bedRoomUl .formErr{width: 351px; left: -108px; white-space: inherit; position: relative; top: 0;}
+.bedScroller #bedRoomUl .formErr .formErrArrow{left: 115px;}
+
+.propertyStatus{ padding-top: 20px;}
+.propertyStatus .propFeatures .priceHeader{ padding-bottom: 3px;}
+.areaCalcBlock{ width: 645px; text-align:right; font-size: 12px; margin-top:-8px; margin-bottom: -5px;}
+.areaCalcBlock a{ color: red; text-decoration: none;}
+.areaCalcBlock a:hover{ text-decoration: underline;}
+.coveredHelpCont{ float:left;  position: relative; background: url('https://post.magicbricks.com/static/images/ppStep1Sprite.png') no-repeat 0 -325px; width: 15px; height: 15px; margin: 15px 0 0 60px;}
+.newPropHelp{ background: #f9f3bf; border: solid 1px #dcd6a5; color: gray; padding: 8px 13px 11px 13px; line-height: 18px; font-size: 12px; border-radius: 3px; margin:10px 0 0 0px;}
+.discCounter{ float:left;}
+.offerTextArea{ border: solid 1px #e0e0e0; border-width: 0 0 1px 0; outline: none; border-radius: 3px; font-weight: regular; font-size: 14px; line-height: 18px; padding: 0px 0px 4px 0px; height: 65px; width: 470px; resize: none; margin-right: 8px;}
+.helpTxtCont {font-size:12px;  margin-bottom: 50px; position: relative;}
+.helpTxtCont a{ color: red; text-decoration: none;}
+.helpTxtCont a:hover{ text-decoration: underline;}
+.helpTxtCont:hover .helpTextContaint{ display: block;}
+.helpTxtCont .helpTextContaint{  display: none; position: absolute; border: solid 1px #cccccc; background: white; padding: 10px 5px 13px 13px; box-shadow: 0 2px 3px #ccc; width: 340px; font-size: 12px; top: 20px; z-index:999; }
+.helpTxtCont .helpTextContaint .helpScroll{max-height: 300px; overflow: auto;}
+.helpTxtCont .helpTextContaint:hover{display: block;}
+.helpTxtCont .helpTextContaint span.arrow{ position:absolute; left:0; background: url('https://post.magicbricks.com/static/images/ppStep1Sprite.png') no-repeat  0px -707px; width: 105px; height: 7px; top: -7px;}
+.helpTxtCont .helpTextContaint ul li{padding-left: 17px; padding-bottom: 7px; background: none !important;}
+.helpTxtCont .helpTextContaint ul li:before{border-bottom: 4px solid transparent; border-left: 4px solid gray; border-top: 4px solid transparent; content: ""; height: 0; left: 14px; margin-top: 6px; position: absolute; width: 0;}
+.offerContLeft{ font-size:12px; color: gray;}
+.offerContLeft.brokerrage{display: inline-block; padding: 0px 10px;}
+.offerNotice{ padding-top: 15px; color: gray; padding-bottom:12px;}
+.offerNotice .offerIcon{background: url('https://post.magicbricks.com/static/images/ppStep1Sprite.png') no-repeat 0 -342px; width: 14px; height: 14px; display:inline-block; vertical-align: -2px; margin-right: 4px;}
+.calanderIcon{ float: left; background: url('https://post.magicbricks.com/static/images/ppStep1Sprite.png') no-repeat 0 -358px; width: 16px; height: 16px; display:inline-block; margin: 8px 0 0 13px;}
+
+.listingMessage{ background: #f9f3bf; border: solid 1px #dcd6a4; padding: 15px 18px 10px 18px; border-radius: 3px; margin-left: 197px; width: 337px; font-size: 13px;  color: gray;}
+.listingMessage .normalInfo{ padding-bottom: 17px;}
+.listingMessage .listingBlock{ padding-bottom: 17px;}
+.listingMessage .listingBlock .listingHead{ font-weight: bold;}
+.listingMessage .listingBlock .errorLIst{ font-weight: bold; display: block;}
+.listingMessage .mainAlert { font-weight: bold; color: red; padding-top: 6px;}
+
+.rightBlock{ float:right; height: 1px; overflow: visible; position: relative; margin-right: 22px; margin-top: 13px; z-index:10;}
+.rightBlock.rightBlockStiky{position:fixed; top:0px;}
+
+.rightBlock .rightDataBlock{width: 276px; position: absolute; background: white; right: 0; box-shadow: 0 2px 3px #ccc; border: solid 1px #e6e6e6;}
+.secComScore .rightDataBlock{width: 276px; position: absolute;  right: 0; }
+.secComScore .rightDataBlock.hideThis{opacity:0;}
+
+.secComScore .rightDataBlock .insider{ box-shadow: 0 2px 3px #ccc; border: solid 1px #e6e6e6; background: white;}
+.rightBlock .rightDataBlock .graphHeader,
+.secComScore .rightDataBlock .graphHeader{ font-size: 23px; text-align:center; background: #f5f5f5; height: 42px; line-height: 42px;}
+.rightBlock .rightDataBlock .graphImg,
+.secComScore .rightDataBlock .graphImg{ text-align:center; padding-top: 12px; padding-bottom: 3px;}
+.rightBlock .rightDataBlock .graphText{ font-size: 14px; text-align:center; line-height: 20px; padding-bottom: 8px;}
+.secComScore .rightDataBlock .graphText{ font-size: 14px; text-align:left; line-height: 16px; padding-bottom: 6px; padding-left: 15px; padding-top: 7px;}
+
+.secComScore .rightDataBlock .ppRightBanner{padding-top:  20px; text-align: center;}
+
+.rightBlock .rightDataBlock .lowerVer{display: none; display: block; }
+.secComScore .rightDataBlock .lowerVer{display: none; display: block; }
+
+.rightBlock .rightDataBlock .radialProgress{display: block; display: none; }
+.secComScore .rightDataBlock .radialProgress{display: block; display: none; }
+
+
+
+/* Progress bar */
+.radialProgress{ background:url("https://post.magicbricks.com/static/images/dummyGraph.png") center center no-repeat; height: 126px; width: 126px; padding:7px; margin:auto;}
+.timer {position:relative; font-size: 126px; width:1em; height:1em; float: left;}
+.timer > .percent {position: absolute; top: 45px; left: 25px; width: 3.33em; font-size: 25px; text-align:center; font-weight: bold; color: #188218;}
+.timer > #slice {position:absolute; width:1em; height:1em; clip:rect(0px,1em,1em,0.5em);}
+.timer > #slice.gt50 {clip:rect(auto, auto, auto, auto);}
+.timer > #slice > .pie {
+	border: 0.1em solid #1c7f1c;
+	position:absolute;
+	width:0.8em; /* 1 - (2 * border width) */
+	height:0.8em; /* 1 - (2 * border width) */
+	clip:rect(0em,0.5em,1em,0em);
+	-moz-border-radius:0.5em;
+	-webkit-border-radius:0.5em; 
+	border-radius:0.5em; 
+}
+.timer > #slice > .pie.fill {
+	-moz-transform:rotate(180deg) !important;
+	-webkit-transform:rotate(180deg) !important;
+	-o-transform:rotate(180deg) !important;
+	transform:rotate(180deg) !important;
+}
+.timer.fill > .percent {
+	display: none;
+	color: #1a8e1a;
+	font-size: 25px; 
+	
+}
+.timer.fill > #slice > .pie {
+	border: transparent;
+	background-color: #c0c0c0;
+	width:1em;
+	height:1em;
+}
+
+/* Area Calulaor*/
+#grayOverLay{ background: #000; opacity: .4; height: 100%; width: 100%; position: fixed; left:0; top: 0; display: none; z-index: 10000;}
+#grayOverLayEx{ background: #000; opacity: .4; height: 100%; width: 100%; position: fixed; left:0; top: 0; display: none; z-index: 10002;}
+
+#areaCalc{ display: none;}
+.areaCalc{ width: 430px; height: 330px; background: white; position: absolute; padding: 10px 13px 11px 18px;}
+.areaCalc .closeArea{background: url('https://post.magicbricks.com/static/images/ppStep1Sprite.png') no-repeat -24px -64px; width: 18px; height: 18px; display:block; float:right; cursor:pointer;}
+.areaCalc .calcHeading{font-weight: bold; font-size:22px; color: #303030; padding-top: 2px; padding-bottom: 26px;}
+.areaCalc .formEle .formLabel{ width: 101px;}
+.areaCalc .ciDrop.covered{ width: 84px;}
+
+#ageofcons, #ageOfPg, #approvedByAuthority, #availFor, #balconies, #bathrooms, #bedrooms, #builtUpAreaType, #cabins, #carpetAreaType, #cityDropDown, #coveredAreaType, #directionalfacing, #directionalfacing5, #floorAllow, #floorNumber, #furnished, #landAreaType, #liftsInTower, #minSeats, #newVenue, #noticePeriod, #occupacyNo, #openSides, #preferredGuest, #priceCrores, #priceHundreds, #priceLacs, #priceThousand, #propertyType, #remainingPriceComponentOptions, #roomsInPg, #sharedMeetingRooms, #specialZone, #stateDropDown, #statusOfElectricity, #statusOfWater, #strataSaleAreaType, #timingRestriction, #totalFloorNumber, ._displaySelect {
+    height: 0;
+    width: 1px;
+    display: block;
+    opacity: 0;
+    overflow: hidden;
+    margin-top: -6px;
+    float: right;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -999;
+}
+
+.unitBlockAreaDropDown ul li {
+    padding: 2px 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.unitBlockAreaDropDown ul li:hover {
+    background: #f8f8f8;
+}
+.unitBlockAreaDropDown ul li.optGroup {
+    font-weight: 600;
+    cursor: text;
+    background: #d4dee8;
+}
+.formEle.v--display .formLabel {
+    width: 100%;
+    font-size: 14px;
+    color: #606060;
+    padding-bottom: 4px;
+}
+
+.formEle .formLabel.inputDrop {
+    padding-top: 8px;
+}
+.formEle .formLabel {
+    padding-right: 24px;
+    font-size: 14px;
+    float: left;
+    line-height: 16px;
+    color: #606060;
+}
+.formEle.v--display .formLabel:after {
+    content: "";
+    display: block;
+    height: 0;
+}
+.formEle .formValue, .formEle .formValue .formCom {
+    position: relative;
+    float: left;
+}
+
+.formEle .formValue {
+    font-size: 14px;
+}
+.ftlt {
+    float: left;
+}
+
+.inputContainer {
+    display: inline-block;
+    position: relative;
+}
+.ftlt {
+    float: left;
+}
+.propFeatures ul.pFeatureSel {
+    float: left;
+}
+.ciDrop.inputText {
+    height: 32px;
+    line-height: 32px;
+    background: none;
+    padding: 0 8px 0 0;
+    width: 280px;
+    cursor: text;
+    margin-left: -670px;
+}
+
+.ciDrop, .ciDrop.btnInput {
+    height: 32px;
+}
+.ciDrop {
+    border: 0;
+    border-bottom: 1px solid #d7d7d7;
+    border-radius: 0;
+    line-height: 32px;
+    font-size: 14px;
+    padding: 0 20px 2px 0;
+    width: 280px;
+    background: url("https://post.magicbricks.com/static/images/ppStep1Sprite.png") no-repeat right -436px;
+    text-align: left;
+    color: #303030;
+    font-weight: 400;
+    outline: none;
+    cursor: pointer;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+#addLocality, #addProject {
+    background-color: #c13b2e;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    padding: 2px 10px;
+    position: absolute;
+    right: 6px;
+    top: 7px;
+    z-index: 100;
+    display: none;
+}
+.step1MainCont .ppSecBlock {
+    border-top: 0 solid #e6e6e6;
+}
+.listForSelect ul li.csB {
+    position: absolute;
+    right: 0;
+    top: 37px;
+}
+#bathroomsDiv .csB, #bedroomsDiv .csB, #cabinsLi .csB {
+    z-index: 2;
+}
+.propFeatures ul.pFeatureSel li .listForSelect>ul>li.csB {
+    height: 224px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 20;
+}
+.propFeatures ul.pFeatureSel li .listForSelect>ul>li {
+    padding-right: 0;
+}
+.listForSelect ul li.csB:last-child {
+    border-left: 0;
+    display: block;
+    width: 53px;
+    display: none;
+}
+.areaCalc input.calculate{ background: #c1392b; color: white; height: 40px; line-height: 28px; padding: 0px 14px 2px 14px; font-size: 16px; outline: none; border: none; border-radius: 3px;}
+.areaCalc input.calculate:hover{ background: #a5281b; cursor: pointer;}
+.areaCalc .changeValue{font-weight: bold; font-size: 24px; color: #303030;}
+.areaCalc .formEle{ padding-bottom: 19px;}
+.areaCalc .resultVal{ padding-top: 21px;}
+.areaCalc .formEle.inputOut{ padding-top: 21px;}
+.areaCalc .formEle .formLabel.inputDrop{ padding-top: 6px;}
+.areaCalc .formEle.converTo{ padding-bottom: 17px;}
+
+
+/* Package Expire */
+#packageExp{ display: block;}
+.packageExp{ width: 430px; min-height: 180px; background: white; position: absolute; padding: 10px 13px 11px 18px;z-index: 1001;}
+.packageExp .closeArea{background: url('https://post.magicbricks.com/static/images/ppStep1Sprite.png') no-repeat -24px -64px; width: 18px; height: 18px; display:block; float:right; cursor:pointer;}
+.packageExp .packCont{ text-align: center; color: #3a3a3a; font-size: 16px; padding-top: 0px;} 
+.packageExp .packCont .mainHead{font-weight: bold; padding-bottom: 2px; font-size: 28px;}
+.packageExp .packCont .secHead{ padding-bottom: 10px; padding-top: 10px;}
+.packageExp .packCont .contatName{ text-align: left; font-size: 18px; background:url("https://post.magicbricks.com/static/images/expiredValid.jpg") no-repeat; padding-left: 35px; line-height: 29px; display: block; line-height: 29px; margin: 0 0 0 83px;; width: 260px;}
+
+
+/* Login Block*/
+#LoginBlock{ display: none;}
+.LoginBlock{ width: 612px; background: white; position: absolute; padding: 6px 0px 11px 0px; min-height: 588px; top:50px; z-index:90; border-radius: 4px;  }
+.LoginBlock .closeArea{background: url('https://post.magicbricks.com/static/images/ppStep1Sprite.png') no-repeat -24px -64px; width: 18px; height: 18px; display:block; float:right; margin-right: 9px; cursor:pointer; }
+.verification .closeArea{background: url('https://post.magicbricks.com/static/images/ppStep1Sprite.png') no-repeat -24px -64px; width: 18px; height: 18px; display:block; float:right; margin-right: 11px; cursor:pointer; margin-top: 10px;}
+.LoginBlock .calcHeading{font-weight: bold; font-size:24px; color: #303030; padding-bottom: 22px; clear: both; text-align: center; line-height: 30px;}
+.LoginBlock .loginTabCont{ border-bottom: solid 1px #e6e6e6;}
+.LoginBlock .loginTabCont .loginTab{ font-size: 14px; text-align: center; } 
+.LoginBlock .loginTabCont .loginTab a{ color: #999; text-decoration: none; line-height: 28px; height: 30px; padding: 0 18px 1px 18px; border-bottom: solid 5px white; display:inline-block;}
+.LoginBlock .loginTabCont .loginTab a:hover{ border-bottom: solid 5px red; color: gray;}
+.LoginBlock .loginTabCont .loginTab a.active{border-bottom: solid 5px red; color: gray;}
+.LoginBlock .loginSec{ padding-bottom: 14px;}
+.LoginBlock .loginSec.iAgree{padding-top: 17px; padding-bottom:0;}
+.LoginBlock .loginSec.mobile{padding-bottom: 2px;}
+
+.LoginBlock .loginData{ padding-top: 27px;}
+.LoginBlock .loginSec .loginLabel{ font-size: 14px; width: 160px; float:left; padding-top:7px; padding-right:10px; text-align: right;  font-weight: bold; color: gray;}
+.LoginBlock .loginSec .loginField{float:left; position: relative;}
+.LoginBlock .loginSec .loginField .useName{ height: 32px; line-height:32px; border: solid 1px #e0e0e0; border-radius: 3px; width: 227px; padding: 0 10px; font-size: 14px;}
+.LoginBlock .loginSec .loginField .btn{ border:none; background: none repeat scroll 0 0 red; border-radius: 3px; color: white; font-size: 16px; height: 40px; line-height: 36px; padding-bottom:2px; text-align: center; text-decoration: none; width: 250px; margin-top: 4px; cursor:pointer; float: left;}
+.LoginBlock .loginSec .loginField .btn:hover{background: #a5281b;}
+
+.LoginBlock .loginSec .loginField .forgot{ text-align:right; width: $elemWidth; font-size:14px;}
+.LoginBlock .loginSec .loginField .forgot a{ color: #c1392b; text-decoration: none;}
+.LoginBlock .loginSec .loginField .forgot a:hover{text-decoration: underline;}
+.LoginBlock .orDevider{ background: url('https://post.magicbricks.com/static/images/ppStep1Sprite.png') repeat-x 0 -483px; width: 100%; height: 41px; display:block;}
+.LoginBlock .orDevider .orText{background: url('https://post.magicbricks.com/static/images/ppStep1Sprite.png') no-repeat -29px -160px; width: 40px; height: 40px; margin:auto;}
+.LoginBlock .loginSocial{ padding-bottom: 20px;}
+.LoginBlock .loginSocial a{ background:url("https://post.magicbricks.com/static/images/dummyGraph.png"); height: 38px; width: 215px; display:block; margin:20px auto 0;}
+.LoginBlock .loginSocial a.googlePlus{ background-position: 0 -38px;}
+.LoginBlock .loginSocial input.googlePlus{ background:url("https://post.magicbricks.com/static/images/dummyGraph.png") 0 -38px; height: 38px; width: 215px; display:block; margin:20px auto 0; border: none; outline:0; cursor: pointer;}
+
+
+
+.actionBlock{ padding-top:20px; padding-bottom: 10px; width: 200px; position: relative;}
+#ppListingType .actionBlock{width: 400px; margin: auto;}
+.actionBlock a{ background: red; color: white; width: 200px; display: block; height: 32px; line-height: 32px; text-decoration: none; text-align:center; border-radius: 3px; font-size: 14px;}
+.actionBlock a:hover{background: #a5281b; color:white; text-decoration: none;}
+#ppListingType .actionBlock a{width:$elemWidth / 2; font-size: 14px; display: inline-block; font-weight: bold;}
+.actionBlock.forLogin{ padding-top:18px; padding-bottom: 30px; width: 200px;}
+.actionBlock.forLogin #mapSubmit{ background: red; color: white; width: 195px; display: block; height: 40px; line-height: 40px; text-decoration: none; text-align:center; border-radius: 3px; font-size: 14px;}
+.actionBlock.forLogin #mapSubmit:hover{background: #a5281b;}
+.actionBlock.forLogin.locationMap{width: 218px; margin: auto;}
+.actionBlock.forLogin.locationMap div{float: left;}
+.actionBlock.forLogin.locationMap #mapSubmit{width: 106px; margin-right: 24px; cursor: pointer;}
+.actionBlock.forLogin.locationMap #mapClose{width: 80px; text-align: center; background: white; border-radius: 3px; height: 34px; line-height: 34px; border: solid 2px #d7d7d7; color:#717171; margin-top: 1px;cursor: pointer;}
+.actionBlock.forLogin.locationMap #mapClose:hover{text-decoration: none; border: solid 2px red; background:red; color: white;}
+ 
+
+
+.captchaBlock { padding-top: 14px;}
+.captchaBlock .captchaText{ width: 68px; float: left; height:34px; line-height: 34px; text-align: center;}
+.captchaBlock .captchaInput{ float:left} 
+.captchaBlock .captchaInput input{ width: 110px; padding: 0px 7px;  border: solid 1px #e0e0e0; border-radius: 2px; height: 32px; line-height: 32px;}
+ 
+.mapContainer{ float:right; height: 1px; position: relative;}
+.mapContainer .mapBlock{ position:absolute; top: 18px; right:0; border:  solid 1px #d1d1d1;  margin-right: 20px; margin-top:0px; width:228px; height:132px; }
+.mapContainer .mapBlockLarge{ position:absolute; top: 0; right:0; border:  solid 1px #d1d1d1;  margin-right: 20px; margin-top:18px; width:418px; height:400px; }
+
+.secComScore{ margin-right: 20px; float:right; position: relative;}
+.graphDevider{ height: 10px; width: 276px; overflow: hidden; background:url('https://post.magicbricks.com/static/images/scoreDevider.png'); display: block; margin: 10px auto 12px;}
+.ratingCacl{ font-size: 14px; padding: 11px 20px 18px 17px;}
+.ratingCacl .numBlock{ margin: 9px 0 10px 0; color: red; cursor: pointer; }
+.ratingCacl .numBlock:hover .ratingLabel .underLine{border-bottom: solid 1px;}
+.ratingCacl .numBlock .ratingLabel{ float:left; padding-left: 21px; background: url('https://post.magicbricks.com/static/images/ppStep1Sprite.png') no-repeat -87px -135px; }
+.ratingCacl .numBlock .ratingLabel .underLine{border-bottom: solid 1px transparent;}
+.ratingCacl .numBlock .ratingVal{ float:right;}
+.ratingCacl .numBlock.done{ color: #1a8e1a;}
+.ratingCacl .numBlock.done .ratingLabel{background: url('https://post.magicbricks.com/static/images/ppStep1Sprite.png') no-repeat -88px -102px;}
+.ratingCacl .numBlock .ratingLabel.noLink {border-bottom: 1px solid transparent !important;}
+.ratingCacl .numBlock .ratingLabel.noLink:hover{border-bottom: 1px solid transparent; cursor: text;}
+
+.secComScore .rightDataBlock.sticky {position: fixed; top:50px !important; /* z-index:80 !important; */ border-top: 0; left:0px; }
+
+#editCalloutInnerBox .photoBlock .uploadImgBlock {height:280px; overflow-y:auto;}
+#editCalloutInnerBox  .photoBlock .uploadImgBlock .imageStatus{ color: gray; width:151px; margin:auto; text-align:left; font-size:12px; text-align: center;}
+// .photoBlock{}
+.photoBlock .photoHeading{  padding-bottom: 0px;}
+.photoBlock .photoSubHead{  font-size: 14px; color: gray; padding-bottom: 6px;}
+.photoBlock .upImgBlock{ width: 100%;}
+.photoBlock .uploadImgTab{ font-size:12px; margin-bottom:18px;}
+.photoBlock .uploadImgTab ul{ float:left;}
+.photoBlock .uploadImgTab ul li{ float:left;}
+.photoBlock .uploadImgTab a{ color: #4c4c4c; text-decoration: none; padding: 17px 0px 6px; border-bottom: solid 3px  transparent; display: block; text-align:center; margin-right:10px;}
+.photoBlock .uploadImgTab a.active{color:#d8232a; border-bottom: solid 3px #d8232a;}
+.photoBlock .uploadImgTab a:hover{color: #d8232a; border-bottom: solid 3px #d8232a;}
+#imagesSection #addImageLink.popupHeading {
+    color: #4d4d4d;
+    font-weight: 700;
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+.addPhotoBlock__box, .freephoto__block {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.addPhotoBlock__box {
+    background: #fef6f6;
+    border: 1px solid rgba(228,102,108,.58);
+    width: 394px;
+    margin: 0 auto 14px;
+    border-radius: 34px;
+    height: 72px;
+    position: relative;
+    padding: 9px 0 0;
+    -webkit-animation: placeHolderShimmer 3s ease infinite;
+    animation: placeHolderShimmer 3s ease infinite;
+    z-index: 11;
+}
+.addPhotoBlock__box .uploadLocal {
+    font-size: 18px;
+    line-height: 22px;
+    color: #303030;
+}
+
+.font-type-3 {
+    font-weight: 700;
+}
+.photoBlock .uploadImgCont{float:left; width:600px; margin-right:20px;}
+.photoBlock .uploadImgCont .deaultScreen{border:1px dashed #eaeaea; min-height:324px; background:white;}
+.photoBlock .uploadImgCont .deaultScreen .addPhotoBlock{text-align:center;  font-size:18px; padding-top:54px; color:gray;}
+.photoBlock .uploadImgCont .deaultScreen .addPhotoBlock .uploadLocal span {color:#d8232a;}
+.photoBlock .uploadImgCont .deaultScreen .addPhotoBlock .uploadLocal2 {font-size:14px; margin:3px 0 15px;}
+.photoBlock .uploadImgCont .deaultScreen .arrowBlock{ height: 131px; width: 131px; border: dashed 1px #acacac; background: white; margin-bottom: 14px;}
+.photoBlock .uploadImgCont .deaultScreen .arrowBlock .arrowUp{ height: 36px; width: 29px; display:block; background: url('https://post.magicbricks.com/static/images/ppStep1Sprite.png') no-repeat -24px -83px; margin: 54px 0 0 50px;}
+.photoBlock .uploadImgCont .deaultScreen .arrowBlock .arrowUpVideo{ height: 31px; width: 31px; display:block; background: url('https://post.magicbricks.com/static/images/ppStep1Sprite.png') no-repeat -24px -124px; margin: 47px 0 0 50px;}
+.photoBlock .uploadImgCont .deaultScreen .uploadBtn{cursor: pointer;}
+.photoBlock .uploadImgCont .addDevider{ float: left; font-size:18px;  background: url('https://post.magicbricks.com/static/images/ppStep1Sprite.png') no-repeat -91px -166px; padding-top: 69px; height: 99px; margin-left: 21px; width: 20px; text-align: center; margin-top: 7px;}
+.photoBlock .uploadImgCont .uploadText{font-size: 12px; color:gray;}
+.photoBlock .uploadImgCont .uploadText a {color:#c23824;}
+.photoBlock .dummyImg{ 
+	float: right;
+    width: 290px;
+    font-size: 11px;
+    color: gray;
+}
+.photoBlock .dummyImg .text{ padding: 20px 0 8px 0px; font-size:12px; color:#303030;}
+// .photoBlock .dummyImg .dummyImgCont{}
+.photoBlock .dummyImg .dummyImgCont li{float: left;
+    width: 64px;
+    margin: 0 8px 8px 0;
+    position: relative;
+    color: #d8232a;}
+.photoBlock .dummyImg .dummyImgCont li span {position:absolute; width:15px; height:15px; background:red; top:-5px; left:-5px;}
+.photoBlock .dummyImg .dummyImgCont li.green {color:#55c433;}
+.photoBlock .dummyImg .dummyImgCont li p {margin-top:7px;}
+.photoBlock .uploadImgCont .acpFormat{ font-size:12px; color: gray; padding: 20px 0 16px;  }
+.photoBlock .uploadImgCont .acpFormat__dark{color: #303030;}
+.imgMessages {float: left; width: 260px;}
+
+.photoBlock .uploadImgBlock{ padding-bottom: 3px;}
+.photoBlock .uploadImgBlock ul{ float:left; width: 100%;}
+.photoBlock .uploadImgBlock ul li {position:relative; float:left; margin: 19px 0 22px 19px; width:188px; font-size: 14px; text-align:center; height: 213px; background:white; box-shadow:0 1px 4px 0 rgba(0, 0, 0, 0.1); border:3px dashed #d7d7d7;}
+.photoBlock .uploadImgBlock ul div li  {float:left; padding-top:12px; margin: 19px 0 22px 19px; width:188px; font-size: 14px; text-align:center; height: 207px; background:white; box-shadow:0 1px 4px 0 rgba(0, 0, 0, 0.1); border:none;}
+.photoBlock .uploadImgBlock .madeDefault{width:148px; margin:auto; text-align:left; font-size:14px; color:#4a4a4a; margin-bottom:10px;}
+.photoBlock .uploadImgBlock .uploadImgTemp{width:148px; margin:auto; text-align:left; font-size:13px; color:#d8232a;}
+.photoBlock .uploadImgBlock .uploadImgTemp .img{ background: url('https://post.magicbricks.com/static/images/loader.gif') no-repeat center center;}
+.imgloader{ border-bottom: solid 1px #e4e4e4; background: url('https://post.magicbricks.com/static/images/loader.gif') no-repeat center center; height: 131px; }
+.photoBlock .uploadImgBlock .removeLink{ padding: 7px 0 10px; text-align: center;}
+.photoBlock .uploadImgBlock .removeLink  a{ color: red; text-decoration: none;}
+.photoBlock .uploadImgBlock .removeLink  a:hover{ color: red; text-decoration: underline;}
+.photoBlock .uploadImgBlock .imageInProcess{ font-weight: bold;  padding-bottom: 10px;  height:20px;}
+.photoBlock .uploadImgBlock .imageInProcess.approved{ color: #298700;}
+.photoBlock .uploadImgBlock .imageInProcess.approved span.icon{ height: 15px; width: 15px; display:inline-block; margin-right: 7px; vertical-align: -2px; background: url('https://post.magicbricks.com/static/images/ppStep1Sprite.png') no-repeat -63px -82px;}
+.photoBlock .uploadImgBlock .imageInProcess.rejected{ color: red; text-align:center;}
+.photoBlock .uploadImgBlock .imageInProcess.rejected span.icon{ height: 14px; width: 15px; display:inline-block; margin-right: 4px; vertical-align: -2px; background: url('https://post.magicbricks.com/static/images/ppStep1Sprite.png') no-repeat -64px -102px;}
+.photoBlock .uploadImgBlock .imageInProcess.pending{ color: #6e6e6e;}
+.photoBlock .uploadImgBlock .imageInProcess.pending span.icon{ height: 15px; width: 10px; display:inline-block; margin-right: 3px; vertical-align: -2px; background: url('https://post.magicbricks.com/static/images/ppStep1Sprite.png') no-repeat -67px -121px;}
+.photoBlock .uploadImgBlock .imageStatus{ color: gray; width:148px; margin:auto; text-align:left; font-size:12px; text-align: center;}
+.photoBlock .uploadImgBlock ul li .img {position: relative;}
+.photoBlock .uploadImgBlock ul li span.iconMagnifier{width: 16px; height: 16px; background: url('https://post.magicbricks.com/static/images/ppStep1Sprite.png') 0 -684px; position: absolute; right: 4px; bottom: 5px; display: none;}
+.photoBlock .uploadImgBlock ul li .img:hover span.iconMagnifier{display: block;}
+
+.photoBlock .uploadImgCont .uploadImgBlock .addPhotoBlock{font-size:14px;}
+.photoBlock .uploadImgCont .uploadImgBlock .addPhotoBlock a{ color: #303030; text-decoration: none; display: block; border-radius: 2px; background: transparent; width:182px; height:82px; padding-top:118px; line-height: 36px;}
+// .photoBlock .uploadImgCont .uploadImgBlock .arrowBlock{}
+.photoBlock .uploadImgCont .uploadImgBlock .arrowBlock .arrowUp{height: 39px; width: 47px; display:block; background: url('https://post.magicbricks.com/static/images/imgPlus.svg') no-repeat top left; margin: 66px 0 27px 69px;}
+.photoBlock .uploadImgCont .uploadImgBlock .arrowBlock .arrowUpVideo{ height: 31px; width: 31px; display:block; background: url('https://post.magicbricks.com/static/images/ppStep1Sprite.png') no-repeat -24px -124px; margin: 47px 0 0 50px;}
+.photoBlock .uploadImgCont .uploadImgBlock .uploadBtn{ width: 180px; height:200px; position:absolute; top:2px; left:2px;	 margin:auto;}
+
+.dummyImgCont div {width:64px; height:64px; background: url('https://post.magicbricks.com/static/images/imgGuidelineSprite1.png') no-repeat top left; background-size: 137px auto;}
+.dummyImgCont div.guideImg1 {background-position:0 0;}
+.dummyImgCont div.guideImg2 {background-position:-71px 0;}
+.dummyImgCont div.guideImg3 {background-position:0 -68px;}
+.dummyImgCont div.guideImg4 {background-position:-72px -69px;}
+
+.dummyImgCont div:before{content:""; position: absolute; left: 27px; top: 72px;  height: 10px; width: 10px; background: url('https://post.magicbricks.com/static/images/postPropertyRevIcons.svg') no-repeat;}
+.dummyImgCont div.guideImg1:before {background-position:0 0; width: 12px;}
+.dummyImgCont div.guideImg2:before,
+.dummyImgCont div.guideImg3:before,
+.dummyImgCont div.guideImg4:before {background-position:0 -292px;}
+
+.mapInfoBoxClass{line-height: 18px; background: #b80437; color: white; display: block; text-align: center; white-space: nowrap; font-size: 12px; padding: 5px; position: relative; width: 345px; cursor: pointer;}
+.mapInfoBoxClass span{position: absolute; background: url('https://post.magicbricks.com/static/images/ppStep1Sprite.png') no-repeat -15px -588px; width: 16px; height: 12px; left: 182px; top: 28px; }
+
+
+.mapInfoBoxClassLarge{ background: #b80437; color: white; display: block; text-align: center; white-space: nowrap; font-size: 14px; padding: 5px; position: relative; width: 285px; cursor: pointer; box-shadow: 0px 1px 4px gray;}
+.mapInfoBoxClassLarge span{ position: absolute; background: url('https://post.magicbricks.com/static/images/ppStep1Sprite.png') no-repeat -15px -588px; width: 16px; height: 12px; left: 144px; top: 43px; }
+
+.disClaimer{ width: 579px; font-size:12px; line-height: 16px; margin:auto; padding-top:12px; position: relative;}
+.disClaimer .customCheckBox{ float:left;}
+.disClaimer .disclaimer{ float:left; width: 520px; padding-left: 5px; cursor: pointer;}
+.disClaimer .formErr{left: -16px; top: 50px;}
+
+ /* Mobile verification css */
+#smsWrapper {font:14px; color:#3a3a3a;}
+#smsWrapper .smsVerifyMobile {min-height:53px; padding-left:0; padding-top: 1px; padding-right: 10px; line-height: 21px; text-align:center;}
+#smsWrapper .smsVerifyMobile div{font-weight:bold; font-size:14px;}
+#smsWrapper .smsVerifyMobile p {margin:0px 0 0 0; font-size: 14px; color: #3a3a3a;}
+#smsWrapper .smsForm {padding-left:0; padding-top: 15px;}
+#smsWrapper .smsForm p {font-weight:bold; margin:9px 0 15px;}
+/*#smsWrapper .smsNo {display:block; float:left; background:white; border:1px solid #c8c8c8; border-radius:3px; color:#656565; font-size:14px; line-height:14px; margin:0 14px 0 0; padding:9px; width:87px;}*/
+#smsWrapper a.smsSubmit {display:block; text-align:cenetr; background:#c1392b; height:40px; line-height:40px; border:0px solid #b14a1f; border-radius:3px; padding:0;  color:white; text-decoration:none; font-size: 16px;
+width:246px; margin:0 auto; text-align:center;}
+#smsWrapper a.smsSubmit:hover {text-decoration:underline;}
+#smsWrapper a.skip {display:block; float:left; line-height:24px; margin-left:29px; color:#737373;}
+#smsWrapper a.skip:hover {text-decoration:none;}
+#smsWrapper .smsVerifiedMes {padding-top:10px; height:30px; font-style:italic;}
+#smsWrapper .smsVerified {color:#0fb129;}
+#smsWrapper .smsVerified span {background:url("https://post.magicbricks.com/static/images/rightWrong.png") left -13px no-repeat; width:10px; height:10px; display:inline-block;}
+#smsWrapper .smsVerifiedErr span {background:url("https://post.magicbricks.com/static/images/rightWrong.png") left top no-repeat; width:11px; height:9px; display:inline-block;}
+#smsWrapper .smsCodeSent a{color:#0060b6; text-decoration:none; text-align:center;}
+#smsWrapper .smsCodeSent a:hover {text-decoration:underline;}
+#smsWrapper .smsCodeSent{padding-top: 7px; font-size: 14px;  text-align:center; padding-bottom: 12px;}
+#smsWrapper .smsCodeSent a{color: #c1392b;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////
+
+body.postPropDef{
+    overflow-x: hidden;
+}
+/*@keyframes bounceAndRotate {
+    0% {
+      transform:rotate(0deg);
+    }
+    12% {
+       transform:rotate(10deg);
+    }
+    25% {
+       transform:rotate(0deg);
+    }
+    37% {
+       transform:rotate(-10deg);
+    }
+    50% {
+      transform: rotate(0deg);
+    }
+    62% {
+        transform:rotate(10deg);
+    }
+    75% {
+        transform:rotate(0deg);
+    }
+    87% {
+        transform:rotate(-10deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+  }*/
+  @keyframes bounceAndRotate {
+    0% {
+      transform: scale(1);
+    }
+    12% {
+        transform: scale(1.1);
+    }
+    25% {
+        transform: scale(1);
+    }
+    37% {
+        transform: scale(1.1);
+    }
+    50% {
+        transform: scale(1);
+    }
+    62% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(1);
+    }
+    87% {
+        ttransform: scale(1);
+    }
+    100% {
+        transform: scale(1);
+    }
+  }
+.progress__top{
+    &__block{
+        width: 100%;
+        height: 54px;
+        background-color: white;
+        box-shadow: 0 -2px 6px 0 rgba(51, 51, 51, 0.25);
+        position: fixed;
+        top: 50px;
+        z-index:12;
+        
+        &__heading{
+            width: 1200px;
+            margin: 15px auto;
+            font-size: 14px;
+            font-weight: bold;
+            color: gray;
+        }
+        &__progress{
+            height: 4px;
+            border-radius: 2px;
+            background-color: #303030;
+            width:0%;
+            transition: width .5s;
+        }
+    }
+}
+.postingStep1{
+    &__offer{
+        width: 624px;
+        height: 108px;
+        border-radius: 4px;
+        background-color: lightgray;
+        padding: 17px  0 0 24px;
+
+        &__block{
+            margin-bottom: 15px;
+        }
+        &__heading{
+            font-size: 14px;
+            color: #303030;
+            line-height: 18px;
+            font-weight: bold;
+            padding-bottom: 13px;
+        }
+        &__amt{
+            position: relative;
+        }
+        &__amt:before{
+            content:"";
+            height: 1px;
+            width: 100%;
+            top: 10px;
+            background: red;
+            position: absolute;
+        }
+        &__free{
+            width: 48px;
+              height: 20px;
+              border-radius: 2px;
+              background-color: #ffcc33;
+              display: inline-block;
+              text-align: center;
+              font-weight: bold;
+        }
+        &__list{
+            float: left;
+        }
+        &__listitems{
+            float: left;
+            background: url("https://post.magicbricks.com/static/images/postPropertyRevIcons.svg") no-repeat 0 4px; 
+            padding-left: 20px;
+            margin-right: 28px;
+            margin-bottom:5px;
+        }
+        &__bold{
+            font-weight: bold;
+        }
+        &_block{
+            width: 100%;
+            height: 54px;
+            background-color: white;
+            box-shadow: 0 -2px 6px 0 rgba(51, 51, 51, 0.25);
+            position: fixed;
+            top: 50px;
+            z-index:12;
+            display: none;
+
+            &__heading{
+                width: 1200px;
+                margin: 15px auto;
+                font-size: 14px;
+                font-weight: bold;
+                color: gray;
+            }
+            &__progress{
+                height: 4px;
+                border-radius: 2px;
+                background-color: #303030;
+                width:0%;
+                transition: width .5s;
+            }
+        }
+    }
+    &__pointblock{
+        width: 342px;
+        height: 1px;
+        float: right;
+        &__missedblock{
+            // margin-top: 12px;
+            margin-bottom: 12px;
+        }
+        &__ul{
+            // padding-bottom: 16px;
+        }
+        &__heading{
+            padding-bottom: 12px;
+        }
+        &__headlebel{
+            font-size: md;
+            color: #4a4a4a;
+            width: 50%;
+            float: left;
+            padding-top: 2px;
+        }
+        &__headvalue{
+            width: 50%;
+            float: right;
+            text-align: right;
+            font-size: xl;
+            font-weight: bold;
+        }
+        &__outercircle{
+            height: 20px;
+            width: 20px;
+            border-radius: 100%;
+            display: inline-block;
+            vertical-align: -2px;
+            background: url("https://post.magicbricks.com/static/images/icon__coin__step1.svg");
+        }
+        &__innercircle{
+            height: 14px;
+            width: 14px;
+            border-radius: 100%;
+            border: solid 1px #303030;
+            background: yellow;
+            display: inline-block;
+            text-align: center;
+            line-height: 12px;
+            font-size: base + 1;
+            font-weight: normal;
+        }
+        &__ulblock{
+            font-size: 12px;
+            padding-bottom: 12px;
+            &.selected .postingStep1__pointblock__lilabel::before{
+                background: green;
+            }
+        }
+        &__box{
+            border: solid 1px #eaeaea;
+            border-radius: 4px;
+            padding: 12px 16px 0px 16px;
+            position: relative;
+            &:after {
+                content: "";
+                height: 4px;
+                background: #F7F7F7;
+                border-top: solid 1px #eaeaea;
+                position: absolute;
+                left: -26px;
+                right: -26px;
+                bottom: -15px;
+            }
+            &__heading{
+                font-size: md;
+                line-height: 20px;
+                color: #303030;
+                font-weight: bold;
+                padding-bottom: 8px;
+            }
+             &__mt12{
+                margin-top: 24px;
+                position: relative;
+                &:after{
+                    content: "";
+                    height: 1px;
+                    position: absolute;
+                    background:#fff;
+                    left: -26px;
+                    right: -26px;
+                    top: -11px;
+                    border:0;
+                }
+            }
+        }
+        &__lilabel{
+            color: #303030;
+            float: left;
+            width: 112px;
+            padding-right: 4px;
+            position: relative;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            &::before{
+                width: 16px;
+                height: 16px;
+                background-color: #e8e8e8;
+                content: "";
+                border-radius: 100%;
+                display: inline-block;
+                margin-right: 4px;
+                vertical-align: -4px;
+            }
+            &:after{
+                position: absolute;
+                height: 3px;
+                width: 7px;
+                border: solid 1.5px white;
+                transform: rotate(-45deg);
+                border-right:0;
+                border-top: 0;
+                content: "";
+                display: inline-block;
+                left: 3px;
+                top: 6px;
+            }
+        }
+        &__processvalue{
+            float: right;
+            color: red;
+            font-size: xl;
+            font-weight: bold;
+        }
+        &__processing{
+            padding-top: 4px;
+            color: red;
+        }
+        &__livalue{
+            font-weight: bold;
+            width: 144px;
+            float: left;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        &__databottomtxt{
+            font-size: md;
+            color: #303030;
+            line-height: 20px;
+            padding-bottom: 12px;
+        }
+        &__comvview{
+            font-weight: bold;
+        }
+        &__step1ico{
+            background: url('https://post.magicbricks.com/static/images/postPropertyRevIcons.svg') no-repeat 0 -141px;
+            width: 44px;
+            height: 48px;
+            margin-bottom: 24px;
+        }
+        &__step1heading{
+            font-size: 18px;
+            color: #303030;
+            padding-bottom: 8px;	
+        }
+        &__step1headingsb, &__step1subheadingsb, &__step1redemhsb, &__step1lisb{
+            font-weight: bold;
+        }
+        &__step1subheading{
+            font-size: 14px;
+            color: #303030;
+            padding-bottom: 24px;
+            line-height: 20px;	
+        }
+        &__step1redemh{
+            font-size: 14px;
+            color: #303030;
+            padding-bottom: 14px;
+            line-height: 20px;
+        }
+        &__step1li{
+            font-size: 12px;
+            color: #303030;
+            padding-bottom: 7px;
+            padding-left: 20px;
+            background: url('https://post.magicbricks.com/static/images/postPropertyRevIcons.svg') no-repeat 0 4px;
+        }
+        &__data{
+            position: fixed;
+            background: white;;
+            width: 342px;
+            min-height: 180px;
+            top: 120px;
+            border: solid 1px #eaeaea;
+            border-radius: 0px;
+            padding: 12px 24px;
+        }
+        &__datatop.postingStep1__pointblock__datatopstep1{
+            border-bottom: dashed 0px #eaeaea;
+        }
+        &__datatop{
+            padding-bottom: 0px;
+        }
+        &__datatopinfo{
+            width: 100%;
+            height: 64px;
+            border-radius: 4px;
+            background-color: white;
+            border: solid 1px #eaeaea;
+            padding: 10px 0 0 15px;
+        }
+        &__datatopinfo.animateMe{
+            animation: bounceAndRotate 1.5s 1 linear alternate;
+        }
+        &__datatopinfoimg{
+            width: 33px;
+            height: 34px;
+            background: url('https://post.magicbricks.com/static/images/postPropertyRevIcons.svg') no-repeat 0 -96px;
+            float: left;
+            background-size: 105px auto;
+        }
+        &__datatopinfotxt{
+            float: left;
+            padding-left: 14px;
+            line-height: 1.2;
+        }
+        &__databottominfo{
+            padding-top: 30px;
+            padding-bottom: 12px;
+        }
+        &__dataprogressblock{
+            width: 100%;
+            height: 80px;
+            border-radius: 4px;
+            background-color: white;
+            border: solid 1px #eaeaea;
+            padding: 16px 20px 0px 16px;
+        }
+        &__dataprogressicon{
+            background: url('https://post.magicbricks.com/static/images/postPropertyRevIcons.svg') no-repeat 0 -488px;
+            width: 34px;
+            height: 35px;
+            float: left;
+            margin-right: 12px;
+        }
+        &__dataprogressinf{
+            float: left;
+            width: 135px;
+        }
+        &__dataprogressinfo{
+            width: 146px;
+        }
+        &__dataprogressinfoheading{
+            font-size: 12px;
+            color: #303030;
+        }
+        &__dataprogressno{
+            font-size: 18px;
+            font-weight: bold;;
+            color: #303030;
+        }
+        &__dataprogressgraphbg{
+            width: 146px;
+            height: 4px;
+            border-radius: 2px;
+            background-color: #fbe9e9;
+        }
+        &__dataprogressgraph{
+            width: 1px;
+            height: 4px;
+            border-radius: 2px;
+            background-color: red;
+        }
+        &__mcashtxt, &__points{
+            font-size: 12px;
+	        color: gray;
+        }
+        &__pointsno{
+            font-size: 24px;
+            color: #303030;
+            font-weight: bold;
+        }
+        &__pointsnolabel{
+            font-size: md;
+            font-weight: bold;
+            color: #303030;
+        }
+        &__data:before{
+            content:"";
+            height: 14px;
+            width: 14px;
+            border: solid 1px #eaeaea;
+            transform: rotate(45deg);
+            left: -8px;
+            top: 100px;
+            background: white;
+            position: absolute;
+            border-top: 0;
+            border-right:0;
+        }
+        // &__missedblock{
+        //     padding: 27px 0 0 0;        
+        //     border-top: dashed 1px #eaeaea;
+        //     margin-top: 30px;
+        // }
+        // &__missedblock3{
+        // //    padding: 0;        
+        // }
+        &__missedblock3 .postingStep1__pointblock__value{
+            float: right;
+        }
+        &__missedblock3 .postingStep1__pointblock__label{
+            cursor: pointer;
+        }
+        &__localtxt{
+            padding-bottom: 2px;
+            font-size: sm;
+            color: #303030;
+            line-height: 20px;
+            &bold{
+                font-weight: 700;
+                display: inline-block;
+            }
+        }
+        &__li, .numBlock {
+            padding: 12px 0 0 0;
+            color: #303030;
+            font-size: sm;
+        }
+        // &__li.done{
+        //     //color: $green;
+        // }
+        &__li.done:before{
+            height: 4px;
+            width: 9px;
+            border: solid 1px green;
+            transform: rotate(-45deg);
+            content: "";
+            margin-right: 7px;
+            border-width: 0 0 2px 2px;
+            float: left;
+            margin-top: 3px;
+        }
+        &__label{
+            float: left;
+            width: 190px;
+            text-decoration: underline;
+        }
+        &__value{
+            float: left;
+            font-weight: bold;
+        }
+   }
+}
+
+.pp__magiccasn{
+    &__coins{
+        background: url('https://post.magicbricks.com/static/images/postPropertyRevIcons.svg') no-repeat 0 -731px;
+	    width: 12px;
+        height: 11px;
+        display: inline-block;
+        margin: 0 4px 0 0;
+    }
+    &__int{
+        font-size: sm;
+        color: #303030;
+        font-weight: bold;
+        padding-left: 7px;
+        &__rdo{
+            padding-left: 0px;
+            padding-top: 5px;
+        } 
+    }
+    &__intbold{
+        font-weight: bold;
+    }
+    
+    }
+    
+ .photoshoot-block *{		
+	box-sizing: border-box;		
+}		
+.photoshoot-block{		
+	border: 1px solid #ebebeb;		
+	background: #fff;		
+	border-radius: 4px;		
+	width: 341px;		
+	margin-bottom: 10px;		
+	padding:21px 18px 13px 19px;		
+	font-family: 'Open Sans';		
+	position: fixed;		
+    top: 222px;		
+    min-height: 40px;		
+    margin-left:-25px;		
+			
+	&__head{		
+		position: relative;		
+		font-size: 14px;		
+		color: #303030;		
+		font-weight: 600;		
+		padding: 0 0 15px 35px;		
+		display:none;
+	}		
+	&__title{		
+		font-size: 12px;		
+		line-height: 16px;		
+		color: #333;		
+		font-weight: 600;		
+		padding:0 0 10px 0;		
+	}		
+	&__con{		
+		font-size: 13px;		
+		line-height: 16px;		
+		color: #606060;		
+	}		
+			
+	&__cta{		
+		text-align: right;		
+		padding-top: 10px;		
+				
+		& a{		
+			    display: inline-block;
+			    padding: 0 10px;
+			    color: #303030;
+			    font-weight: 600;
+			    font-size: 12px;
+			    text-align: center;
+			    text-decoration: underline;		
+					
+			&:hover{		
+				opacity: 0.8;		
+			}		
+		}		
+				
+	}		
+}		
+.photoshoot-block__thankyou{		
+	position: relative;		
+    padding: 0 0 5px 30px;		
+    font-size: 14px;		
+}		
+.icon-Av {		
+    display: inline-block;		
+    width:20px;		
+    height: 20px;		
+    position: relative;		
+    border-radius: 50%;		
+    border: 1px solid #00bd00;		
+    background: #00bd00;		
+	position: absolute;		
+	left:0;		
+	top:5px;		
+			
+	&:after{		
+	        content: "";		
+	        width: 8px;		
+	        height: 4px;		
+	        border: solid 1px #fff;		
+	        border-width: 0 0 2px 2px;		
+	        transform: rotate(-45deg);		
+	        position: absolute;		
+	        left: 4px;		
+	        top: 5px;		
+	        z-index: 1;		
+	}		
+}		
+.icon-thankyou {		
+    display: inline-block;		
+    width:20px;		
+    height: 20px;		
+    position: relative;		
+    border-radius: 50%;		
+    border: 1px solid #00bd00;		
+    background: #00bd00;		
+	position: absolute;		
+	left:0;		
+	top:10px;		
+			
+	&:after{		
+	        content: "";		
+	        width: 8px;		
+	        height: 4px;		
+	        border: solid 1px #fff;		
+	        border-width: 0 0 2px 2px;		
+	        transform: rotate(-45deg);		
+	        position: absolute;		
+	        left: 4px;		
+	        top: 5px;		
+	        z-index: 1;		
+	}		
+}		
+.photoshoot-block__cta-m{		
+	text-align: right;		
+	padding-top: 10px;		
+			
+	& a{		
+		color:#303030;		
+		text-decoration: underline;		
+		font-weight: 600;		
+		font-size: 12px;		
+	}		
+}		
+.photoshoot-block.photoshoot-block--mobile{		
+	width: auto;		
+	padding:16px 12px 14px 12px;		
+}		
+
+.postPropertyStep2-block{
+
+	& .postingStep1__pointblock__databottominfo{
+		display:none;
+	}
+	
+	& .postingStep1__pointblock__data{
+		min-height:40px;
+	}
+	
+	& .postingStep1__pointblock__data:before {
+		top: 38px;
+	}
+}
+
+.pp__card{
+    padding: 12px 16px 12px 16px;
+    border: dashed 1px #e3e3e3;
+    border-radius: 4px;
+}
+.pp__card__reqfields{
+    padding-top: 12px;
+}
+.pp__card__head {
+    padding-bottom: 12px;
+}
+.pp__card__heading {
+    font-size: 18px;
+    font-weight: 600;
+    color: #303030;
+}
+.pp__card__subheading {
+    font-size: 14px;
+    font-weight: 400;
+    color: #909090;
+}
+.pp__card__reqblock {
+    float: right;
+    color: #909090;
+    font-size: 12px;
+}
+.pp__card__reqno {
+    color: #303030;
+    font-weight: 600;
+}
+.pp__card__location {
+    font-size: 14px;
+    line-height: 1.15;
+    color: #606060;
+    padding-bottom: 12px;
+    border-bottom: solid 1px #e3e3e3;
+}
+.pp__card__location__icon{
+    width: 12px;
+    height: 15px;
+    background: url('https://post.magicbricks.com/static/images/location_icon_rrp.svg') no-repeat 0 0;
+    display: inline-block;
+    margin-right: 4px;
+    vertical-align: -2px;
+}
+.pp__card__uppertop::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.pp__card__upperlower {
+    padding: 12px 20px 0;
+}
+.pp__card__seeReqCta {
+    font-size: 14px;
+    color: #303030;
+    position: relative;
+    padding-right: 20px;
+}
+.pp__card__seeReqCta:after {
+    content: "";
+    height: 7px;
+    width: 7px;
+    display: inline-block;
+    position: absolute;
+    transform: rotate(135deg);
+    border: solid 1px #303030;
+    border-bottom: 0;
+    border-left: 0;
+    right: 2px;
+    top: 5px;
+    transition: all 0.3s ease;
+}
+.pp__card__seeReqCta.active:after {
+    transform: rotate(-45deg);
+    top: 8px;
+}
+.pp__card__reqblockInfo {
+    color: #909090;
+    font-size: 12px;
+    display: none;
+}
+.pp__card__reqlists {
+    width: 285px;
+    float: left;
+    padding-bottom: 12px;
+}
+.pp__card__reqlabel {
+    width: 160px;
+    font-size: 14px;
+    color: #909090;
+    display: inline-block;
+}
+.pp__card__reqvalue {
+    width: 120px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #303030;
+    display: inline-block;
+}
+.rsFont {
+    font-weight: 400;
+}
+
+
+.pp__card__locationhidden {
+    display: none;
+}
+.pp__card__locationmore {
+    color: #d8232a;
+    text-decoration: underline;
+}
+.pp__ads__keyblocks.oneline {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    float: left;
+    width: calc(100% - 70px);
+}
+.pp__spacing {
+    padding: 12px 0 0 0;
+    border-top: solid 1px #f5f5f5;
+}
+.pp__ads__keyblocks {
+    padding-bottom: 12px;
+    font-size: 14px;
+    color: #606060;
+}
+.pp__ads__keyblocks.oneline {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    float: left;
+    width: calc(100% - 70px);
+}
+.pp__keysection {
+    margin-bottom: 0px;
+}
+.oneline .pp__ads__keysection {
+    display: inline;
+}
+.pp__ads__keylabel {
+    color: #909090;
+    display: inline;
+}
+.pp__ads__keylabel, 
+.pp__ads__keyvalue {
+    display: inline;
+}
+.pp__ads__keyblocks.oneline .pp__ads__keylabel, 
+.pp__ads__keyblocks.oneline .pp__ads__keyvalue {
+    display: inline;
+}
+.pp__ads__proplocalityHidden {
+    display: none;
+}
+.pp__ads__keyreadmore{
+    color: #d8232a;
+    text-decoration: underline !important;
+    display: inline-block;
+    font-size: 14px;
+}
+.pp__ads__proplocalityHidden.show-inline {
+    display: inline;
+}
+.pp__card__seeReqCont{
+    padding-top: 12px;
+}
+.pp__ads__keyblocks.pp__ads__proplocalityFirst{
+    padding-bottom: 12px;
+}
+.pp__ads__keyblocks.pp__ads__proplocalityFirst.oneline{
+    padding-bottom: 0px;
+}
+
+
+
+
+// WEBPACK FOOTER //
+// ./src/main/resources/static/scss/postPropertyRewamp.scss

@@ -1,0 +1,33 @@
+#ing{
+          
+    height:200px;
+    width: 200px;
+}
+  
+  #current li{
+   
+list-style-type: none;
+font-size: x-large;
+}
+input{
+font-size: x-large;
+
+}
+input:focus, textarea:focus{
+background-color: floralwhite;
+}
+input .submit{
+font-size: x-large;
+}
+  
+
+input{
+font-size: x-large;
+
+}
+input:focus, textarea:focus{
+background-color: floralwhite;
+}
+input .submit{
+font-size: x-large;
+}

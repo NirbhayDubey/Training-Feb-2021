@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+.my-nav{
+    z-index: 1;
+}
+
+.my-sidenav{
+    position: sticky;
+    top: 100px;
+}
+p{
+    font-size: 14px;
+}

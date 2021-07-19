@@ -1,0 +1,288 @@
+<div class="p-3">
+  <h3 class="bg-success text-Dark">Student Admission Form</h3>
+  <label  class=" font-weight-bold">Student Details</label>
+
+  <form [formGroup]="StudentForm" (ngSubmit)="Submit()">
+    <div formGroupName="Name" >
+
+      <div class="form-group">
+        <label class="mt-3">FirstName :</label> 
+        <input [class.is-invalid]="getStudentFirstName!.invalid && getStudentFirstName!.touched"  type="text" class="form-control" formControlName="FirstName" />
+        <div *ngIf="getStudentFirstName!.invalid && getStudentFirstName!.touched">
+          <small *ngIf="getStudentFirstName!.errors?.required" class="text-danger">FirstName is required</small>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="mt-1">MiddleName : </label>
+          <input type="text" [class.is-invalid]="getStudentMiddleName!.invalid && getStudentMiddleName!.touched" class="form-control" formControlName="MiddleName" />
+          <div *ngIf="getStudentMiddleName!.invalid && getStudentMiddleName!.touched">
+            <small *ngIf="getStudentMiddleName!.errors?.required" class="text-danger">MiddleName is required</small>
+          </div>
+      </div>
+      <div class="form-group">
+        <label class="mt-1">LastName : </label> 
+        <input type="text" [class.is-invalid]="getStudentLastName!.invalid && getStudentLastName!.touched" class="form-control" formControlName="LastName" />
+        <div *ngIf="getStudentLastName!.invalid && getStudentLastName!.touched">
+          <small *ngIf="getStudentLastName!.errors?.required" class="text-danger">LastName is required</small>
+        </div>
+      </div>
+    </div>
+
+    <ng-container class="form-group">
+      <label class="mt-2">DOB :</label>
+        <input type="date" [class.is-invalid]="getStudentDoB!.invalid && getStudentDoB!.touched" class="form-control" formControlName="DOB" />
+        <div *ngIf="getStudentDoB!.invalid && getStudentDoB!.touched">
+          <small *ngIf="getStudentDoB!.errors?.required" class="text-danger">DOB is required</small>
+          <small *ngIf="getStudentDoB!.errors?.DOBValidator" class="text-danger">You are not Eligible for Admission</small>
+        </div>
+
+    </ng-container>
+    <ng-container class="form-group">
+      <label class="mt-2">PlaceOfBirth :</label>
+        <input type="text" class="form-control" formControlName="PlaceOfBirth" />
+    </ng-container>
+
+    <ng-container class="form-group">
+      <label class="mt-2">First Language :</label>
+        <input type="text" class="form-control" formControlName="FirstLanguage" />
+    </ng-container>
+
+    <div formGroupName="Address"><label class="mt-2">Address :</label><br>
+      
+      <ng-container class="form-group">
+        <label class="mt-2">City :</label>
+          <input type="text" [class.is-invalid]="getStudentCity!.invalid && getStudentCity!.touched" class="form-control" formControlName="City" />
+          <div *ngIf="getStudentCity!.invalid && getStudentCity!.touched">
+            <small *ngIf="getStudentCity!.errors?.required" class="text-danger">City is required</small>
+          </div>
+      </ng-container>
+
+      <ng-container class="form-group">
+        <label class="mt-2">State :</label>
+          <input type="text" [class.is-invalid]="getStudentState!.invalid && getStudentState!.touched"  class="form-control" formControlName="State" />
+          <div *ngIf="getStudentState!.invalid && getStudentState!.touched">
+            <small *ngIf="getStudentState!.errors?.required" class="text-danger">State is required</small>
+          </div>
+      </ng-container>
+
+      <ng-container class="form-group">
+        <label class="mt-2">PinCode :</label>
+          <input type="number" [class.is-invalid]="getStudentPinCode!.invalid && getStudentPinCode!.touched" class="form-control" formControlName="Pin" />
+          <div *ngIf="getStudentPinCode!.invalid && getStudentPinCode!.touched">
+            <small *ngIf="getStudentPinCode!.errors?.required" class="text-danger">Pincode is required</small>
+            <small *ngIf="getStudentPinCode!.errors?.pattern" class="text-danger">Pincode must be in 6 digits</small>
+          </div>
+      </ng-container>
+    </div>
+
+    <div formGroupName="Father">
+      <label  class="mt-3 font-weight-bold">Father Details :</label>
+      <div formGroupName="Name">
+        <ng-container class="form-group">
+          <label class="mt-2">FirstName : </label>
+            <input type="text" [class.is-invalid]="getFatherFirstName!.invalid && getFatherFirstName!.touched" class="form-control" formControlName="FirstName" />
+            <div *ngIf="getFatherFirstName!.invalid && getFatherFirstName!.touched">
+              <small *ngIf="getFatherFirstName!.errors?.required" class="text-danger">FirstName is required</small>
+            </div>
+        </ng-container>
+        <ng-container class="form-group">
+          <label class="mt-2">MiddleName :</label>
+            <input type="text" [class.is-invalid]="getFatherMiddleName!.invalid && getFatherMiddleName!.touched" class="form-control" formControlName="MiddleName" />
+            <div *ngIf="getFatherMiddleName!.invalid && getFatherMiddleName!.touched">
+              <small *ngIf="getFatherMiddleName!.errors?.required"  class="text-danger">MiddleName is required</small>
+            </div>
+        </ng-container>
+        <ng-container class="form-group">
+          <label class="mt-2">LastName : </label>
+            <input type="text" [class.is-invalid]="getFatherLastName!.invalid && getFatherLastName!.touched" class="form-control" formControlName="LastName" />
+            <div *ngIf="getFatherLastName!.invalid && getFatherLastName!.touched">
+              <small *ngIf="getFatherLastName!.errors?.required"  class="text-danger">LastName is required</small>
+            </div>
+        </ng-container>
+      </div>
+      <ng-container class="form-group">
+        <label class="mt-2">Email : </label>
+          <input type="email"[class.is-invalid]="getFatherEmail!.invalid && getFatherEmail!.touched" class="form-control" formControlName="Email" />
+          <div *ngIf="getFatherEmail!.invalid && getFatherEmail!.touched">
+            <small *ngIf="getFatherEmail!.errors?.required" class="text-danger">Email is required</small>
+            <small *ngIf="getFatherEmail!.errors?.email" class="text-danger">Enter valid email</small>
+          </div>
+      </ng-container>
+      <ng-container class="form-group">
+        <label class="mt-2">Education Qualification :</label>
+          <input type="text" class="form-control" formControlName="EducationQualification" />
+      </ng-container>
+      <ng-container class="form-group">
+        <label class="mt-2">Profession : </label>
+          <input type="text" class="form-control" formControlName="Profession" />
+      </ng-container>
+      <ng-container class="form-group">
+        <label class="mt-2">Designation :</label>
+          <input type="text" class="form-control" formControlName="Designation" />
+      </ng-container>
+      <ng-container class="form-group">
+        <label class="mt-2">Phone : </label>
+          <input type="number" [class.is-invalid]="getFatherPhone!.invalid && getFatherPhone!.touched" class="form-control" formControlName="Phone" />
+          <div *ngIf="getFatherPhone!.invalid && getFatherPhone!.touched">
+            <small *ngIf="getFatherPhone!.errors?.required" class="text-danger">Phone number is required</small>
+            <small *ngIf="getFatherPhone!.errors?.pattern" class="text-danger">Phone number must be in 10 digits</small>
+            
+          </div>
+      </ng-container>
+    </div>
+
+    <div formGroupName="Mother">
+      <label class="mt-2 font-weight-bold">Mother Details : </label>
+      <div formGroupName="Name">
+        
+        <ng-container class="form-group">
+          <label class="mt-2">FirstName : </label>
+            <input type="text" class="form-control" formControlName="FirstName" />
+        </ng-container>
+        <ng-container class="form-group">
+          <label class="mt-2">MiddleName : </label>
+            <input type="text" class="form-control" formControlName="MiddleName" />
+        </ng-container>
+        <ng-container class="form-group">
+          <label class="mt-2">LastName : </label>
+            <input type="text" class="form-control" formControlName="LastName" />
+        </ng-container>
+      </div>
+      <ng-container class="form-group">
+        <label class="mt-2">Email : </label>
+          <input type="email" [class.is-invalid]="getMotherEmail!.invalid && getMotherEmail!.touched" class="form-control" formControlName="Email" />
+          <div *ngIf="getMotherEmail!.invalid && getMotherEmail!.touched">
+            <small *ngIf="getMotherEmail!.errors?.email" class="text-danger">Enter valid email</small>
+          </div>
+      </ng-container>
+      <ng-container class="form-group">
+        <label class="mt-2">Education Qualification : </label>
+          <input type="text" class="form-control" formControlName="EducationQualification" />
+      </ng-container>
+      <ng-container class="form-group">
+        <label class="mt-2">Profession : </label>
+          <input type="text" class="form-control" formControlName="Profession" />
+      </ng-container>
+      <ng-container class="form-group">
+        <label class="mt-2">Designation : </label>
+          <input type="text" class="form-control" formControlName="Designation" />
+      </ng-container>
+      <ng-container class="form-group">
+        <label class="mt-2">Phone : </label>
+          <input type="number" [class.is-invalid]="getMotherPhone!.invalid && getMotherPhone!.touched" class="form-control" formControlName="Phone" />
+          <div *ngIf="getMotherPhone!.invalid && getMotherPhone!.touched">
+            <small *ngIf="getMotherPhone!.errors?.pattern" class="text-danger">Phone number must be in 10 digits</small>
+          </div>
+      </ng-container>
+    </div>
+    <div formArrayName="EmergencyContactList">
+
+      <label class="mt-2 font-weight-bold">Emergency Contact List : </label><br />
+      <div *ngFor="let item of getEmergencyContactList.controls; index as i" >
+        <div [formGroupName]="i">
+          <div>
+            <label>Relation : </label>
+            <input type="text" class="form-control" [class.is-invalid]="item.get('Relation')!.invalid && item.get('Relation')!.touched" formControlName="Relation" />
+            <div *ngIf="item.get('Relation')!.invalid && item.get('Relation')!.touched">
+              <small *ngIf="item.get('Relation')!.errors?.required" class="text-danger">Relation name is required</small>
+            </div>
+          </div>
+          <div>
+            <label class="">Phone Number :
+              </label>
+              <input type="number" [class.is-invalid]="item.get('Number')!.invalid && item.get('Number')!.touched" class="form-control" formControlName="Number" />
+              <div *ngIf="item.get('Number')!.invalid && item.get('Number')!.touched">
+                <small *ngIf="item.get('Number')!.errors?.required" class="text-danger">Mobile number is required</small>
+                <small *ngIf="item.get('Number')!.errors?.pattern" class="text-danger">Mobile number must be in 10 digits</small>
+              </div>
+          </div>
+        </div>
+        
+      </div>
+      <button class="btn-primary my-2" (click)="AddList()">Add New Relation </button>
+      <button class="btn-secondary my-2" (click)="ResetList()">Reset Relation </button>
+    
+    </div>
+  
+    <div formGroupName="ReferenceDetails">
+      <label class="mt-2 font-weight-bold">ReferenceDetails : </label><br />
+      <ng-container class="form-group">
+        <label class="mt-2">Reference Through :</label>
+          <input type="text" class="form-control" formControlName="ReferenceThrough" />
+      </ng-container>
+      <div formGroupName="Address">
+        <label class="mt-2 font-weight-bold">Address : </label><br />
+        <ng-container class="form-group">
+          <label >City : </label>
+            <input type="text" class="form-control" formControlName="City" />
+        </ng-container>
+        <ng-container class="form-group">
+          <label class="mt-2">Telephone Number :</label>
+            <input type="number" [class.is-invalid]="referenceTelNo!.invalid && referenceTelNo!.touched" class="form-control" formControlName="TelNo" />
+            <div *ngIf="referenceTelNo!.invalid &&  referenceTelNo!.touched">
+              <small *ngIf="referenceTelNo!.errors?.pattern" class="text-danger">Phone number must be 10 digits</small>
+            </div>
+            
+        </ng-container>
+
+      </div>
+    </div>
+    <div class="form-group my-3">
+      <button type="submit" [disabled]="!StudentForm.valid" class="btn btn-success" >Submit Data</button>
+    </div>
+  </form>
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">No.</th>
+          <th scope="col">StudentName</th>
+          <th scope="col">DOB</th>
+          <th scope="col">PlaceOfBirth</th>
+          <th scope="col">FirstLanguage</th>
+          <th scope="col">Address</th>
+          <th scope="col">FatherName</th>
+          <th scope="col">Father's Email</th>
+          <th scope="col">Father's Qualification</th>
+          <th scope="col">Father's Profession</th>
+          <th scope="col">Father's Designation</th>
+          <th scope="col">Father's Phone</th>
+          <th scope="col">MotherName</th>
+          <th scope="col">Mother's Email</th>
+          <th scope="col">Mother's Qualification</th>
+          <th scope="col">Mother's Profession</th>
+          <th scope="col">Mother's Designation</th>
+          <th scope="col">Mother's Phone</th>
+          <th scope="col">ReferenceThrough</th>
+          <th scope="col">Reference City</th>
+          <th scope="col">Reference Phone</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let s of studentArray; let i= index">
+          <th scope="row">{{i+1}}</th>
+          <td>{{s.Name.FirstName}} {{s.Name.MiddleName}} {{s.Name.LastName}}</td>
+          <td>{{s.DOB}}</td>
+          <td>{{s.PlaceOfBirth}}</td>
+          <td>{{s.FirstLanguage}}</td>
+          <td>{{s.Address.City}},{{s.Address.State}},{{s.Address.Pin}}</td>
+          <td>{{s.Father.Name.FirstName}} {{s.Father.Name.MiddleName}} {{s.Father.Name.LastName}}</td>
+          <td>{{s.Father.Email}}</td>
+          <td>{{s.Father.EducationQualification}}</td>
+          <td>{{s.Father.Profession}}</td>
+          <td>{{s.Father.Designation}}</td>
+          <td>{{s.Father.Phone}}</td>
+          <td>{{s.Mother.Name.FirstName}} {{s.Mother.Name.MiddleName}} {{s.Mother.Name.LastName}}</td>
+          <td>{{s.Mother.Email}}</td>
+          <td>{{s.Mother.EducationQualification}}</td>
+          <td>{{s.Mother.Profession}}</td>
+          <td>{{s.Mother.Designation}}</td>
+          <td>{{s.Mother.Phone}}</td>
+          <td>{{s.ReferenceDetails.ReferenceThrough}}</td>
+          <td>{{s.ReferenceDetails.Address.City}}</td>
+          <td>{{s.ReferenceDetails.Address.TelNo}}</td>  
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

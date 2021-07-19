@@ -1,0 +1,15 @@
+.topnav{
+    width: 100%;
+    background-color: dimgrey !important;
+}
+.topnav a{
+display: inline-block;
+text-decoration: none;
+color: gainsboro;
+padding: 10px;
+font-weight: bold;
+font-size: 20px;
+}
+.topnav a:hover{
+background-color: gray;
+}

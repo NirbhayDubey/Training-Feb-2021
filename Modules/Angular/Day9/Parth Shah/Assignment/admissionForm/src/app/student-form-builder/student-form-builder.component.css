@@ -1,0 +1,16 @@
+#pink{
+background-color: #2c3c4c;
+    /* background-color: #44242c; */
+    color: white;
+    /* #34444c */
+}
+
+span{
+    color: tomato;
+    font-weight: bold;
+}
+.display-4{
+    color: tomato;
+    text-shadow: 1px solid;
+    font-weight: bold;
+}

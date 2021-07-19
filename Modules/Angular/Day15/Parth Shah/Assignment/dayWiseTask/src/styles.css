@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+li a:hover  {
+    background-color: #1c1c1c;
+  }
+  body{
+      background-color: #f4f4fc;
+  }
+  .card-body{
+    background-color:   #14142c;
+  }
+  .card-header{
+      background-color: lightblue;
+  }
+  li a{
+font-weight: bold;
+color:black;
+  }

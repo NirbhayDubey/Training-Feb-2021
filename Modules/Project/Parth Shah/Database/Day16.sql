@@ -392,6 +392,12 @@ CREATE VIEW bbCategoryViews AS
 SELECT CategoryID ,CategoryName FROM Category 
 WHERE CategoryId = 1 
 
+--create view of getting product name ,and brand name and category name :
+CREATE VIEW BbproductDetail
+AS
+Select P.ProductID, P.ProductName , B.BrandName ,C.CategoryName FROM Product AS P Join Brand AS B on P.BrandID = B.BrandID 
+Join Category as C On B.CategoryID = C.CategoryId; 
+
 
 							
 

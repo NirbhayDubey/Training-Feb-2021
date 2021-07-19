@@ -1,0 +1,58 @@
+
+  <div class="row no-gutters">
+    <div class="col-md-9 ">
+      <div class="container">
+        <div class="card">
+          <div class="card-header bg-danger">
+<h6 class="display-4">Registration</h6>
+          </div>
+          <div class="card-body">
+
+         
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="fname">First Name </label>
+                  <input [(ngModel)]="fname" class="form-control"  placeholder="Enter ur first name "  />
+                </div>
+                  <div class="form-group col-md-6">
+                    <label for="lname">Last Name</label>
+                    <input [(ngModel)]="lname" class="form-control" placeholder="Enter ur last name "/>
+                  </div>
+              </div>
+              <div class="form-group">
+                <label for="inputAddress">Address</label>
+                <input [(ngModel)]="add" class="form-control" placeholder="1234 Main St" />
+              </div>
+              <div class="form-group">
+                <label for="inputAddress2">Pan Number</label>
+                <input [(ngModel)]="pan"class="form-control" placeholder="NTPCR2021" />
+              </div>
+             
+              
+              <button type="submit" class="btn btn-primary">Sign in</button>
+         
+          
+      
+
+</div>
+      </div>
+      </div>
+    </div>
+      <div class="col-md-3 p-0">
+
+<div class="container">
+        <div class="card" >
+          <div class="card-header bg-secondary" > 
+<h6 class="display-4 text-white">Paragraph</h6>
+          </div>
+          <div class="card-body " style="height: 335px;">
+            <p class="h3">Hello! </p><p class="h3 text-primary"> {{fname}} {{lname}}</p>
+            <p class="h3"> Address is : </p> <p class="h3 text-primary"> {{add}}</p>
+            <p class="h3">PAN No is :</p> <p class="h3 text-primary">{{pan}}</p>
+          </div>
+            </div>
+</div>
+
+
+      </div>
+      </div>

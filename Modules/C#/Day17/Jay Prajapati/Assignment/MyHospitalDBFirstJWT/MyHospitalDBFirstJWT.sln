@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyHospitalDBFirstJWT", "MyHospitalDBFirstJWT\MyHospitalDBFirstJWT.csproj", "{856646D1-2B1C-485E-A4E6-2DA10441E84F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{856646D1-2B1C-485E-A4E6-2DA10441E84F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{856646D1-2B1C-485E-A4E6-2DA10441E84F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{856646D1-2B1C-485E-A4E6-2DA10441E84F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{856646D1-2B1C-485E-A4E6-2DA10441E84F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6563254A-294F-4A93-BB2E-DA1E03840007}
+	EndGlobalSection
+EndGlobal

@@ -2,6 +2,7 @@
 using ToyManufacturingCompany.Models;
 using ToyManufacturingCompany.Data;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace ToyManufacturingCompany
 {
@@ -12,22 +13,51 @@ namespace ToyManufacturingCompany
             //using ToyManufacturingCompanyContext context = new ToyManufacturingCompanyContext();
             Console.WriteLine("---------------Toys Manufacturing Company--------------");
             Console.WriteLine("1. Login \n" +
-                "2. SignUp");
+                "2. SignUp\n"+
+                "3. Get Customer By Name \n");
             Console.Write("Choose Option :");
             int op = Convert.ToInt32(Console.ReadLine());
             int Cid = 0;
-           
+
+
             
                 switch (op)
                 {
-                    case 1:Cid = Login();
+                    case 1:
+                        Cid = Login();
                         break;
-                    case 2:Cid = SignUp();
+                    case 2:
+                        Cid = SignUp();
+                        break;
+                    case 3:
+                        using (var context = new ToyManufacturingCompanyContext())
+                        {
+                            Console.Write("Enter Name of Customer :");
+                            string name = Console.ReadLine();
+                            var customer = context.Customers.FromSqlRaw($"exec GetCustomer {name}").ToList();
+                            if (customer != null)
+                            {
+                                foreach (var item in customer)
+                                {
+                                    Console.Write(item.ToString());
+                                }
+
+                            }
+                            else
+                            {
+                                Console.Write("Customer Is Not Found");
+
+                            }
+                            Console.ReadLine();
+
+                        }
                         break;
                     default:
                         Console.WriteLine("Choose Valid Option!!");
                         break;
                 }
+                
+                
                 
             
 
@@ -36,10 +66,10 @@ namespace ToyManufacturingCompany
                 "2. Display Customer Details\n" +
                 "3. Display Order Details\n" +
                 "4. Place The Order\n" +
-                "5. Exit\n");
+                "6. Exit\n");
             Console.Write("Choose Option: ");
             int op1 = Convert.ToInt32(Console.ReadLine());
-            while (op1 != 5)
+            while (op1 != 6)
             {
                 switch (op1)
                 {
@@ -55,6 +85,13 @@ namespace ToyManufacturingCompany
                     case 4:
                         PlaceOrder(Cid);
                         break;
+                    case 5:
+                        using (var context = new ToyManufacturingCompanyContext())
+                        {
+                            var count = context.Orders.FromSqlRaw($"OrderCount {Cid}");
+                            Console.WriteLine($"You have total {count} Orders Placed");
+                        }
+                        break;
                     default:Console.WriteLine("Please Select Valid Option");
                         break;
                 }
@@ -63,7 +100,8 @@ namespace ToyManufacturingCompany
                     "2. Display Customer Details\n" +
                     "3. Display Order Details\n" +
                     "4. Place The Order\n" +
-                    "5. Exit\n");
+                    "5. Number of Order Placed By Customer\n" +
+                    "6. Exit\n");
                 Console.Write("Choose Option: ");
                 op1 = Convert.ToInt32(Console.ReadLine());
             }
@@ -129,75 +167,94 @@ namespace ToyManufacturingCompany
         }
         public static void OrderDetails(int Id)
         {
-            using ToyManufacturingCompanyContext context = new ToyManufacturingCompanyContext();
-            var Details = context.ProductOrders
-                                  .Where(s=>s.Id == Id)
-                                  .ToList();
-            if (Details.Count > 0)
+            using (ToyManufacturingCompanyContext context = new ToyManufacturingCompanyContext())
             {
+                var Details = context.Orders
+                                      .Where(s => s.CustomerId == Id).Include(s => s.ProductOrders)
+                                      .ToList();
+                var ProductDetails = context.ProductOrders
+                    .Where(s => s.CustomerId == Id)
+                    .Include(s => s.order)
+                    .Include(s => s.Toy).ToList();
+                    
 
-                foreach (var p in Details)
+
+                if (ProductDetails.Count > 0)
                 {
-                    Console.WriteLine($"{p.OrderId}\t{p.Toy.Id}\t{p.Toy.Name}\t{p.Quantity}\t{p.order.OrderPlaced}");
+
+                    foreach (var p in ProductDetails)
+                    {
+                        Console.WriteLine($"{p.Id}\t{p.Quantity}\t{p.ToyId}\t{p.order.OrderPlaced}");
+                    }
                 }
-            }
-            else
-            {
-                Console.WriteLine("Sorry!! No Order Detail Available at this time");
+                else
+                {
+                    Console.WriteLine("Sorry!! No Order Detail Available at this time");
+                }
             }
         }
         public static void PlaceOrder(int id)
         {
-            using ToyManufacturingCompanyContext context = new ToyManufacturingCompanyContext();
-            DisplayProducts();
-            Console.WriteLine("\n\nEnter ProductId");
-            int Pid = Convert.ToInt32(Console.ReadLine());
-            var Products = context.Toys
-                                  .Where(s => s.Id == Pid)
-                                  .FirstOrDefault();
-            
-            if(Products is Toy)
+            using (ToyManufacturingCompanyContext context = new ToyManufacturingCompanyContext())
             {
-                Console.Write("Enter Qnty : ");
-                int Qnty = Convert.ToInt32(Console.ReadLine());
-                if (Products.QuntityAvailable >= Qnty)
-                {
-                    var totalQnty = Products.QuntityAvailable;
-                    Products.Id = Pid;
-                    Products.QuntityAvailable = totalQnty - Qnty;
-                    
-                    //Toy p = new Toy()
-                    //{
-                    //    Id = Pid,
-                    //    QuntityAvailable = totalQnty - Qnty
-                    //};
+                DisplayProducts();
+                Console.WriteLine("\n\nEnter ProductId");
+                int Pid = Convert.ToInt32(Console.ReadLine());
+                var Products = context.Toys
+                                      .Where(s => s.Id == Pid)
+                                      .FirstOrDefault();
 
-                    
-                  
-                        context.Toys.Update(Products);
-                        context.SaveChanges();
-                    
-                    var order = new Order()
+                if (Products is Toy)
+                {
+                    Console.Write("Enter Qnty : ");
+                    int Qnty = Convert.ToInt32(Console.ReadLine());
+                    if (Products.QuntityAvailable >= Qnty)
                     {
-                        CustomerId = id,
-                        OrderPlaced = DateTime.Now
-                    };
-                    context.Orders.Add(order);
-                    context.SaveChanges();
+                        var totalQnty = Products.QuntityAvailable;
+                        Products.Id = Pid;
+                        Products.QuntityAvailable = totalQnty - Qnty;
+
+                        //Toy p = new Toy()
+                        //{
+                        //    Id = Pid,
+                        //    QuntityAvailable = totalQnty - Qnty
+                        //};
+
+
+
+                        context.Toys.Update(Products);
+                        //context.SaveChanges();
+
+                        var order = new Order()
+                        {
+                            CustomerId = id,
+                            OrderPlaced = DateTime.Now
+                        };
+                        context.Orders.Add(order);
+                        //context.SaveChanges();
+
+                        var productorder = new ProductOrder()
+                        {
+                            Quantity = totalQnty,
+                            ToyId = Products.Id,
+                            OrderId = context.Orders.OrderBy(s => s.OrderPlaced).LastOrDefault().Id,
+                            CustomerId = id
+                        };
+                        context.ProductOrders.Add(productorder);
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Sorry!! {Qnty} items are Not Available now");
+                    }
                 }
                 else
                 {
-                    Console.WriteLine($"Sorry!! {Qnty} items are Not Available now");
+                    Console.WriteLine("No Such Product Available");
                 }
+                context.SaveChanges();
+
+
             }
-            else
-            {
-                Console.WriteLine("No Such Product Available");
-            }
-            context.SaveChanges();
-            
-            
-            
         }
     }
 }

@@ -2,49 +2,48 @@ var nodemailer = require('nodemailer');
 
 var otp1;
 class emailOTP {
-    
-    static getOTP(){
+
+    static getOTP() {
         var digits = '0123456789';
         var otp = '';
-        for(let i=1; i<=6; i++)
-        {
+        for (let i = 1; i <= 6; i++) {
             otp += digits[Math.floor(Math.random() * 10)];
         }
         console.log(otp)
         return otp;
     }
 
-    static send(receiver){
+    static send(receiver) {
 
-        var transporter =nodemailer.createTransport({
+        var transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
                 user: 'jinalkshah1@gmail.com',
-                pass: '******'
-              }
+                pass: '*****'
+            }
         });
 
         otp1 = this.getOTP()
         //const receiver = 'jinalkshah56@gmail.com'
         console.log(receiver)
         var mailOptions = {
-            from : 'jinalkshah1@gmail.com',
-            to : receiver,
-            subject : 'OTP ',
-            text : 'Your One Time Password is : ' + otp1
+            from: 'jinalkshah1@gmail.com',
+            to: receiver,
+            subject: 'OTP ',
+            text: 'Your One Time Password is : ' + otp1
         };
 
-        transporter.sendMail(mailOptions, function(err, data1) {
+        transporter.sendMail(mailOptions, function (err, data1) {
             if (err) {
                 console.log(err);
             }
-            else console.log('Email sent!!!'+ data1.response);
+            else console.log('Email sent!!!' + data1.response);
         });
 
     }
 
-    static verifyOTP(ID){
-        if(otp1 == ID) return true;
+    static verifyOTP(ID) {
+        if (otp1 == ID) return true;
         else return false;
     }
 

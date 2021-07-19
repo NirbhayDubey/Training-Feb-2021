@@ -158,33 +158,7 @@ namespace Day11_assign
 
         public static void SummaryReport()
         {
-            var pat = new MyDBOContext();
-            Console.WriteLine("Enter Id To Get Summary Report");
-            int p = Convert.ToInt32(Console.ReadLine());
-            var Patientdata = from s in pat.Patients
-                              where s.Id == p
-                              select s;
-            var treatment = from d in pat.Treatments
-                            where d.PatientId == Patientdata.FirstOrDefault().Id
-                            select d;
-            var doctor = from d in pat.staff
-                         where d.Id == treatment.FirstOrDefault().StaffId
-                         select d;
-            var meds = from p in pat.DrugAllotments
-                         where r.PatientId == treatment.FirstOrDefault().StaffId
-                         select d;
-
-
-            int dtdata = Convert.ToInt32(Console.ReadLine());
-
-         
-
-            Console.WriteLine($"Patient ID : \t{Patientdata.FirstOrDefault().Id}\n" +
-                $"Patient Name : \t{Patientdata.FirstOrDefault().Name}\n" +
-                $"City : \t{Patientdata.FirstOrDefault().City}\n" +
-                $"Assigned Doctor : \t{doctor.FirstOrDefault().Name}\n" +
-                $"Treatment : \t{treatment.FirstOrDefault().TreatmentName}");
-
+           
         }
     }
 }

@@ -1,0 +1,114 @@
+.navigations ul li .nav-link {
+	font-size: 16px;
+	font-weight: 400;
+	text-transform: none;
+	color: var(--TEXT_COLOR_L1);
+	cursor: pointer;
+	line-height: normal;
+}
+
+.nav-item{
+    padding: 10px;
+    padding-right: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: none;
+    cursor: pointer;
+    line-height: normal;
+}
+
+footer {
+    background: #272727 none repeat scroll 0 0;
+  
+}
+footer.container{
+    width: 100%;
+    padding: 34px 0 24px;
+}
+footer h2{color: #FFF; font-size: 20px;}
+footer p{color: #FFF; text-indent: 25px; font-size: 13px;}
+.link-list li {
+    border-top: 1px solid #353535;
+}
+.link-list a {
+    color: #eee;
+    display: inline-block;
+    font-size: 11px;
+    padding: 6px 0;
+    text-transform: uppercase;
+}
+.link-list li i {
+    color: #bbb;
+    float: right;
+    margin-top: 10px;
+}
+
+address {
+    color: #eee;
+    font-style: normal;
+    line-height: 1.42857;
+    margin-bottom: 20px;
+    margin-left: 50px;
+}
+
+
+
+.copy {
+    background: #222 none repeat scroll 0 0;
+    padding: 22px;
+}
+.copy a i {
+    color: #fff;
+    float: right;
+    font-size: 24px;
+    width: 50px;
+}
+.copy a {
+
+    color: #fff;
+    padding-top: 5px;
+}
+
+
+
+.copy,h3{
+    color:white;
+    font-size: 20px;
+    padding: inherit;
+    padding-left: 16px;
+    padding-right: 20px;
+}
+
+
+
+.subscribe-btn {
+    float: right;
+	font-size: 16px;
+	font-weight: 500;
+	text-transform: uppercase;
+	color: #fff;
+	text-decoration: none;
+	cursor: pointer;
+	/* display: inline-block; */
+	padding: 0px;
+	margin-left: 15px;
+	opacity: 1;
+	font-size: 14px;
+	height: 28px;
+	width: 85px;
+	line-height: 24px;    
+	border-radius: 4px;
+
+}
+
+
+.row {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin-right: -15px;
+	margin-left: -15px;
+    /* width: 900px; */
+}
+

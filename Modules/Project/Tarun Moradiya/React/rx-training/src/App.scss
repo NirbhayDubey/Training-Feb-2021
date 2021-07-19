@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#rx-logo {
+  width: 7rem;
+}
+
+#header {
+  text-align: center;
+  border-bottom: 0.2rem solid hsl(207, 44%, 49%, 0.7) !important;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  opacity: 0.97;
+}
+
+.dropdown-submenu {
+  position: relative;
+  width: 100%;
+  padding: 5px;
+  padding-left: 10px;
+  margin-bottom: 2px;
+
+  span::after {
+    transform: rotate(-90deg);
+    position: absolute;
+    right: 3px;
+    top: 40%;
+  }
+
+  .dropdown-menu {
+    display: none;
+    a {
+      color: #333;
+      text-decoration: none;
+    }
+  }
+}
+
+.dropdown-submenu:hover,
+.dropdown-submenu:focus {
+  background-color: #f6f6f6;
+  .dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute !important;
+    top: 0px;
+    left: 100%;
+  }
+}
+
+.shadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+td {
+  overflow: auto;
+}
+
+@media (max-width: 992px) {
+  .dropdown-submenu:hover {
+    .dropdown-menu {
+      position: static !important;
+    }
+  }
+  .dropdown-submenu {
+    padding-left: 0;
+  }
+  #nav {
+    padding-bottom: 1rem;
+  }
+  #logout-btn {
+    margin-bottom: 1rem !important;
+  }
+  #logout-container {
+    margin: auto !important;
+    margin-bottom: 1rem !important;
+    width: 20%;
+  }
+}
+
+@media (max-width: 768px) {
+  #sidebar {
+    display: none;
+  }
+  #logout-container {
+    margin: auto !important;
+    width: 100%;
+  }
+  table {
+    font-size: 0.7rem;
+  }
+}
+
+.accordion {
+  .ac-toggle {
+    border-radius: 0;
+  }
+}
+
+label,
+button {
+  text-transform: capitalize;
+}
+
+// .outline {
+//   outline: 3px solid hsl(207, 44%, 49%, 0.7);
+//   outline-offset: -7px;
+// }

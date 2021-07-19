@@ -1,0 +1,49 @@
+<div class="container mt-5">
+    <div class="row">
+        <h2>Student List</h2>
+        <table class="table table-bordered">
+            <thead>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Average</th>
+                <th>Grade</th>
+                <th>Active</th>
+            </thead>
+            <tbody>
+                <ng-container *ngFor = "let student of studentList">
+                    <ng-container *ngIf="student.Active">
+                        <tr>
+                            <td>{{student.Id}}</td>
+                            <td>{{student.Name}}</td>
+                            <td>{{student.Age}}</td>
+                            <td>{{student.Average}}</td>
+                            <td [ngSwitch]="student.Grade" [ngClass]="'grade'">
+                                <span *ngSwitchCase="'A'" [ngStyle]="{color : 'darkgreen'}">
+                                    {{student.Grade}}
+                                </span>
+                                <span *ngSwitchCase="'B'" [ngStyle]="{color : 'darkblue'}">
+                                   {{student.Grade}}
+                                </span>
+                                <span *ngSwitchCase="'C'" [ngStyle]="{color : 'darkorange'}">
+                                    {{student.Grade}}
+                                </span>
+                                <span *ngSwitchCase="'D'" [ngStyle]="{color : 'darkred'}">
+                                    {{student.Grade}}
+                                </span>
+                                <span *ngSwitchCase="'E'" [ngStyle]="{color : 'darkorange'}">
+                                    {{student.Grade}}
+                                </span>
+                                <span *ngSwitchDefault>
+                                    {{student.Grade}}
+                                </span>
+                            </td>
+                               
+                            <td>{{student.Active}}</td>                                                    
+                        </tr>
+                    </ng-container>
+                </ng-container>                     
+            </tbody>
+        </table>
+    </div>
+</div>

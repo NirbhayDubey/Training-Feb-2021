@@ -1,0 +1,82 @@
+<div class="container col-lg-8 mt-5 py-5">
+            
+    <div class="form-group">
+        <label for="date">Enter Date : </label>
+        <input id="date" class="form-control" type="text" placeholder="MM-DD-YYYY">
+    </div>
+    <button class="btn btn-info" onclick="checkDate()">Check</button>
+
+    <h5 id="ans" class="py-3"></h5>
+</div>
+
+<script>
+    function checkDate(){
+        var date = document.getElementById('date').value;
+
+        if(date == "")
+        {
+            document.getElementById('ans').innerHTML = "Enter Date.";
+            return false;
+        }
+
+        var pattern = /\d{2}-\d{2}-\d{4}$/;
+        if(!pattern.test(date))
+        {
+            document.getElementById('ans').innerHTML = 'Enter Date in MM-DD-YYYY';
+            return false;
+        }
+
+        var array1 = date.split('-');
+
+        var m = array1[0];
+        var d = array1[1];
+        var y = array1[2];
+
+        if(y<=0)
+        {
+            
+            document.getElementById('ans').innerHTML = 'Enter Valid Year.';
+            return false;
+        }
+
+        if(m<=0 || m>12)
+        {
+            
+            document.getElementById('ans').innerHTML = "Enter valid Month.";
+            return false;
+        }
+
+        if((d<=0 || d>31) || ((m==4 || m==6 || m==9 || m==11) && d==31) || (m==2 && d>29))
+        {
+            
+            document.getElementById('ans').innerHTML = "Enter valid Day.";
+            return false;
+        }
+
+        var leapYear = false;
+        
+        if(y%4==0)
+        {
+            if(y%100==0)
+            {
+                if(y%400==0)
+                {
+                    leapYear = true;
+                }
+            }
+            else
+            {
+                leapYear = true;
+            }
+        }
+
+        if(!leapYear && d>28 && m==2)
+        {
+            document.getElementById('ans').innerHTML = 'Enter valid Day. ' + y +' is not a Leap Year.';
+            return false;
+        }
+
+
+        document.getElementById('ans').innerHTML = "Valid Date.";
+    }
+</script>

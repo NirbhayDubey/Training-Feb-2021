@@ -1,0 +1,58 @@
+$card-border-color: teal;
+$card-spacer-x: 1rem;
+$card-border-width: 0.2rem;
+$card-bg: lightyellow;
+$btn-primary: teal;
+$card-height: 20rem;
+
+/* .card-group {
+  display: inline;
+  >>> .card {
+    font-weight: bold;
+    color: teal;
+    text-align: center;
+    margin: 1px;
+    background-color: $card-bg;
+    height: 22rem;
+
+    > .btn {
+      margin-top: 10px;
+    }
+  }
+} */
+
+.card-group {
+  margin: 10px;
+  margin-bottom: 10px;
+}
+
+.card {
+  font-weight: bold;
+  color: teal;
+  margin: 10px;
+
+  > .card-body {
+    background-color: $card-bg;
+    max-width: 18rem;
+    text-align: center;
+    border: 2px solid teal;
+  }
+
+  > .card-footer {
+    text-align: center;
+    max-width: 18rem;
+  }
+}
+
+.img {
+  float: left;
+}
+.img1 {
+  float: right;
+}
+
+/* .btn {
+  margin: 10px;
+} */
+
+@import "~bootstrap/scss/bootstrap.scss";

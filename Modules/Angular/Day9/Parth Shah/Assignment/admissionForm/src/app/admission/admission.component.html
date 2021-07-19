@@ -1,0 +1,146 @@
+<div class="container">
+    <h1 class="display-4">Students Detail</h1>
+<form [formGroup]="addmissionForm" (ngSubmit)="submitdata()">
+    <div formGroupName="studentName">
+        <label for="EnterName">Enter your First Name</label>
+        <input type="text" class="form-control" formControlName="firstName">
+        <label for="EnterName">Enter your middle Name</label>
+        <input type="text" class="form-control" formControlName="middleName">
+        <label for="EnterName">Enter your last Name</label>
+        <input type="text" class="form-control" formControlName="lastName">
+        </div>
+
+        <label for="EnterName">Enter your Date of birth</label>
+        <input type="date" class="form-control" formControlName="dob">
+        <label for="EnterName">Enter your Place of Birth</label>
+        <input type="text" class="form-control" formControlName="PlaceOfBirth">
+        <label for="EnterName">Enter your  First Language</label>
+        <input type="text" class="form-control" formControlName="FirstLanguage">
+
+<div formGroupName="Address">
+    <label >Enter City</label>
+    <input type="text" class="form-control" formControlName="city">
+    <label for="EnterName">Enter state</label>
+    <input type="text" class="form-control" formControlName="state">
+    <label for="EnterName">Enter Country</label>
+    <input type="text" class="form-control" formControlName="country">
+    <label for="EnterName">Enter Pincode</label>
+    <input type="number" class="form-control" formControlName="pin">
+</div>
+
+<h1 class="display-4">Father's Detail</h1>
+
+<div formGroupName="Father">
+    <label >Enter First name </label>
+    <input type="text" class="form-control" formControlName="firstName">
+
+    <label >Enter Middle name</label>
+    <input type="text" class="form-control" formControlName="middleName">
+
+    <label >Enter last Name</label>
+    <input type="text" class="form-control" formControlName="lastName">
+
+
+    <label >Enter Email</label>
+    <input type="text" class="form-control" formControlName="email">
+
+    <label >Enter Education Qualification</label>
+    <input type="text" class="form-control" formControlName="educationQualification">
+
+    <label >Enter Profession</label>
+    <input type="text" class="form-control" formControlName="Profession">
+
+    <label >Enter Designation</label>
+    <input type="text" class="form-control" formControlName="Designation">
+
+    <label >Enter Phone</label>
+    <input type="number" class="form-control" formControlName="Phone">
+</div>
+
+<h1 class="display-4">Mother's Detail</h1>
+
+<div formGroupName="Mother">
+    <label >Enter First name </label>
+    <input type="text" class="form-control" formControlName="firstName">
+
+    <label >Enter Middle name</label>
+    <input type="text" class="form-control" formControlName="middleName">
+
+    <label >Enter last Name</label>
+    <input type="text" class="form-control" formControlName="lastName">
+
+
+    <label >Enter Email</label>
+    <input type="text" class="form-control" formControlName="email">
+
+    <label >Enter Education Qualification</label>
+    <input type="text" class="form-control" formControlName="educationQualification">
+
+    <label >Enter Profession</label>
+    <input type="text" class="form-control" formControlName="Profession">
+
+    <label >Enter Designation</label>
+    <input type="text" class="form-control" formControlName="Designation">
+
+    <label >Enter Phone</label>
+    <input type="number" class="form-control" formControlName="Phone">
+</div>
+
+<h1 class="display-4">Emergency Detail's</h1>
+
+<div formArrayName="Emergency">
+    <div *ngFor="let item of getEmergency.controls;index as i">
+        <div [formGroupName]="i">
+
+            <label >Relation</label>
+            <input type="text" class="form-control" formControlName="Relation">
+
+            <label >Enter phone number :</label>
+            <input type="number" class="form-control" formControlName="Number">
+            </div>
+            </div>
+            <div>
+    <button type="text" (click)="Add()" class="btn btn-primary m-1">Add Emergency Contact</button>
+</div>
+    </div>
+
+
+
+    <div formArrayName="ReferenceDetail">
+        <div *ngFor="let item of getReference.controls;index as i">
+            <div [formGroupName]="i">
+    
+                <label >Reference through:</label>
+                <input type="text" class="form-control" formControlName="ReferenceThrough">
+
+                <label >Reference Address Details:</label>
+                <input type="text" class="form-control" formControlName="Address">
+    
+                <label >Reference Contact Details:</label>
+                <input type="number" class="form-control" formControlName="TelephoneNo">
+
+
+
+                </div>
+                </div>
+                <div>
+        <button type="text" (click)="AddReference()" class="btn btn-primary m-1">Add Reference Detail</button>
+    </div>
+        </div>
+
+
+
+
+
+
+
+<br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+        </form>
+<br>
+<div class="container">
+    <h5>The Json format is:</h5>{{addmissionForm.value | json}}
+
+  </div>
+</div>

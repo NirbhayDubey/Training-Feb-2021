@@ -1,0 +1,72 @@
+
+<div class="row position-fixed my-nav">
+  
+  <div class="container ">
+    <nav class="navbar  bg-light navbar-light fixed-top  shadow-lg ">
+      <div class="dropdown">
+        <button class="navbar-toggler" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+          id="dropdownLink">
+          <span class="navbar-toggler-icon small p-0"></span>
+        </button>
+        <div class="dropdown-menu  " aria-labelledby="dropdownLink">
+          <a class="dropdown-item" routerLink="/home-page"><strong class="ml-2">HOME</strong></a>
+          <p class="ml-2">PUBLIC</p>
+          <a routerLink="/questions" class="dropdown-item"><i class="fa fa-globe"></i> Questions</a>
+          <a routerLink="/tags" class="dropdown-item">Tags</a>
+          <a routerLink="/users" class="dropdown-item">Users</a>
+          <!-- <p class="ml-2">FIND A JOB</p>
+          <a href="" class="dropdown-item">Jobs</a>
+          <a href="" class="dropdown-item">Companies</a> -->
+        </div>
+      </div>
+      <a href="index.html" class="navbar-brand d-none d-md-block pl-2"><img src="../assets/Images/Logo.png"
+          alt="StackOverFlow" width="150px"></a>
+<!-- 
+      <ul class="nav mr-auto">
+        <li class="nav-item">
+          <a href="" class="nav-link text-dark">Products</a>
+        </li>
+
+      </ul> -->
+      <a href="index.html" class="navbar-brand d-md-none  ">
+        <img src="../assets/Images/smalLogo.png" alt="StackOverFlow" width="35px">
+        
+      </a>
+      <!-- <form class="form-inline my-2 my-lg-0 d-none d-lg-block ml-auto">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form> -->
+
+      <!-- <ul class="nav ml-auto">
+        <li class="nav-item">
+          <a href="" class="nav-link text-dark px-2"><i class="fa fa-inbox"></i></a>
+        </li>
+        <li class="nav-item">
+          <a href="" class="nav-link text-dark px-2"><i class="fa fa-trophy" aria-hidden="true"></i></a>
+        </li>
+        <li class="nav-item">
+          <a href="" class="nav-link text-dark px-2"><i class="fa fa-question-circle" aria-hidden="true"></i></a>
+        </li>
+        <li class="nav-item">
+          <a href="" class="nav-link text-dark px-2"><i class="fa fa-stack-exchange"></i></a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/login" class="nav-link text-dark px-2">Login</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/register" class="nav-link text-dark px-2">Sign Up</a>
+        </li>
+      </ul> -->
+
+
+      <!-- <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button> -->
+
+    </nav>
+  </div>
+</div>
+
+
+  <router-outlet></router-outlet>
+  

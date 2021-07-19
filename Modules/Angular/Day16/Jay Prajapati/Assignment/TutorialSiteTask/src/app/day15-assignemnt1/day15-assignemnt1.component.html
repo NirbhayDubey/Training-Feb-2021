@@ -1,0 +1,94 @@
+   
+
+
+    <div class="container mx-auto py-5">
+        <form style="margin: auto;">
+            <h2 class="form-header text-center text-primary">Calculator</h2>
+            <div class="form-group">
+                <label for="" class="form-label">Enter the first number : </label>
+            <input type="number" id='num1'class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="" class="form-label">Enter the second number : </label>
+            <input type="number" id='num2'class="form-control">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="" class="form-label">Please select operation you want to perform : </label>
+            </div>
+           <div class="form-check">
+                <input type="radio" class="form-check-input"id = "add" name="op" value="addition">
+                <label for="add"class="form-check-label">Addition</label>
+           </div>
+           <div class="form-check">
+                <input type="radio" class="form-check-input" id = "sub" name="op" value="subtraction">
+                <label for="sub"class="form-check-label" >Subtraction</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" id = "mul" name="op" value="multiplication">    
+                <label for="mul"class="form-check-label">Multiplication</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" id = "div" name="op" value="division">
+                <label for="div"class="form-check-label">Division</label>                
+            </div>
+            <br>
+            <input type="button"class="btn btn-primary btn-block" onclick="operation()" value="Calculate">
+            <input type="button"class="btn btn-secondary btn-block"  onclick="location.reload()" value="reset"><br><br>
+            <h1 for=""class="text-info">Result : </h1>
+            <h2 id='result'></h2>
+        
+           
+        </form>
+    
+        <script>
+            function operation(){
+                var num1 = document.getElementById('num1').value;
+                var num2 = document.getElementById('num2').value;
+                var getSelectedValue = document.querySelector( 
+                'input[name="op"]:checked'); 
+                
+                if(document.getElementById('add').checked) { 
+    
+                    var result = parseInt(num1) + parseInt(num2);
+                    document.getElementById("result").innerHTML 
+                    = "Addition of " + num1 + " and " + num2 + " is " + result;
+                }
+                if(document.getElementById('sub').checked) { 
+    
+                    var result = parseInt(num1) - parseInt(num2);
+                document.getElementById("result").innerHTML 
+                = "Subtraction of " + num1 + " and " + num2 + " is " + result;
+                }
+                if(document.getElementById('mul').checked) { 
+                
+                var result = parseInt(num1) * parseInt(num2);
+                document.getElementById("result").innerHTML 
+                = "Multiplication of " + num1 + " and " + num2 + " is " + result;
+                }
+                if(document.getElementById('div').checked) { 
+                
+                    var result = parseInt(num1) / parseInt(num2);
+                document.getElementById("result").innerHTML 
+                        = "Division of " + num1 + " and " + num2 + " is " + result;
+                }
+    
+    
+    
+            }
+           
+        </script>
+    
+    </div>
+    
+    <!-- Optional JavaScript; choose one of the two! -->
+    
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+         crossorigin="anonymous"></script>
+    
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    -->

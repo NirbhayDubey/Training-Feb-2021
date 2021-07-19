@@ -1,0 +1,120 @@
+<div class="container">
+    <div>
+
+      <div>
+        <h1 class="text-danger">Calculator</h1>
+      </div>
+
+  <div class="container">
+      <form>
+          <div class="form-group m-5">
+            <label class="form-label">Enter first number :</label>
+            <input type="number" id="num1" placeholder="Enter first number"required>
+          </div>
+
+          <!--validation-->
+          <p class="text-danger" id="wrong-num-1"></p>
+
+          <div class="form-group m-5">
+            <label class="form-label">Enter second number:</label>
+            <input
+              type="number" id="num2" placeholder="Enter second number" required >
+          </div>
+
+          <p class="text-danger" id="wrong-num-2"></p>
+
+          <div class="form-group m-5">
+            <div class="form-check">
+
+              <input type="radio" class="form-check-input" id="add" name="Calculate" required>
+              <label class="form-check-label" for="Addition"> Addition </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="Calculate" id="subtract" required>
+              <label class="form-check-label" for="Subtraction">Subtraction</label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="Calculate" id="mul" required>
+              <label class="form-check-label" for="Multiplication">Multiplication</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="Calculate" id="div" required>
+              <label class="form-check-label" for="Division"> Division </label>
+            </div>
+
+            <p class="text-danger" id="wrong-selection"></p>
+
+            <div class="mt-1">
+              <button class="btn btn-dark" type="reset">Reset</button>
+              <button class="btn btn-success" type="button" onclick="calculate()">Calculate</button>
+            </div>
+
+          </div>
+        </form>
+      </div>
+
+      <div>
+        <h3>Answer : <span id="answer"></span></h3>
+      </div>
+    </div>
+
+    <script>
+    
+        function calculate() {
+        var a = parseInt(document.getElementById("num1").value);
+        var b = parseInt(document.getElementById("num2").value);
+        var add = document.getElementById("add").checked;
+        var sub = document.getElementById("subtract").checked;
+        var mul = document.getElementById("mul").checked;
+        var div = document.getElementById("div").checked;
+      
+        if (isNaN(a)) {
+    
+          document.getElementById("wrong-num-1").innerHTML = "Enter first number";
+          document.getElementById("answer").innerHTML = "";
+        } 
+        else if (isNaN(b)) {
+    
+          document.getElementById("wrong-num-1").innerHTML = "";
+          document.getElementById("wrong-num-2").innerHTML ="Enter second number";
+          document.getElementById("answer").innerHTML = "";
+        } 
+    
+        else {
+          
+            switch (true) {
+            case add:
+              document.getElementById("answer").innerHTML = a + b;
+              document.getElementById("wrong-selection").innerHTML = "";
+              break;
+    
+            case sub:
+              document.getElementById("answer").innerHTML = a - b;
+              document.getElementById("wrong-selection").innerHTML = "";
+              break;
+    
+            case mul:
+              document.getElementById("answer").innerHTML = a * b;
+              document.getElementById("wrong-selection").innerHTML = "";
+              break;
+    
+            case div:
+              document.getElementById("answer").innerHTML = a / b;
+              document.getElementById("wrong-selection").innerHTML = "";
+              break;
+              
+            default:
+              document.getElementById("wrong-num-1").innerHTML = "";
+              document.getElementById("wrong-num-2").innerHTML = "";
+              document.getElementById("wrong-selection").innerHTML = "Please select";
+              document.getElementById("answer").innerHTML = "";
+              break;
+          }
+        }
+        return false;
+      }
+    
+        </script>
+    
+

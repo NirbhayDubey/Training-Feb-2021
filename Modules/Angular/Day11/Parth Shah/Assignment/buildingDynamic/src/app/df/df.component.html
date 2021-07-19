@@ -1,0 +1,13 @@
+
+<ng-content></ng-content>
+
+
+<form (ngSubmit)="onSubmit()" [formGroup]="form" class="flex form">
+    <div *ngFor="let question of questions">
+<df-question [question]="question" [form]="form"></df-question>
+    </div>
+</form>
+
+<div>
+    
+</div>

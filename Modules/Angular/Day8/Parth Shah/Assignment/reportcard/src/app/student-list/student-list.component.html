@@ -1,0 +1,148 @@
+
+<div class="container">
+    <div class="card mb-3">
+      <img src="../../assets/img/21.png" class="card-img-top img-fluid" style="height: 250px;"  alt="...">
+      <div class="card-body">
+        <h5 class="card-title display-4">Welcome to Army Public School</h5>
+        <p class="card-text">Please feel free to here to check your student report card.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+    
+  </div>
+      
+      <!-- Modal -->
+     
+    
+      <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="display-4" >Student Report Card</h4>
+                        </div>
+                        <table class="table table-stripped">
+                            <thead class="thead-inverse">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Age</th>      
+                                    <th>Average</th> 
+                                    <th >Grade</th>  
+                                    <th>Active</th>  
+                                    <th>Edit</th>  
+
+                                    <th>Delete</th>                               
+                                </tr>
+                            </thead>
+
+                            <!-- this will create grade wise colour and only display active data's -->
+                            <tbody *ngFor="let item of studentList; let idx= index" [ngSwitch]="item.Grade">
+                              <tr  *ngSwitchCase = "'A'" [ngClass]="{'bg-secondary':true,'text-light':true,'font-weight-bold':true}" [ngStyle]= "item.Active ? {'font-style':'normal'} : {'display': 'none'}">
+                                    <td scope="row">{{item.ID}}</td>
+                                    <td>{{item.Name}}</td>
+                                    <td>{{item.Age}}</td>
+                                    <td>{{item.Average}}</td>
+                                    <td >{{item.Grade}}</td>
+                                    <td>{{item.Active}}</td>
+                                    
+                                    <td><button (click) ="edit(item)" class="btn btn-primary">Edit</button></td>
+                                    <td><button (click) ="remove(idx)" class="btn btn-danger">Delete</button></td>
+                                </tr>
+                                <tr  *ngSwitchCase = "'B'" [ngClass]="{'bg-warning':true,'text-dark':true,'font-weight-bold':true }" [ngStyle]= "item.Active ? {'font-style':'normal'} : {'display': 'none'}">
+                                  <td scope="row">{{item.ID}}</td>
+                                  <td>{{item.Name}}</td>
+                                  <td>{{item.Age}}</td>
+                                  <td>{{item.Average}}</td>
+                                  <td >{{item.Grade}}</td>
+                                  <td>{{item.Active}}</td>
+                                  
+                                  <td><button (click) ="edit(item)" class="btn btn-primary">Edit</button></td>
+                                  <td><button (click) ="remove(idx)" class="btn btn-danger">Delete</button></td>
+                              </tr>
+                              <tr  *ngSwitchCase = "'C'" [ngClass]="{'bg-success':true,'text-light':true,'font-weight-bold':true }" [ngStyle]= "item.Active ? {'font-style':'normal'} : {'display': 'none'}">
+                                <td scope="row">{{item.ID}}</td>
+                                <td>{{item.Name}}</td>
+                                <td>{{item.Age}}</td>
+                                <td>{{item.Average}}</td>
+                                <td >{{item.Grade}}</td>
+                                <td>{{item.Active}}</td>
+                                
+                                <td><button (click) ="edit(item)" class="btn btn-primary">Edit</button></td>
+                                <td><button (click) ="remove(idx)" class="btn btn-danger">Delete</button></td>
+                            </tr>
+                          
+                           
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+  
+
+                <div class="col-md-3">
+                    <div class="card text-center bg-warning text-white mb-3">
+                    <h5 class="card-header bg-light text-dark h5">Check List of Student</h5>
+
+                        <div class="card-body">
+                            <h3>Check</h3>
+                            <h1 class="display-4">
+                            </h1><br>
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+                                Launch student List
+                              </button>
+                          
+
+
+                              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="exampleModalLabel">Student List</h5>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h2 class="text-primary"> Below is the list of Student</h2>
+                        
+                                        <div class="list-group">
+                                         
+                                          <a href="#" *ngFor="let student of studentList" class="list-group-item list-group-item-action">{{student.Name}}</a>
+                                         
+                                        </div>
+                        
+                                       
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                      <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+    
+                        </div>
+                    </div>
+  
+                    <div class="card text-center bg-primary text-white mb-3">
+                        <h5 class="card-header bg-light text-dark h5">Update</h5>
+                    <div class="card-body">                        
+                        
+                        <label for="text">Update Name</label>
+                        <input type="text" [(ngModel)]="Name" class="form-control"><br>
+                        <label for="text">Update Average</label>
+                        <input type="text"  [(ngModel)]="Average" class="form-control"><br>
+                        <button (click)="update()" class="btn btn-danger">Update</button>
+
+                    </div>
+                </div>
+
+</div>
+                </div>
+                </div>
+                </section>
+
+                <div class="my-5">
+
+                </div>

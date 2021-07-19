@@ -1,97 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <%- include('../partials/head', { title : 'RxTraining' }) %>
-</head>
-<body>
-    <header>
-        <%- include('../partials/header', {Tech}) %>
-    </header>
+  </head>
+  <body>
+    <header><%- include('../partials/header', {Tech, User}) %></header>
     <main>
-        <div class="container">
-            <h1 class="display-1 mb-5 d-inline-block"><%= techName %> Supported Files:</h1>
-            <button class="btn btn-info float-right" data-toggle="modal" data-target="#addModal">Add Topic</button>
-            <% modules.forEach(element => { %>
-                <div>
-                    <h1 class="d-inline-block"><%= element.topic %></h1>
-                    <a href="/technologies/<%= techId %>/modules/supports/<%= element._id %>/delete" class="btn btn-danger float-right deleteTech"><i class="fas fa-trash-alt"></i></a>
-                    <hr>
-                        <% element.contents.forEach(cont => { %>
-                            <div class="item-hl m-4" style="position: relative;">
-                                <a href="/technologies/<%= techId %>/modules/supports/<%= element._id %>/contents/<%= cont._id %>/delete" class="btn btn-danger float-right deleteTech" style="position: absolute; z-index: 1; right: 0;"><i class="fas fa-trash-alt"></i></a>
-                                <a href="<%= cont.contentUrl %>" class="w-100" controls><%= cont.contentUrl %></a>
-                                <p class="lead"><%= cont.contentName %></p>
-                            </div>
-                        <% }) %>
-                        <button class="btn btn-warning w-25" data-toggle="modal" data-target="#addContent"><i class="fas fa-plus"></i></button>
-                        <p class="lead text-center w-25">Add File</p>
+      <div class="container">
+        <h1 class="display-1 mb-5 d-inline-block">
+          <%= techName %> Supported Files:
+        </h1>
+        <button
+          class="btn btn-info float-right"
+          data-toggle="modal"
+          data-target="#addModal"
+        >
+          Add Topic
+        </button>
+        <% modules.forEach(element => { %>
+        <div>
+          <h1 class="d-inline-block"><%= element.topic %></h1>
+          <a
+            href="/technologies/<%= techId %>/modules/supports/<%= element._id %>/delete"
+            class="btn btn-danger float-right deleteTech"
+            ><i class="fas fa-trash-alt"></i
+          ></a>
+          <hr />
+          <% element.contents.forEach(cont => { %>
+          <div class="item-hl m-4" style="position: relative">
+            <a
+              href="/technologies/<%= techId %>/modules/supports/<%= element._id %>/contents/<%= cont._id %>/delete"
+              class="btn btn-danger float-right deleteTech"
+              style="position: absolute; z-index: 1; right: 0"
+              ><i class="fas fa-trash-alt"></i
+            ></a>
+            <a href="<%= cont.contentUrl %>" class="w-100" controls
+              ><%= cont.contentUrl %></a
+            >
+            <p class="lead"><%= cont.contentName %></p>
+          </div>
+          <% }) %>
+          <button
+            class="btn btn-warning w-25"
+            data-toggle="modal"
+            data-target="#addContent"
+          >
+            <i class="fas fa-plus"></i>
+          </button>
+          <p class="lead text-center w-25">Add File</p>
 
-                            <div class="modal" id="addContent">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">Add Plan</h5>
-                                            <button class="close" data-dismiss="modal">&times;</button>
-                                        </div>
-                                        <form action="/technologies/<%= techId %>/modules/supports/<%= element._id %>/contents" method="POST" enctype="multipart/form-data">
-                                            <div class="modal-body">
-                                                <div class="form-group">
-                                                    <label for="contentName">File Name</label>
-                                                    <input type="text"  id="contentName" name="contentName" class="form-control" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="content">Add File</label>
-                                                    <input type="file"  id="content" name="content" class="form-control" multiple required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="description">File Description</label>
-                                                    <textarea type="text"  id="description" name="description" class="form-control"></textarea>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button class="btn btn-secondary" data-dismiss="modal">close</button>
-                                                <button class="btn btn-primary" type="submit">Submit</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-
+          <div class="modal" id="addContent">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Add Plan</h5>
+                  <button class="close" data-dismiss="modal">&times;</button>
                 </div>
-            <% }) %>
+                <form
+                  action="/technologies/<%= techId %>/modules/supports/<%= element._id %>/contents"
+                  method="POST"
+                  enctype="multipart/form-data"
+                >
+                  <div class="modal-body">
+                    <div class="form-group">
+                      <label for="contentName">File Name</label>
+                      <input
+                        type="text"
+                        id="contentName"
+                        name="contentName"
+                        class="form-control"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="content">Add File</label>
+                      <input
+                        type="file"
+                        id="content"
+                        name="content"
+                        class="form-control"
+                        multiple
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button class="btn btn-secondary" data-dismiss="modal">
+                      close
+                    </button>
+                    <button class="btn btn-primary" type="submit">
+                      Submit
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
+        <% }) %>
+      </div>
     </main>
 
     <!-- add supports -->
     <div class="modal" id="addModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Add Plan</h5>
-                    <button class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <form action="/technologies/<%= techId %>/modules/supports" method="POST" enctype="multipart/form-data">
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label for="topic">Topic</label>
-                            <input type="text"  id="topic" name="topic" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="contents">Contents</label>
-                            <input type="file"  id="contents" name="contents" class="form-control" multiple required>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" data-dismiss="modal">close</button>
-                        <button class="btn btn-primary" type="submit">Submit</button>
-                    </div>
-                </form>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Add Plan</h5>
+            <button class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <form
+            action="/technologies/<%= techId %>/modules/supports"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="topic">Topic</label>
+                <input
+                  type="text"
+                  id="topic"
+                  name="topic"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="contents">Contents</label>
+                <input
+                  type="file"
+                  id="contents"
+                  name="contents"
+                  class="form-control"
+                  multiple
+                  required
+                />
+              </div>
             </div>
+            <div class="form-group">
+              <label for="description">File Description</label>
+              <textarea
+                type="text"
+                id="description"
+                name="description"
+                class="form-control"
+              ></textarea>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" data-dismiss="modal">
+                close
+              </button>
+              <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+          </form>
         </div>
+      </div>
     </div>
 
     <!-- add content  -->
-    
+
     <%- include('../partials/footer') %>
-</body>
+  </body>
 </html>

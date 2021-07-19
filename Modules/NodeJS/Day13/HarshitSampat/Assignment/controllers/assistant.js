@@ -22,7 +22,7 @@ exports.getAllAssistants = async (req,res)=>{
    }
 }
 
-//add new assisstant
+//add new assisstant    
 
 exports.addNewassistant = async (req,res)=>{
     
@@ -71,6 +71,6 @@ exports.deleteAssistant = async (req,res)=>{
     if(!assistant) return res.status(401).send('Assistant with this id is not found')
 
     //send response
-    res.send(assistant  )
+    res.send(assistant)
 
 }

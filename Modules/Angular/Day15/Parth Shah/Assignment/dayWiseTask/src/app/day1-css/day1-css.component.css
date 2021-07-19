@@ -1,0 +1,39 @@
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: #1c1c1c; }
+  
+  body {
+    background: #14142c; }
+  
+  .radix {
+    height: 550px; }
+  
+  .disable {
+    background: #140c1c !important;
+    text-align: center;
+    font-size: larger;
+    font-weight: bolder;
+    color: whitesmoke !important; }
+  
+  .col-md-3 {
+    overflow: auto; }
+  
+  .list-group a:hover {
+    background-color: #3c4444 !important;
+    color: whitesmoke;
+    font-size: x-large; }
+  
+  .urdiv {
+    color: #070707;
+    font-weight: bold; }
+  
+  .menutag {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    font-size: larger; }
+  
+  .menutag a:hover {
+    color: chartreuse; }
+  
+    .body{
+        background-color:   #14142c;
+    }

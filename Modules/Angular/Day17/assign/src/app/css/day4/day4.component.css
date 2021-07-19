@@ -1,0 +1,26 @@
+
+        *{
+            font-size: 23px;
+        }
+        .details{
+            background-color: #aaa9f5;
+            padding:20px;
+            width: 70%;
+            margin: auto;;
+        }
+
+    h3,h2{
+       text-decoration: underline;
+    
+     }
+
+        table{
+    text-align: left;
+    border: 3px solid olive;
+    }
+
+    td{
+    padding: 2px;
+    border: 1px solid #E88741;
+    }
+
