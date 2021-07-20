@@ -64,10 +64,10 @@ export default function AddTrininigPlan(props) {
             }
             setCourses(allc);
           }
+          setLoading(false);
         })
         .catch((ex) => console.log(ex));
     }
-    setLoading(false);
   }, [confirmBox]);
 
   const handleAddCourse = async (e) => {

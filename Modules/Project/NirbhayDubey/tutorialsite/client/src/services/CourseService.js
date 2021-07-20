@@ -76,6 +76,20 @@ class CourseService {
   postTrainingPlanImg(image) {
     return axios.post(CLOUDNARY_IMG_UP, image);
   }
+  putTrainingPlan(trainingplan, token) {
+    return axios.put(
+      TUTORIAL_API_API_URL +
+        trainingplan.cid +
+        "/trainingplan/" +
+        trainingplan._id,
+      trainingplan,
+      {
+        headers: {
+          Authorization: token,
+        },
+      }
+    );
+  }
   removeTplan(plan, token) {
     return axios.delete(
       TUTORIAL_API_API_URL + plan.cid + "/trainingplan/" + plan.tp_day,

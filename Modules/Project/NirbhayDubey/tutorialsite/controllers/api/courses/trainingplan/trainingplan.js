@@ -110,62 +110,30 @@ class TrainingplanRoute {
   }
 
   static async putTrainingPlan(req, res) {
-    Course.findById(req.params.id)
-      .then(async function (course) {
-        if (!course)
-          return res.status(404).json({
-            error: "ERROR: No Course found",
-          });
-        else {
-          const upTplan = await TrainingPlan.findOne({
-            cid: course._id,
-            tp_day: req.params.day,
-          });
-          const bTplan = req.body;
-          upTplan.set({
-            cid: course._id,
-            tp_day: bTplan.tp_day != undefined ? bTplan.tp_day : upTplan.tp_day,
-            tp_whattolearn:
-              bTplan.tp_whattolearn != undefined
-                ? bTplan.tp_whattolearn
-                : upTplan.tp_whattolearn,
-            tp_practice:
-              bTplan.tp_practice != undefined
-                ? bTplan.tp_practice
-                : upTplan.tp_practice,
-            tp_assignment:
-              bTplan.tp_assignment != undefined
-                ? bTplan.tp_assignment
-                : upTplan.tp_assignment,
-            tp_onlineref:
-              bTplan.tp_onlineref != undefined
-                ? bTplan.tp_onlineref
-                : upTplan.tp_onlineref,
-            tp_note:
-              bTplan.tp_note != undefined ? bTplan.tp_note : upTplan.tp_note,
-            tp_practiceimgarr:
-              bTplan.tp_practiceimgarr != undefined
-                ? bTplan.tp_practiceimgarr
-                : upTplan.tp_practiceimgarr,
-            tp_assignmentimgarr:
-              bTplan.tp_assignmentimgarr != undefined
-                ? bTplan.tp_assignmentimgarr
-                : upTplan.tp_assignmentimgarr,
-          });
+    const upTplan = await TrainingPlan.findById(req.params.tpid);
+    if (upTplan) {
+      upTplan.set({
+        tp_whattolearn: req.body.tp_whattolearn,
+        tp_practice: req.body.tp_practice,
+        tp_assignment: req.body.tp_assignment,
+        tp_onlineref: req.body.tp_onlineref,
+        tp_note: req.body.tp_note,
+        tp_practiceimgarr: req.body.tp_practiceimgarr,
+        tp_assignmentimgarr: req.body.tp_assignmentimgarr,
+      });
 
-          upTplan
-            .save()
-            .then((plan) => {
-              res.status(200).json({
-                msg: "Trainingplan updated successfully..",
-                Trainingplan: plan,
-              });
-            })
-            .catch((ex) => console.log(ex));
-        }
-      })
-      .catch((ex) => console.log(ex));
+      upTplan
+        .save()
+        .then((plan) => {
+          res.status(200).json({
+            msg: "Trainingplan updated successfully..",
+            Trainingplan: plan,
+          });
+        })
+        .catch((ex) => console.log(ex));
+    }
   }
+
   static async deleteTrainingPlan(req, res) {
     Course.findById(req.params.id)
       .then(async function (course) {
@@ -207,7 +175,7 @@ router.post(
   TrainingplanRoute.postTrainingPlanXlsx
 );
 router.put(
-  "/:day",
+  "/:tpid",
   passport.authenticate("jwt", { session: false }),
   TrainingplanRoute.putTrainingPlan
 );

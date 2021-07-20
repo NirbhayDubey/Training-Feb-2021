@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Dashboard from "../../components/dashboard/Dashboard";
 import ManageCourse from "../../components/forms/ManageCourse";
 import ManageUser from "../../components/forms/ManageUser";
-import RemoveStudent from "../../components/forms/RemoveStudent";
 import ManageTrainingPlan from "../../components/forms/ManageTrainingPlan";
 import ManagePpt from "../../components/forms/ManagePpt";
 import Managevideo from "../../components/forms/ManageVideo";
